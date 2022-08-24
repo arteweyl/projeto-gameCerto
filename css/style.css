@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 100%;    
+    background: url('../img/bg.png') fixed;
+}
+
+header {
+    background: url('../img/header.jpg') no-repeat;
+    padding: 0.2%;
+}
+
+h1 {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 6rem;
+    padding-bottom: 1%;
+    transition: color 1s;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Oxanium', cursive;
+    font-size: 3rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+h1:hover {
+    color: rgb(165, 7, 7);
+
+}
+
+.button:hover {
+    Background-color: rgb(165, 7, 7);
+
+}
+
+#platform {
+    background: rgba(127, 25, 158, 0.514);
+    border-radius: 10px;
+    font-family: sans-serif;   
+    text-align: center; 
+}
+
+.container{
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    align-content: center;
+    text-align:center;
+    font-family: 'Oxanium', cursive  ;
+    background:rgba(167, 112, 199, 0.534); 
+    padding:0.2%;
+    margin:0.02%;
+     
+
+}
+#container-2{
+
+    align-items: center;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-checkbox{
+    
+    text-align:left;
+    align-items: center;
+    padding:0.05%;
+
+}
+
+.div-checkbox:hover{
+    transform:scale(1.2);
+    padding:0 1%;
+}
+
+.li-checkbox{
+    font-size: 20px;
+    padding:0.01%;
+    list-style: none;
+}
+
+.li-checkbox:hover{
+        
+    transform: scale(1.20);
+}
+
+.submit-container{
+    width:100%;
+    height:fit-content;
+    margin:10px;
+
+}
+
+#RAM-quantity{
+    width:100%;
+    margin:2% 0%;
+    padding:1%;
+    border-radius: 50px; 
+    border:1px solid rgb(167, 98, 167);
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+
+}
+
+.button{
+    width: 80%;
+    padding: 2%;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    margin: 2% 2%;
+    font-family: 'Oxanium', cursive;
+    font-size: 2rem;
+    color: whitesmoke;
+    background-color: rgba(169, 53, 192, 0.555);
+    cursor:pointer;
+    transition: background-color 1s;
+}
+
+h2 {
+    margin: 0.5% 2%;
+    color: rgb(22, 3, 27);
+    font-family: 'Oxanium', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.label-checkbox{
+    align-items:baseline;
+    font-size: 20px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bolder;
+    padding-right: 10%;
+
+
+}
+
+
+#RAM-quantity{
+    width: 400px;
+    align-items: center;
+    text-align:center;
+
+    
+
+}
+
+footer{
+    position:fixed;
+    align-items: center;
+    bottom: 0%;
+    background-color: rgba(162, 33, 221, 0.521);
+    color: rgba(255, 255, 255, 0.945);
+    width: 100%;
+    height: 50px;    
+    text-align: center;
+    line-height: 50px;     
+    
+}
+
+
+#sectionCard{
+    width: 100%;
+    margin:1%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+}
+
+.gameImg {
+    size: 50%;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.gamePlatform {
+    color: whitesmoke;
+    font-family: 'Oxanium', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.titleMeta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+#gameCard  {
+    width: 50%;
+    min-width: fit-content;
+    background-color: rgba(95, 21, 180, 0.158);
+    color: whitesmoke;
+    font-family: 'Oxanium', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    align-items: center;
+}
