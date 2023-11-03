@@ -1,6 +1,6 @@
 # projeto-gameCerto
 
-Esse projeto foi feito como forma avaliativa para a vaga de dev jr na LevelUp.
+Esse projeto foi feito com proposito de treino
 
 O meu projeto consiste em um buscador através de checkboxes. se não selecionarmos nenhuma não é feito a request para API, quando selecionamos uma ou mais caixa, fazemos uma request de acordo com a tag. tambem precisamos selecionar uma plataforma, se não selecionarmos nenhuma a request fica vazia.
 
