@@ -1,52 +1,105 @@
-var listaTipoJogos = [,"mmorpg", "shooter", "strategy", "moba", "racing", "sports", "social", "sandbox", "open-world", "survival", "pvp", "pve", "pixel", "voxel", "zombie", "turn-based", "first-person", "third-Person", "top-down", "tank", "space", "sailing", "side-scroller", "superhero", "permadeath", "card", "battle-royale", "mmo", "mmofps", "mmotps", "3d", "2d", "anime", "fantasy", "sci-fi", "fighting", "action-rpg", "action", "military", "martial-arts", "flight", "low-spec", "tower-defense", "horror", "mmorts"];
-const div1 = document.getElementById("container-1");
+var listaTipoJogos = [
+  "mmorpg",
+  "shooter",
+  "strategy",
+  "moba",
+  "racing",
+  "sports",
+  "social",
+  "sandbox",
+  "open-world",
+  "survival",
+  "pvp",
+  "pve",
+  "pixel",
+  "voxel",
+  "zombie",
+  "turn-based",
+  "first-person",
+  "third-person",
+  "top-down",
+  "tank",
+  "space",
+  "sailing",
+  "side-scroller",
+  "superhero",
+  "permadeath",
+  "card",
+  "battle-royale",
+  "mmo",
+  "mmofps",
+  "mmotps",
+  "3d",
+  "2d",
+  "anime",
+  "fantasy",
+  "sci-fi",
+  "fighting",
+  "action-rpg",
+  "action",
+  "military",
+  "martial-arts",
+  "flight",
+  "low-spec",
+  "tower-defense",
+  "horror",
+  "mmorts",
+];
 
-callCheckBox(15,listaTipoJogos)
+const container1 = document.getElementById("container-1");
 
-function callCheckBox (k,array){
-    const  ncheckbox= (array.length-1)/k;
+function callCheckBox(array) {
+  if (!container1) return;
+  container1.innerHTML = ""; // Limpa o container
 
-     // k vai assumir valor de multiplo de itens -1 que o array possui, para essa lista específica só temos a opção de 3 ou 5 ou 15
+  array.forEach((tag, idx) => {
+    // Wrapper para o chip de checkbox
+    const wrapper = document.createElement("div");
+    wrapper.setAttribute("class", "chip-wrapper");
 
-    for(var j=1;j<=k;j++){
-        const div1 = document.getElementById("container-1");
-        //cria multiplos divs pra aninharem ul
-        var div = document.createElement("div");
-        div.setAttribute("id","div-checkbox"+j);
-        div.setAttribute("class","div-checkbox");
-        div1.appendChild(div);
-        
-        //cria multiplos ul's pra aninhar li's
-        var ul = document.createElement("ul");
-        ul.setAttribute("class","ul-checkbox");
-        ul.setAttribute("id","ul-div-"+j);
-        div.appendChild(ul);
-    
-        for(var i=ncheckbox*(j-1)+1;i<=ncheckbox*j;i++){
-                //cria multiplos li's e aninha dentro dos ul's criados anteriormente.
-                var li = document.createElement("li");
-                li.setAttribute("class","li-checkbox");
-                li.setAttribute("id","li-checkbox"+i)
-                ul.appendChild(li);
-                //cria multiplos labels correspondentes aos checkbox 
-                var labelbox = document.createElement("label");
-                labelbox.setAttribute("class","label-Checkbox");
-                labelbox.setAttribute("id","labelbox"+i);
-                labelbox.htmlFor = box;
-                labelbox.textContent = array[i];
-                //cria multiplos checkbox correspondentes aos checkbox 
-                var box = document.createElement("input")
-                box.setAttribute("class","Checkbox");
-                box.setAttribute("id","checkbox"+i);
-                box.type = "checkbox";
-                box.value = array[i]
-                //aninha checkbox e labels nas listas criadas acima
-                li.appendChild(box);
-                li.appendChild(labelbox);  
-            
-            
-                
-                
+    // Input de checkbox real (oculto visualmente)
+    const box = document.createElement("input");
+    box.setAttribute("class", "checkbox-input");
+    box.setAttribute("id", "checkbox-" + (idx + 1));
+    box.type = "checkbox";
+    box.value = tag;
+
+    // Label estilizada
+    const labelbox = document.createElement("label");
+    labelbox.setAttribute("class", "chip-label");
+    labelbox.setAttribute("id", "labelbox-" + (idx + 1));
+    labelbox.htmlFor = "checkbox-" + (idx + 1);
+
+    // Formatação amigável do texto da tag (ex: action-rpg -> Action RPG)
+    let formattedText = tag
+      .split("-")
+      .map((word) => {
+        const uppercaseWords = [
+          "rpg",
+          "mmo",
+          "fps",
+          "tps",
+          "rts",
+          "pvp",
+          "pve",
+          "3d",
+          "2d",
+        ];
+        if (uppercaseWords.includes(word.toLowerCase())) {
+          return word.toUpperCase();
         }
-    }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+
+    labelbox.textContent = formattedText;
+
+    // Aninha os elementos
+    wrapper.appendChild(box);
+    wrapper.appendChild(labelbox);
+    container1.appendChild(wrapper);
+  });
 }
+
+// Inicializa a criação de todos os chips em formato de grid
+callCheckBox(listaTipoJogos);

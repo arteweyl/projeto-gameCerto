@@ -1,0 +1,30 @@
+{
+  "name": "projeto-gamecerto",
+  "version": "1.1.0",
+  "description": "Buscador e Dashboard analítico de jogos gratuitos",
+  "main": "index.html",
+  "scripts": {
+    "lint:html": "htmlhint \"*.html\"",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:js": "eslint \"JS/**/*.js\"",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "test": "npm run format:check && npm run lint"
+  },
+  "keywords": [
+    "gaming",
+    "freetoplay",
+    "dashboard",
+    "rapidapi"
+  ],
+  "author": "Artemisia Weyl",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.0.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

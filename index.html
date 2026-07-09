@@ -1,72 +1,202 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameCerto - Descubra seu Próximo Jogo</title>
 
+    <!-- Google Fonts: Oxanium for headers/gaming theme, Inter for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oxanium:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <title>GameCerto</title>
-  
-<!-- google font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+  <body>
+    <!-- Animated Background Glows -->
+    <div class="mesh-glow mesh-glow-1"></div>
+    <div class="mesh-glow mesh-glow-2"></div>
 
+    <div class="app-container">
+      <header class="app-header">
+        <div class="logo-area">
+          <h1 class="logo-title">Game<span>Certo</span></h1>
+          <p class="logo-subtitle">
+            Encontre o free-to-play ideal para o seu setup
+          </p>
+        </div>
+        <nav class="app-nav">
+          <a href="index.html" class="nav-item active">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Recomendador
+          </a>
+          <a href="dashboard.html" target="_blank" class="nav-item">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+              <line x1="17" y1="9" x2="17" y2="21" />
+              <line x1="3" y1="9" x2="17" y2="9" />
+              <line x1="3" y1="15" x2="17" y2="15" />
+            </svg>
+            Dashboard da API
+          </a>
+        </nav>
+      </header>
 
-<body>
+      <main class="app-main">
+        <!-- Filter Sidebar (Controls) -->
+        <section class="control-panel glass">
+          <div class="panel-header">
+            <svg
+              class="panel-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              />
+            </svg>
+            <h2>Filtros de Busca</h2>
+          </div>
 
-  <header>
-    
-    <h1>GameCerto</h1><br>
-  </header>
+          <div class="control-group">
+            <label class="group-label">1. Escolha as categorias de jogo:</label>
+            <div id="container-1" class="tags-grid">
+              <!-- Checkboxes (chips) will be generated here dynamically -->
+            </div>
+          </div>
 
-  <main id="main-1">
-    <section>
-      <h2 id="label-checkbox1" for="tipo-jogo">Escolha o tipo de Jogo:</h2>
+          <div class="control-group">
+            <div class="field-row">
+              <div class="field-box">
+                <label for="platform" class="group-label">2. Plataforma</label>
+                <div class="select-wrapper">
+                  <select id="platform" name="platform">
+                    <option value="">-- Qualquer Plataforma --</option>
+                    <option id="option-1" value="pc">PC (Windows)</option>
+                    <option id="option-2" value="browser">
+                      Navegador (Web)
+                    </option>
+                  </select>
+                </div>
+              </div>
 
-      <div id="container-1" class="container">
+              <div class="field-box">
+                <label for="RAM-quantity" class="group-label"
+                  >3. Memória RAM (GB)</label
+                >
+                <input
+                  id="RAM-quantity"
+                  type="number"
+                  min="1"
+                  max="128"
+                  placeholder="Ex: 8 (Opcional)"
+                />
+              </div>
+            </div>
+          </div>
 
-      </div>
-      <div id="container-2" class="submit-container">
-        <input id="RAM-quantity" type="number " placeholder="Digite a quantidade de Memoria RAM  (Opcional)"><br>
-        <form action="">
-          <label for="">Escolha o tipo de Plataforma</label>
-          <select id="platform" name="platform">
-            <option value=""null >--Selecione--</option>
-            <option id="option-1" value="pc">PC</option>
-            <option id="option-2" value="browser">Navegador</option> 
-            
-          </select><br><br>
-        <button id="button-check"type="button" class="button" disabled>Veja o jogo</button>  
-        
-        </form>
-      </div>
-  
-    </section>
+          <div class="action-area">
+            <button
+              id="button-check"
+              type="button"
+              class="btn btn-primary"
+              disabled
+            >
+              <span>Descobrir Jogo</span>
+              <svg
+                class="btn-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
 
-    <section id="sectionCard">
-     
-    </section>
-    
+        <!-- Results Showcase -->
+        <section class="results-panel">
+          <div id="sectionCard" class="card-showcase">
+            <!-- Default placeholder before a game is selected -->
+            <div class="placeholder-card glass">
+              <div class="placeholder-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="48"
+                  height="48"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                  />
+                </svg>
+              </div>
+              <h3>Pronto para jogar?</h3>
+              <p>
+                Selecione uma ou mais categorias ao lado e clique em
+                <strong>"Descobrir Jogo"</strong> para gerar uma recomendação
+                aleatória personalizada!
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-   
-            
-  </main>
-
-
-
-<footer class="rodape">
-  <h4>Esse é um projeto experimental por <a href="https://artemisia-weyl.netlify.app/main.html" id="minha-web-page">Artemisia Weyl</a></h4><br>
-</footer>
-
-<script src="JS/createCheckBox.js"></script>
-<script type="module" src="JS/main.js"></script>
-
-
-
-</body>
-
+      <footer class="app-footer">
+        <p>
+          Projeto Experimental &bull; Desenvolvido por
+          <a
+            href="https://artemisia-weyl.netlify.app/main.html"
+            id="minha-web-page"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Artemisia Weyl</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,82 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# Permissões necessárias para publicar no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita deploys concorrentes
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job 1: Integração Contínua (CI)
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Code Style Check (Prettier)
+        run: npm run format:check
+
+      - name: Run HTML Lint (HTMLHint)
+        run: npm run lint:html
+
+      - name: Run CSS Lint (Stylelint)
+        run: npm run lint:css
+
+      - name: Run JS Lint (ESLint)
+        run: npm run lint:js
+
+  # Job 2: Entrega e Deploy Contínuo (CD) - Só roda se o Job 1 passar
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+          # Ignora arquivos não essenciais usando o .gitignore padrão
+          ignore: |
+            node_modules/
+            .github/
+            package-lock.json
+            package.json
+            .eslintrc.json
+            .stylelintrc.json
+            .htmlhintrc
+            .gitignore
+            README.md
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
