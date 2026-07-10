@@ -971,11 +971,17 @@ function renderTable() {
     const isPaid =
       game.price === "paid" ||
       (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
-    const priceText = isPaid
-      ? game.worth && game.worth !== "N/A"
-        ? game.worth
-        : "Pago"
-      : "Grátis";
+
+    let priceText = "Grátis";
+    if (isPaid) {
+      if (game.sale_price) {
+        priceText = `${game.sale_price} (Promo)`;
+      } else if (game.worth && game.worth !== "N/A") {
+        priceText = game.worth;
+      } else {
+        priceText = "Pago";
+      }
+    }
 
     const priceTag = document.createElement("span");
     priceTag.className = isPaid
@@ -1006,7 +1012,11 @@ function renderTable() {
 
     let actionLabel = "Jogar";
     if (isPaid) {
-      actionLabel = game.open_giveaway_url ? "Resgatar" : "Comprar";
+      if (game.sale_price) {
+        actionLabel = "Oferta";
+      } else {
+        actionLabel = game.open_giveaway_url ? "Resgatar" : "Comprar";
+      }
     }
 
     const playLink = document.createElement("a");

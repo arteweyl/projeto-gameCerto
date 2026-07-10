@@ -704,11 +704,17 @@ async function fazFetch() {
     const isPaid =
       game.price === "paid" ||
       (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
-    const priceText = isPaid
-      ? game.worth
-        ? `Pago (${game.worth})`
-        : "Pago"
-      : "Grátis";
+
+    let priceText = "Grátis";
+    if (isPaid) {
+      if (game.sale_price) {
+        priceText = `Promo: ${game.sale_price} (Era ${game.worth})`;
+      } else if (game.worth && game.worth !== "N/A") {
+        priceText = `Pago (${game.worth})`;
+      } else {
+        priceText = "Pago";
+      }
+    }
 
     // Gênero / Categoria Badge (GamerPower usa .type, FreeToGame usa .genre)
     const genre =
@@ -841,7 +847,12 @@ async function fazFetch() {
 
     let btnText = "Jogar Grátis";
     if (isPaid) {
-      if (game.open_giveaway_url) {
+      if (game.sale_price) {
+        btnText = "Ver Oferta";
+      } else if (
+        game.open_giveaway_url ||
+        (game.game_url && game.game_url.includes("gamerpower"))
+      ) {
         btnText = "Resgatar Grátis";
       } else {
         btnText = "Comprar Jogo";

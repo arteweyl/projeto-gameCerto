@@ -11,7 +11,8 @@
     "game_url": "https://www.freetogame.com/open/league-of-legends",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Valorant",
@@ -25,7 +26,8 @@
     "game_url": "https://www.freetogame.com/open/valorant",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Minecraft",
@@ -39,7 +41,8 @@
     "game_url": "https://www.minecraft.net",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$29.99"
+    "worth": "$29.99",
+    "sale_price": null
   },
   {
     "title": "Elden Ring",
@@ -53,7 +56,8 @@
     "game_url": "https://www.eldenring.com",
     "min_ram": 12,
     "price": "paid",
-    "worth": "$59.99"
+    "worth": "$59.99",
+    "sale_price": null
   },
   {
     "title": "Cyberpunk 2077",
@@ -67,7 +71,8 @@
     "game_url": "https://www.cyberpunk.net",
     "min_ram": 12,
     "price": "paid",
-    "worth": "$59.99"
+    "worth": "$59.99",
+    "sale_price": null
   },
   {
     "title": "Grand Theft Auto V",
@@ -81,7 +86,8 @@
     "game_url": "https://www.rockstargames.com/gta-v",
     "min_ram": 8,
     "price": "paid",
-    "worth": "$29.99"
+    "worth": "$29.99",
+    "sale_price": null
   },
   {
     "title": "Red Dead Redemption 2",
@@ -95,7 +101,8 @@
     "game_url": "https://www.rockstargames.com/reddeadredemption2",
     "min_ram": 12,
     "price": "paid",
-    "worth": "$59.99"
+    "worth": "$59.99",
+    "sale_price": null
   },
   {
     "title": "Overwatch",
@@ -109,7 +116,8 @@
     "game_url": "https://www.freetogame.com/open/overwatch",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "PUBG: BATTLEGROUNDS",
@@ -123,7 +131,8 @@
     "game_url": "https://www.freetogame.com/open/pubg",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Enlisted",
@@ -137,7 +146,8 @@
     "game_url": "https://www.freetogame.com/open/enlisted",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Tanks: HEAT",
@@ -151,7 +161,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-tanks-heat",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Neverness to Everness",
@@ -165,7 +176,8 @@
     "game_url": "https://www.freetogame.com/open/nte",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Throne And Liberty",
@@ -179,7 +191,8 @@
     "game_url": "https://www.freetogame.com/open/throne-and-liberty",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fall Guys",
@@ -193,7 +206,8 @@
     "game_url": "https://www.freetogame.com/open/fall-guys",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Game Of Thrones Winter Is Coming",
@@ -207,7 +221,8 @@
     "game_url": "https://www.freetogame.com/open/game-of-thrones-winter-is-coming",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Elvenar",
@@ -221,7 +236,8 @@
     "game_url": "https://www.freetogame.com/open/elvenar",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Neverwinter",
@@ -235,7 +251,8 @@
     "game_url": "https://www.freetogame.com/open/neverwinter",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Lost Ark",
@@ -249,7 +266,8 @@
     "game_url": "https://www.freetogame.com/open/lost-ark",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Genshin Impact",
@@ -263,7 +281,8 @@
     "game_url": "https://www.freetogame.com/open/genshin-impact",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Hero Wars: Dominion Era",
@@ -277,7 +296,8 @@
     "game_url": "https://www.freetogame.com/open/hero-wars",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Warships",
@@ -291,7 +311,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-warships",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Tanks",
@@ -305,7 +326,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-tanks",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crystal Saga Nova",
@@ -319,7 +341,8 @@
     "game_url": "https://www.freetogame.com/open/crystal-saga-nova",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Sea Battle",
@@ -333,7 +356,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-sea-battle",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Diablo Immortal",
@@ -347,7 +371,8 @@
     "game_url": "https://www.freetogame.com/open/diablo-immortal",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Phantasy Star Online 2 New Genesis",
@@ -361,7 +386,8 @@
     "game_url": "https://www.freetogame.com/open/pso2-new-genesis",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crossout",
@@ -375,7 +401,8 @@
     "game_url": "https://www.freetogame.com/open/crossout",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "War Thunder",
@@ -389,7 +416,8 @@
     "game_url": "https://www.freetogame.com/open/war-thunder",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battlefield REDSEC",
@@ -403,7 +431,8 @@
     "game_url": "https://www.freetogame.com/open/battlefield-redsec",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Foundation: Galactic Frontier",
@@ -417,7 +446,8 @@
     "game_url": "https://www.freetogame.com/open/foundation-galactic-frontier",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Marvel Rivals",
@@ -431,7 +461,8 @@
     "game_url": "https://www.freetogame.com/open/marvel-rivals",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Project Entropy",
@@ -445,7 +476,8 @@
     "game_url": "https://www.freetogame.com/open/project-entropy",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Palia",
@@ -459,7 +491,8 @@
     "game_url": "https://www.freetogame.com/open/palia",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "League of Angels - Heaven's Fury",
@@ -473,7 +506,8 @@
     "game_url": "https://www.freetogame.com/open/league-of-angels-heavens-fury",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Forge of Empires",
@@ -487,7 +521,8 @@
     "game_url": "https://www.freetogame.com/open/forge-of-empires",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Star Trek Online",
@@ -501,7 +536,8 @@
     "game_url": "https://www.freetogame.com/open/star-trek-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Where Winds Meet",
@@ -515,7 +551,8 @@
     "game_url": "https://www.freetogame.com/open/where-winds-meet",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Brighter Shores",
@@ -529,7 +566,8 @@
     "game_url": "https://www.freetogame.com/open/brighter-shores",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Halo Infinite",
@@ -543,7 +581,8 @@
     "game_url": "https://www.freetogame.com/open/halo-infinite",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Phantasy Star Online 2",
@@ -557,7 +596,8 @@
     "game_url": "https://www.freetogame.com/open/pso2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Call of Duty: Warzone",
@@ -571,7 +611,8 @@
     "game_url": "https://www.freetogame.com/open/call-of-duty-warzone",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Destiny 2",
@@ -585,7 +626,8 @@
     "game_url": "https://www.freetogame.com/open/destiny-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Apex Legends",
@@ -599,7 +641,8 @@
     "game_url": "https://www.freetogame.com/open/apex-legends",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fortnite",
@@ -613,7 +656,8 @@
     "game_url": "https://www.freetogame.com/open/fortnite-battle-royale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blade and Soul",
@@ -627,7 +671,8 @@
     "game_url": "https://www.freetogame.com/open/blade-and-soul",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Brawlhalla",
@@ -641,7 +686,8 @@
     "game_url": "https://www.freetogame.com/open/brawlhalla",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Trove",
@@ -655,7 +701,8 @@
     "game_url": "https://www.freetogame.com/open/trove",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Guild Wars 2",
@@ -669,7 +716,8 @@
     "game_url": "https://www.freetogame.com/open/guild-wars-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Goodgame Empire",
@@ -683,7 +731,8 @@
     "game_url": "https://www.freetogame.com/open/goodgame-empire",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "RuneScape",
@@ -697,7 +746,8 @@
     "game_url": "https://www.freetogame.com/open/runescape",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tibia",
@@ -711,7 +761,8 @@
     "game_url": "https://www.freetogame.com/open/tibia",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Arknights: Endfield",
@@ -725,7 +776,8 @@
     "game_url": "https://www.freetogame.com/open/arknights-endfield",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Wuthering Waves",
@@ -739,7 +791,8 @@
     "game_url": "https://www.freetogame.com/open/wuthering-waves",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Naraka: Bladepoint",
@@ -753,7 +806,8 @@
     "game_url": "https://www.freetogame.com/open/naraka-bladepoint",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Honkai: Star Rail",
@@ -767,7 +821,8 @@
     "game_url": "https://www.freetogame.com/open/honkai-star-rail",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Gloria Victis",
@@ -781,7 +836,8 @@
     "game_url": "https://www.freetogame.com/open/gloria-victis",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "RF Online Next",
@@ -795,7 +851,8 @@
     "game_url": "https://www.freetogame.com/open/rf-online-next",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Division Resurgence",
@@ -809,7 +866,8 @@
     "game_url": "https://www.freetogame.com/open/the-division-resurgence",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Seven Deadly Sins: Origin",
@@ -823,7 +881,8 @@
     "game_url": "https://www.freetogame.com/open/the-seven-deadly-sins-origin",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Heartopia",
@@ -837,7 +896,8 @@
     "game_url": "https://www.freetogame.com/open/heartopia",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Reign of Guilds",
@@ -851,7 +911,8 @@
     "game_url": "https://www.freetogame.com/open/reign-of-guilds",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "2XKO",
@@ -865,7 +926,8 @@
     "game_url": "https://www.freetogame.com/open/2xko",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blue Protocol: Star Resonance",
@@ -879,7 +941,8 @@
     "game_url": "https://www.freetogame.com/open/blue-protocol-star-resonance",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Raven2",
@@ -893,7 +956,8 @@
     "game_url": "https://www.freetogame.com/open/raven2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Superball",
@@ -907,7 +971,8 @@
     "game_url": "https://www.freetogame.com/open/superball",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Arena Breakout: Infinite",
@@ -921,7 +986,8 @@
     "game_url": "https://www.freetogame.com/open/arena-breakout-infinite",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Warborne Above Ashes",
@@ -935,7 +1001,8 @@
     "game_url": "https://www.freetogame.com/open/warborne-above-ashes",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eterspire",
@@ -949,7 +1016,8 @@
     "game_url": "https://www.freetogame.com/open/eterspire",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "skate.",
@@ -963,7 +1031,8 @@
     "game_url": "https://www.freetogame.com/open/skate",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blade & Soul Heroes",
@@ -977,7 +1046,8 @@
     "game_url": "https://www.freetogame.com/open/blade-soul-heroes",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dragon Ball Gekishin Squadra",
@@ -991,7 +1061,8 @@
     "game_url": "https://www.freetogame.com/open/dragon-ball-gekishin-squadra",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dfiance",
@@ -1005,7 +1076,8 @@
     "game_url": "https://www.freetogame.com/open/dfiance",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dungeon Stalker",
@@ -1019,7 +1091,8 @@
     "game_url": "https://www.freetogame.com/open/dungeon-stalker",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mecha BREAK",
@@ -1033,7 +1106,8 @@
     "game_url": "https://www.freetogame.com/open/mecha-break",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Terminull Brigade",
@@ -1047,7 +1121,8 @@
     "game_url": "https://www.freetogame.com/open/terminull-brigade",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Umamusume: Pretty Derby",
@@ -1061,7 +1136,8 @@
     "game_url": "https://www.freetogame.com/open/umamusume-pretty-derby",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crystal Of Atlan",
@@ -1075,7 +1151,8 @@
     "game_url": "https://www.freetogame.com/open/crystal-of-atlan",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Splitgate: Arena Reloaded",
@@ -1089,7 +1166,8 @@
     "game_url": "https://www.freetogame.com/open/splitgate-arena-reloaded",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Steel Hunters",
@@ -1103,7 +1181,8 @@
     "game_url": "https://www.freetogame.com/open/steel-hunters",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Lost Glitches",
@@ -1117,7 +1196,8 @@
     "game_url": "https://www.freetogame.com/open/the-lost-glitches",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Odin: Valhalla Rising",
@@ -1131,7 +1211,8 @@
     "game_url": "https://www.freetogame.com/open/odin-valhalla-rising",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "War Robots: Frontiers",
@@ -1145,7 +1226,8 @@
     "game_url": "https://www.freetogame.com/open/war-robots-frontiers",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "FragPunk",
@@ -1159,7 +1241,8 @@
     "game_url": "https://www.freetogame.com/open/fragpunk",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Delta Force",
@@ -1173,7 +1256,8 @@
     "game_url": "https://www.freetogame.com/open/delta-force",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Strinova",
@@ -1187,7 +1271,8 @@
     "game_url": "https://www.freetogame.com/open/strinova",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "SUPERVIVE",
@@ -1201,7 +1286,8 @@
     "game_url": "https://www.freetogame.com/open/supervive",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Starborne: Frontiers",
@@ -1215,7 +1301,8 @@
     "game_url": "https://www.freetogame.com/open/starborne-frontiers",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Return Alive",
@@ -1229,7 +1316,8 @@
     "game_url": "https://www.freetogame.com/open/return-alive",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spectre Divide",
@@ -1243,7 +1331,8 @@
     "game_url": "https://www.freetogame.com/open/spectre-divide",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Vigor",
@@ -1257,7 +1346,8 @@
     "game_url": "https://www.freetogame.com/open/vigor",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Smite 2",
@@ -1271,7 +1361,8 @@
     "game_url": "https://www.freetogame.com/open/smite-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The First Descendant",
@@ -1285,7 +1376,8 @@
     "game_url": "https://www.freetogame.com/open/the-first-descendant",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Once Human",
@@ -1299,7 +1391,8 @@
     "game_url": "https://www.freetogame.com/open/once-human",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stormgate",
@@ -1313,7 +1406,8 @@
     "game_url": "https://www.freetogame.com/open/stormgate",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Zenless Zone Zero",
@@ -1327,7 +1421,8 @@
     "game_url": "https://www.freetogame.com/open/zenless-zone-zero",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battle Crush",
@@ -1341,7 +1436,8 @@
     "game_url": "https://www.freetogame.com/open/battle-crush",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Screenplay CCG",
@@ -1355,7 +1451,8 @@
     "game_url": "https://www.freetogame.com/open/screenplay",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "SolForge Fusion",
@@ -1369,7 +1466,8 @@
     "game_url": "https://www.freetogame.com/open/solforge-fusion",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Sky: Children of the Light",
@@ -1383,7 +1481,8 @@
     "game_url": "https://www.freetogame.com/open/sky-children-of-the-light",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Predecessor",
@@ -1397,7 +1496,8 @@
     "game_url": "https://www.freetogame.com/open/predecessor",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Project Apidom",
@@ -1411,7 +1511,8 @@
     "game_url": "https://www.freetogame.com/open/project-apidom",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "RAID: Shadow Legends",
@@ -1425,7 +1526,8 @@
     "game_url": "https://www.freetogame.com/open/raid-shadow-legends",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ravendawn",
@@ -1439,7 +1541,8 @@
     "game_url": "https://www.freetogame.com/open/ravendawn",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "One Punch Man: World",
@@ -1453,7 +1556,8 @@
     "game_url": "https://www.freetogame.com/open/one-punch-man-world",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battle Teams 2",
@@ -1467,7 +1571,8 @@
     "game_url": "https://www.freetogame.com/open/battle-teams-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Finals",
@@ -1481,7 +1586,8 @@
     "game_url": "https://www.freetogame.com/open/the-finals",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Infinite Borders",
@@ -1495,7 +1601,8 @@
     "game_url": "https://www.freetogame.com/open/infinite-borders",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Titan Revenge",
@@ -1509,7 +1616,8 @@
     "game_url": "https://www.freetogame.com/open/titan-revenge",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Destiny's Divide",
@@ -1523,7 +1631,8 @@
     "game_url": "https://www.freetogame.com/open/destinys-divide",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Warhammer 40,000: Warpforge",
@@ -1537,7 +1646,8 @@
     "game_url": "https://www.freetogame.com/open/warhammer-40000-warpforge",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Microvolts: Recharged",
@@ -1551,7 +1661,8 @@
     "game_url": "https://www.freetogame.com/open/microvolts",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Deceit 2",
@@ -1565,7 +1676,8 @@
     "game_url": "https://www.freetogame.com/open/deceit-2",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "My Hero Ultra Rumble",
@@ -1579,7 +1691,8 @@
     "game_url": "https://www.freetogame.com/open/my-hero-ultra-rumble",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Hawked",
@@ -1593,7 +1706,8 @@
     "game_url": "https://www.freetogame.com/open/hawked",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tales Of Yore",
@@ -1607,7 +1721,8 @@
     "game_url": "https://www.freetogame.com/open/tales-of-yore",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Waven",
@@ -1621,7 +1736,8 @@
     "game_url": "https://www.freetogame.com/open/waven",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Town of Salem 2",
@@ -1635,7 +1751,8 @@
     "game_url": "https://www.freetogame.com/open/town-of-salem-2",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Undawn",
@@ -1649,7 +1766,8 @@
     "game_url": "https://www.freetogame.com/open/undawn",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eden Eternal",
@@ -1663,7 +1781,8 @@
     "game_url": "https://www.freetogame.com/open/eden-eternal",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Veiled Experts",
@@ -1677,7 +1796,8 @@
     "game_url": "https://www.freetogame.com/open/veiled-experts",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Jected - Rivals",
@@ -1691,7 +1811,8 @@
     "game_url": "https://www.freetogame.com/open/jected-rivals",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ethyrial: Echoes of Yore",
@@ -1705,7 +1826,8 @@
     "game_url": "https://www.freetogame.com/open/ethyrial-echoes-of-yore",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stalcraft: X",
@@ -1719,7 +1841,8 @@
     "game_url": "https://www.freetogame.com/open/stalcraft-x",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fangs",
@@ -1733,7 +1856,8 @@
     "game_url": "https://www.freetogame.com/open/fangs",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Summoners War: Chronicles",
@@ -1747,7 +1871,8 @@
     "game_url": "https://www.freetogame.com/open/summoners-war-chronicles",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Marvel Snap",
@@ -1761,7 +1886,8 @@
     "game_url": "https://www.freetogame.com/open/marvel-snap",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World Boss",
@@ -1775,7 +1901,8 @@
     "game_url": "https://www.freetogame.com/open/world-boss",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Omega Strikers",
@@ -1789,7 +1916,8 @@
     "game_url": "https://www.freetogame.com/open/omega-strikers",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Gundam Evolution",
@@ -1803,7 +1931,8 @@
     "game_url": "https://www.freetogame.com/open/gundam-evolution",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Aero Tales Online",
@@ -1817,7 +1946,8 @@
     "game_url": "https://www.freetogame.com/open/aero-tales-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tower of Fantasy",
@@ -1831,7 +1961,8 @@
     "game_url": "https://www.freetogame.com/open/tower-of-fantasy",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Magic Spellslingers",
@@ -1845,7 +1976,8 @@
     "game_url": "https://www.freetogame.com/open/magic-spellslingers",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "A.V.A Global",
@@ -1859,7 +1991,8 @@
     "game_url": "https://www.freetogame.com/open/ava",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Lost Light",
@@ -1873,7 +2006,8 @@
     "game_url": "https://www.freetogame.com/open/lost-light",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Temperia: Soul of Majestic",
@@ -1887,7 +2021,8 @@
     "game_url": "https://www.freetogame.com/open/temperia",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Flyff Universe",
@@ -1901,7 +2036,8 @@
     "game_url": "https://www.freetogame.com/open/flyff-universe",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Runes",
@@ -1915,7 +2051,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-runes",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Roller Champions",
@@ -1929,7 +2066,8 @@
     "game_url": "https://www.freetogame.com/open/roller-champions",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Goose, Goose, DUCK",
@@ -1943,7 +2081,8 @@
     "game_url": "https://www.freetogame.com/open/goose-goose-duck",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Super Animal Royale",
@@ -1957,7 +2096,8 @@
     "game_url": "https://www.freetogame.com/open/super-animal-royale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Super Squad",
@@ -1971,7 +2111,8 @@
     "game_url": "https://www.freetogame.com/open/super-squad",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Sherwood Extreme",
@@ -1985,7 +2126,8 @@
     "game_url": "https://www.freetogame.com/open/sherwood-extreme",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Smash Legends",
@@ -1999,7 +2141,8 @@
     "game_url": "https://www.freetogame.com/open/smash-legends",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Primordials: Battle of Gods",
@@ -2013,7 +2156,8 @@
     "game_url": "https://www.freetogame.com/open/primordials-battle-of-gods",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Super Mecha Champions",
@@ -2027,7 +2171,8 @@
     "game_url": "https://www.freetogame.com/open/super-mecha-champions",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Chroma: Bloom And Blight",
@@ -2041,7 +2186,8 @@
     "game_url": "https://www.freetogame.com/open/chroma-bloom-and-blight",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blankos Block Party",
@@ -2055,7 +2201,8 @@
     "game_url": "https://www.freetogame.com/open/blankos",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Slapshot: Rebound",
@@ -2069,7 +2216,8 @@
     "game_url": "https://www.freetogame.com/open/slapshot-rebound",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rogue Company",
@@ -2083,7 +2231,8 @@
     "game_url": "https://www.freetogame.com/open/rogue-company",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eternal Return",
@@ -2097,7 +2246,8 @@
     "game_url": "https://www.freetogame.com/open/eternal-return",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blood of Steel",
@@ -2111,7 +2261,8 @@
     "game_url": "https://www.freetogame.com/open/blood-of-steel",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spellbreak",
@@ -2125,7 +2276,8 @@
     "game_url": "https://www.freetogame.com/open/spellbreak",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rocket League",
@@ -2139,7 +2291,8 @@
     "game_url": "https://www.freetogame.com/open/rocket-league",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Armor Valor",
@@ -2153,7 +2306,8 @@
     "game_url": "https://www.freetogame.com/open/armor-valor",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Unfortunate Spacemen",
@@ -2167,7 +2321,8 @@
     "game_url": "https://www.freetogame.com/open/unfortunate-spacemen",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Shop Titans",
@@ -2181,7 +2336,8 @@
     "game_url": "https://www.freetogame.com/open/shop-titans",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Survivor Legacy",
@@ -2195,7 +2351,8 @@
     "game_url": "https://www.freetogame.com/open/survivor-legacy",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Bombergrounds: Battle Royale",
@@ -2209,7 +2366,8 @@
     "game_url": "https://www.freetogame.com/open/bombergrounds-battle-royale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Kakale Online",
@@ -2223,7 +2381,8 @@
     "game_url": "https://www.freetogame.com/open/kakale-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Darwin Project",
@@ -2237,7 +2396,8 @@
     "game_url": "https://www.freetogame.com/open/darwin-project",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Legends of Runeterra",
@@ -2251,7 +2411,8 @@
     "game_url": "https://www.freetogame.com/open/runeterra",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "CRSED: F.O.A.D.",
@@ -2265,7 +2426,8 @@
     "game_url": "https://www.freetogame.com/open/crsed",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mirage Online Classic",
@@ -2279,7 +2441,8 @@
     "game_url": "https://www.freetogame.com/open/mirage-online-classic",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Inferna",
@@ -2293,7 +2456,8 @@
     "game_url": "https://www.freetogame.com/open/inferna",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ultimate Pirates",
@@ -2307,7 +2471,8 @@
     "game_url": "https://www.freetogame.com/open/ultimate-pirates",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stay Out",
@@ -2321,7 +2486,8 @@
     "game_url": "https://www.freetogame.com/open/stay-out",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "PC Futbol Legends",
@@ -2335,7 +2501,8 @@
     "game_url": "https://www.freetogame.com/open/futbol-legends",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Vampire Empire",
@@ -2349,7 +2516,8 @@
     "game_url": "https://www.freetogame.com/open/vampire-empire",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Firestone Idle RPG",
@@ -2363,7 +2531,8 @@
     "game_url": "https://www.freetogame.com/open/firestone-idle-rpg",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mythgard",
@@ -2377,7 +2546,8 @@
     "game_url": "https://www.freetogame.com/open/mythgard",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crystal Clash",
@@ -2391,7 +2561,8 @@
     "game_url": "https://www.freetogame.com/open/crystal-clash",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dota Underlords",
@@ -2405,7 +2576,8 @@
     "game_url": "https://www.freetogame.com/open/dota-underlords",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Minion Masters",
@@ -2419,7 +2591,8 @@
     "game_url": "https://www.freetogame.com/open/minion-masters",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Splitgate",
@@ -2433,7 +2606,8 @@
     "game_url": "https://www.freetogame.com/open/splitgate",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eternal Fury",
@@ -2447,7 +2621,8 @@
     "game_url": "https://www.freetogame.com/open/eternal-fury",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Conqueror's Blade",
@@ -2461,7 +2636,8 @@
     "game_url": "https://www.freetogame.com/open/conquerors-blade",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stein.world",
@@ -2475,7 +2651,8 @@
     "game_url": "https://www.freetogame.com/open/steinworld",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Kards",
@@ -2489,7 +2666,8 @@
     "game_url": "https://www.freetogame.com/open/kards",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "KurtzPel",
@@ -2503,7 +2681,8 @@
     "game_url": "https://www.freetogame.com/open/kurtzpel",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Third Age",
@@ -2517,7 +2696,8 @@
     "game_url": "https://www.freetogame.com/open/the-third-age",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eternal",
@@ -2531,7 +2711,8 @@
     "game_url": "https://www.freetogame.com/open/eternal",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Artifact",
@@ -2545,7 +2726,8 @@
     "game_url": "https://www.freetogame.com/open/artifact",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World War 3",
@@ -2559,7 +2741,8 @@
     "game_url": "https://www.freetogame.com/open/world-war-3",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Combat Arms: Reloaded",
@@ -2573,7 +2756,8 @@
     "game_url": "https://www.freetogame.com/open/combat-arms",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dreadnought",
@@ -2587,7 +2771,8 @@
     "game_url": "https://www.freetogame.com/open/dreadnought",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spacelords",
@@ -2601,7 +2786,8 @@
     "game_url": "https://www.freetogame.com/open/spacelords",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battlerite Royale",
@@ -2615,7 +2801,8 @@
     "game_url": "https://www.freetogame.com/open/battlerite-royale",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Magic: The Gathering Arena",
@@ -2629,7 +2816,8 @@
     "game_url": "https://www.freetogame.com/open/mtg-arena",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "League of Angels 3",
@@ -2643,7 +2831,8 @@
     "game_url": "https://www.freetogame.com/open/league-of-angels-3",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "BlackShot: Revolution",
@@ -2657,7 +2846,8 @@
     "game_url": "https://www.freetogame.com/open/blackshot",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Cosmos Invictus",
@@ -2671,7 +2861,8 @@
     "game_url": "https://www.freetogame.com/open/cosmos-invictus",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Empire: World War 3",
@@ -2685,7 +2876,8 @@
     "game_url": "https://www.freetogame.com/open/empireww3",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Totally Accurate Battlegrounds",
@@ -2699,7 +2891,8 @@
     "game_url": "https://www.freetogame.com/open/tabg",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Will To Live",
@@ -2713,7 +2906,8 @@
     "game_url": "https://www.freetogame.com/open/will-to-live",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battle Arena Heroes Adventure",
@@ -2727,7 +2921,8 @@
     "game_url": "https://www.freetogame.com/open/battle-arena-heroes-adventure",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spellsworn",
@@ -2741,7 +2936,8 @@
     "game_url": "https://www.freetogame.com/open/spellsworn",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Z1 Battle Royale",
@@ -2755,7 +2951,8 @@
     "game_url": "https://www.freetogame.com/open/z1-battle-royale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tale Of Toast",
@@ -2769,7 +2966,8 @@
     "game_url": "https://www.freetogame.com/open/tale-of-toast",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "SoulWorker",
@@ -2783,7 +2981,8 @@
     "game_url": "https://www.freetogame.com/open/soulworker",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Bombtag",
@@ -2797,7 +2996,8 @@
     "game_url": "https://www.freetogame.com/open/bombtag",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dead Maze",
@@ -2811,7 +3011,8 @@
     "game_url": "https://www.freetogame.com/open/dead-maze",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Scions of Fate",
@@ -2825,7 +3026,8 @@
     "game_url": "https://www.freetogame.com/open/scions-of-fate",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Wild Terra Online",
@@ -2839,7 +3041,8 @@
     "game_url": "https://www.freetogame.com/open/wild-terra-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Global Adventures",
@@ -2853,7 +3056,8 @@
     "game_url": "https://www.freetogame.com/open/global-adventures",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Closers",
@@ -2867,7 +3071,8 @@
     "game_url": "https://www.freetogame.com/open/closers",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "La Tale Evolved",
@@ -2881,7 +3086,8 @@
     "game_url": "https://www.freetogame.com/open/la-tale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Luna Online: Reborn",
@@ -2895,7 +3101,8 @@
     "game_url": "https://www.freetogame.com/open/luna-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Ultimatest Battle",
@@ -2909,7 +3116,8 @@
     "game_url": "https://www.freetogame.com/open/the-ultimatest-battle",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Quake Champions",
@@ -2923,7 +3131,8 @@
     "game_url": "https://www.freetogame.com/open/quake-champions",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Gods Origin Online",
@@ -2937,7 +3146,8 @@
     "game_url": "https://www.freetogame.com/open/gods-origin",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Black Squad",
@@ -2951,7 +3161,8 @@
     "game_url": "https://www.freetogame.com/open/black-squad",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Secret World Legends",
@@ -2965,7 +3176,8 @@
     "game_url": "https://www.freetogame.com/open/secret-world-legends",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Albion Online",
@@ -2979,7 +3191,8 @@
     "game_url": "https://www.freetogame.com/open/albion-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Pixel Worlds",
@@ -2993,7 +3206,8 @@
     "game_url": "https://www.freetogame.com/open/pixel-worlds",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Deceit",
@@ -3007,7 +3221,8 @@
     "game_url": "https://www.freetogame.com/open/deceit",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Gwent: The Witcher Card Game",
@@ -3021,7 +3236,8 @@
     "game_url": "https://www.freetogame.com/open/gwent",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Awesomenauts",
@@ -3035,7 +3251,8 @@
     "game_url": "https://www.freetogame.com/open/awesomenauts",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Alien Swarm: Reactive Drop",
@@ -3049,7 +3266,8 @@
     "game_url": "https://www.freetogame.com/open/alien-swarm-reactive-drop",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Catan Universe",
@@ -3063,7 +3281,8 @@
     "game_url": "https://www.freetogame.com/open/catan-universe",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Krosmaga",
@@ -3077,7 +3296,8 @@
     "game_url": "https://www.freetogame.com/open/krosmaga",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Chronicles of Eidola",
@@ -3091,7 +3311,8 @@
     "game_url": "https://www.freetogame.com/open/chronicles-of-eidola",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "MU Legend",
@@ -3105,7 +3326,8 @@
     "game_url": "https://www.freetogame.com/open/mu-legend",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Therian Saga",
@@ -3119,7 +3341,8 @@
     "game_url": "https://www.freetogame.com/open/therian-saga",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Cabals: Card Blitz",
@@ -3133,7 +3356,8 @@
     "game_url": "https://www.freetogame.com/open/cabals-card-blitz",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Line of Sight",
@@ -3147,7 +3371,8 @@
     "game_url": "https://www.freetogame.com/open/line-of-sight",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dragon Awaken",
@@ -3161,7 +3386,8 @@
     "game_url": "https://www.freetogame.com/open/dragon-awaken",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Infestation: The New Z",
@@ -3175,7 +3401,8 @@
     "game_url": "https://www.freetogame.com/open/infestation-new-z",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "One Tower",
@@ -3189,7 +3416,8 @@
     "game_url": "https://www.freetogame.com/open/one-tower",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Shadowverse",
@@ -3203,7 +3431,8 @@
     "game_url": "https://www.freetogame.com/open/shadowverse",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "AdventureQuest 3D",
@@ -3217,7 +3446,8 @@
     "game_url": "https://www.freetogame.com/open/adventurequest-3d",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Riding Club Championships",
@@ -3231,7 +3461,8 @@
     "game_url": "https://www.freetogame.com/open/riding-club-championships",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Battlerite",
@@ -3245,7 +3476,8 @@
     "game_url": "https://www.freetogame.com/open/battlerite",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Paladins",
@@ -3259,7 +3491,8 @@
     "game_url": "https://www.freetogame.com/open/paladins",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Omega Zodiac",
@@ -3273,7 +3506,8 @@
     "game_url": "https://www.freetogame.com/open/omega-zodiac",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Riders of Icarus",
@@ -3287,7 +3521,8 @@
     "game_url": "https://www.freetogame.com/open/riders-of-icarus",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Naruto Online",
@@ -3301,7 +3536,8 @@
     "game_url": "https://www.freetogame.com/open/naruto-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Zula",
@@ -3315,7 +3551,8 @@
     "game_url": "https://www.freetogame.com/open/zula",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "LuckCatchers",
@@ -3329,7 +3566,8 @@
     "game_url": "https://www.freetogame.com/open/luckcatchers",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "UFO Online: Invasion",
@@ -3343,7 +3581,8 @@
     "game_url": "https://www.freetogame.com/open/ufo-online-invasion",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Weapons Of Mythology",
@@ -3357,7 +3596,8 @@
     "game_url": "https://www.freetogame.com/open/weapons-of-mythology",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tree of Savior",
@@ -3371,7 +3611,8 @@
     "game_url": "https://www.freetogame.com/open/tree-of-savior",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Starbreak",
@@ -3385,7 +3626,8 @@
     "game_url": "https://www.freetogame.com/open/starbreak",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fantasy Tales Online",
@@ -3399,7 +3641,8 @@
     "game_url": "https://www.freetogame.com/open/fantasy-tales-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dragon Blood",
@@ -3413,7 +3656,8 @@
     "game_url": "https://www.freetogame.com/open/dragon-blood",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "League of Angels 2",
@@ -3427,7 +3671,8 @@
     "game_url": "https://www.freetogame.com/open/league-angels-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Astral Heroes",
@@ -3441,7 +3686,8 @@
     "game_url": "https://www.freetogame.com/open/astral-heroes",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Holodrive",
@@ -3455,7 +3701,8 @@
     "game_url": "https://www.freetogame.com/open/holodrive",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Cabal Online",
@@ -3469,7 +3716,8 @@
     "game_url": "https://www.freetogame.com/open/cabal-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Atom Universe",
@@ -3483,7 +3731,8 @@
     "game_url": "https://www.freetogame.com/open/atom-universe",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spellweaver",
@@ -3497,7 +3746,8 @@
     "game_url": "https://www.freetogame.com/open/spellweaver",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Clash of Avatars",
@@ -3511,7 +3761,8 @@
     "game_url": "https://www.freetogame.com/open/clash-of-avatars",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "War Trigger 3",
@@ -3525,7 +3776,8 @@
     "game_url": "https://www.freetogame.com/open/wt3",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "VEGA Conflict",
@@ -3539,7 +3791,8 @@
     "game_url": "https://www.freetogame.com/open/vega-conflict",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Metal War Online: Retribution",
@@ -3553,7 +3806,8 @@
     "game_url": "https://www.freetogame.com/open/metal-war-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Immortal Empire",
@@ -3567,7 +3821,8 @@
     "game_url": "https://www.freetogame.com/open/immortal-empire",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "MechWarrior Online",
@@ -3581,7 +3836,8 @@
     "game_url": "https://www.freetogame.com/open/mechwarrior-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Armored Warfare",
@@ -3595,7 +3851,8 @@
     "game_url": "https://www.freetogame.com/open/armored-warfare",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "America’s Army: Proving Grounds",
@@ -3609,7 +3866,8 @@
     "game_url": "https://www.freetogame.com/open/americas-army",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "One Piece Online 2",
@@ -3623,7 +3881,8 @@
     "game_url": "https://www.freetogame.com/open/one-piece-online-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Legends of Honor",
@@ -3637,7 +3896,8 @@
     "game_url": "https://www.freetogame.com/open/legends-of-honor",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Felspire",
@@ -3651,7 +3911,8 @@
     "game_url": "https://www.freetogame.com/open/felspire",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "WARMODE",
@@ -3665,7 +3926,8 @@
     "game_url": "https://www.freetogame.com/open/warmode",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Sphere 3: Enchanted World",
@@ -3679,7 +3941,8 @@
     "game_url": "https://www.freetogame.com/open/sphere-3",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fishing Planet",
@@ -3693,7 +3956,8 @@
     "game_url": "https://www.freetogame.com/open/fishing-planet",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Aberoth",
@@ -3707,7 +3971,8 @@
     "game_url": "https://www.freetogame.com/open/aberoth",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Codename CURE",
@@ -3721,7 +3986,8 @@
     "game_url": "https://www.freetogame.com/open/codename-cure",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Card Hunter",
@@ -3735,7 +4001,8 @@
     "game_url": "https://www.freetogame.com/open/card-hunter",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fallout Shelter",
@@ -3749,7 +4016,8 @@
     "game_url": "https://www.freetogame.com/open/fallout-shelter",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Lord’s Road",
@@ -3763,7 +4031,8 @@
     "game_url": "https://www.freetogame.com/open/lords-road",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Salem",
@@ -3777,7 +4046,8 @@
     "game_url": "https://www.freetogame.com/open/salem",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Heroes of the Storm",
@@ -3791,7 +4061,8 @@
     "game_url": "https://www.freetogame.com/open/heroes-of-the-storm",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dirty Bomb",
@@ -3805,7 +4076,8 @@
     "game_url": "https://www.freetogame.com/open/dirty-bomb",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Vikings: War Of Clans",
@@ -3819,7 +4091,8 @@
     "game_url": "https://www.freetogame.com/open/vikings-war-of-clans",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Star Trek: Alien Domain",
@@ -3833,7 +4106,8 @@
     "game_url": "https://www.freetogame.com/open/star-trek-alien-domain",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Survarium",
@@ -3847,7 +4121,8 @@
     "game_url": "https://www.freetogame.com/open/survarium",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dungeon Fighter Online",
@@ -3861,7 +4136,8 @@
     "game_url": "https://www.freetogame.com/open/dungeon-fighter-online",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Grimoire: Manastorm",
@@ -3875,7 +4151,8 @@
     "game_url": "https://www.freetogame.com/open/grimoire-manastorm",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "StarColony",
@@ -3889,7 +4166,8 @@
     "game_url": "https://www.freetogame.com/open/starcolony",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Transformice",
@@ -3903,7 +4181,8 @@
     "game_url": "https://www.freetogame.com/open/transformice",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Gear Up",
@@ -3917,7 +4196,8 @@
     "game_url": "https://www.freetogame.com/open/gear-up",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "8BitMMO",
@@ -3931,7 +4211,8 @@
     "game_url": "https://www.freetogame.com/open/8bitmmo",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Siegelord",
@@ -3945,7 +4226,8 @@
     "game_url": "https://www.freetogame.com/open/siegelord",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dungeon Defenders 2",
@@ -3959,7 +4241,8 @@
     "game_url": "https://www.freetogame.com/open/dungeon-defenders-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blockade 3D",
@@ -3973,7 +4256,8 @@
     "game_url": "https://www.freetogame.com/open/blockade-3d",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Eldevin",
@@ -3987,7 +4271,8 @@
     "game_url": "https://www.freetogame.com/open/eldevin",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Double Action",
@@ -4001,7 +4286,8 @@
     "game_url": "https://www.freetogame.com/open/double-action",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Pox Nora",
@@ -4015,7 +4301,8 @@
     "game_url": "https://www.freetogame.com/open/pox-nora",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Counter-Strike Nexon",
@@ -4029,7 +4316,8 @@
     "game_url": "https://www.freetogame.com/open/counter-strike-nexon",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Uncharted Waters Online",
@@ -4043,7 +4331,8 @@
     "game_url": "https://www.freetogame.com/open/uncharted-waters-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "ArcheAge",
@@ -4057,7 +4346,8 @@
     "game_url": "https://www.freetogame.com/open/archeage",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tribal Wars 2",
@@ -4071,7 +4361,8 @@
     "game_url": "https://www.freetogame.com/open/tribal-wars-2",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "WAKFU",
@@ -4085,7 +4376,8 @@
     "game_url": "https://www.freetogame.com/open/wakfu",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Infinity Wars",
@@ -4099,7 +4391,8 @@
     "game_url": "https://www.freetogame.com/open/infinity-wars",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Divine Souls",
@@ -4113,7 +4406,8 @@
     "game_url": "https://www.freetogame.com/open/divine-souls",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Cubic Castles",
@@ -4127,7 +4421,8 @@
     "game_url": "https://www.freetogame.com/open/cubic-castles",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Royal Quest",
@@ -4141,7 +4436,8 @@
     "game_url": "https://www.freetogame.com/open/royal-quest",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Bleach Online",
@@ -4155,7 +4451,8 @@
     "game_url": "https://www.freetogame.com/open/bleach-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Unturned",
@@ -4169,7 +4466,8 @@
     "game_url": "https://www.freetogame.com/open/unturned",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Warface",
@@ -4183,7 +4481,8 @@
     "game_url": "https://www.freetogame.com/open/warface",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Freestyle2: Street Basketball",
@@ -4197,7 +4496,8 @@
     "game_url": "https://www.freetogame.com/open/freestyle2-street-basketball",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fistful of Frags",
@@ -4211,7 +4511,8 @@
     "game_url": "https://www.freetogame.com/open/fistful-of-frags",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "GunZ 2: The Second Duel",
@@ -4225,7 +4526,8 @@
     "game_url": "https://www.freetogame.com/open/gunz-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Archeblade",
@@ -4239,7 +4541,8 @@
     "game_url": "https://www.freetogame.com/open/archeblade",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Villagers and Heroes",
@@ -4253,7 +4556,8 @@
     "game_url": "https://www.freetogame.com/open/villagers-and-heroes",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Sparta: War of Empires",
@@ -4267,7 +4571,8 @@
     "game_url": "https://www.freetogame.com/open/sparta-war-empires",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Smite",
@@ -4281,7 +4586,8 @@
     "game_url": "https://www.freetogame.com/open/smite",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dogs of War Online",
@@ -4295,7 +4601,8 @@
     "game_url": "https://www.freetogame.com/open/dogs-war-online",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Hearthstone: Heroes of Warcraft",
@@ -4309,7 +4616,8 @@
     "game_url": "https://www.freetogame.com/open/hearthstone-heroes-warcraft",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Lucent Heart",
@@ -4323,7 +4631,8 @@
     "game_url": "https://www.freetogame.com/open/lucent-heart",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "League of Angels",
@@ -4337,7 +4646,8 @@
     "game_url": "https://www.freetogame.com/open/league-of-angels",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Aura Kingdom",
@@ -4351,7 +4661,8 @@
     "game_url": "https://www.freetogame.com/open/aura-kingdom",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crystal Saga",
@@ -4365,7 +4676,8 @@
     "game_url": "https://www.freetogame.com/open/crystal-saga",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Warplanes",
@@ -4379,7 +4691,8 @@
     "game_url": "https://www.freetogame.com/open/world-of-warplanes",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "RIFT",
@@ -4393,7 +4706,8 @@
     "game_url": "https://www.freetogame.com/open/rift",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Path of Exile",
@@ -4407,7 +4721,8 @@
     "game_url": "https://www.freetogame.com/open/path-of-exile",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Soldiers Inc.",
@@ -4421,7 +4736,8 @@
     "game_url": "https://www.freetogame.com/open/soldiers-inc",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Nords: Heroes of the North",
@@ -4435,7 +4751,8 @@
     "game_url": "https://www.freetogame.com/open/nords-heroes-north",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dota 2",
@@ -4449,7 +4766,8 @@
     "game_url": "https://www.freetogame.com/open/dota-2",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ragnarok Online 2",
@@ -4463,7 +4781,8 @@
     "game_url": "https://www.freetogame.com/open/ragnarok-online-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Panzar",
@@ -4477,7 +4796,8 @@
     "game_url": "https://www.freetogame.com/open/panzar",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Kingdom Wars",
@@ -4491,7 +4811,8 @@
     "game_url": "https://www.freetogame.com/open/kingdom-wars",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Warframe",
@@ -4505,7 +4826,8 @@
     "game_url": "https://www.freetogame.com/open/warframe",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Champions of Regnum",
@@ -4519,7 +4841,8 @@
     "game_url": "https://www.freetogame.com/open/champions-of-regnum",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Star Conflict",
@@ -4533,7 +4856,8 @@
     "game_url": "https://www.freetogame.com/open/star-conflict",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rail Nation",
@@ -4547,7 +4871,8 @@
     "game_url": "https://www.freetogame.com/open/rail-nation",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Epic Cards Battle",
@@ -4561,7 +4886,8 @@
     "game_url": "https://www.freetogame.com/open/epic-card-battle",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Age of Wushu",
@@ -4575,7 +4901,8 @@
     "game_url": "https://www.freetogame.com/open/age-of-wushu",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Everquest",
@@ -4589,7 +4916,8 @@
     "game_url": "https://www.freetogame.com/open/everquest",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mabinogi",
@@ -4603,7 +4931,8 @@
     "game_url": "https://www.freetogame.com/open/mabinogi",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stormfall: Age of War",
@@ -4617,7 +4946,8 @@
     "game_url": "https://www.freetogame.com/open/stormfall-age-war",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "PlanetSide 2",
@@ -4631,7 +4961,8 @@
     "game_url": "https://www.freetogame.com/open/planetside-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "AirMech",
@@ -4645,7 +4976,8 @@
     "game_url": "https://www.freetogame.com/open/airmech",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Big Farm",
@@ -4659,7 +4991,8 @@
     "game_url": "https://www.freetogame.com/open/big-farm",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Wartune",
@@ -4673,7 +5006,8 @@
     "game_url": "https://www.freetogame.com/open/wartune",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Pirate 101",
@@ -4687,7 +5021,8 @@
     "game_url": "https://www.freetogame.com/open/pirate-101",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dino Storm",
@@ -4701,7 +5036,8 @@
     "game_url": "https://www.freetogame.com/open/dino-storm",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Settlers Online",
@@ -4715,7 +5051,8 @@
     "game_url": "https://www.freetogame.com/open/the-settlers-online",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Continent of the Ninth Seal",
@@ -4729,7 +5066,8 @@
     "game_url": "https://www.freetogame.com/open/c9",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Counter-Strike 2",
@@ -4743,7 +5081,8 @@
     "game_url": "https://www.freetogame.com/open/counter-strike-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "RPG MO",
@@ -4757,7 +5096,8 @@
     "game_url": "https://www.freetogame.com/open/rpg-mo",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Realm of the Mad God",
@@ -4771,7 +5111,8 @@
     "game_url": "https://www.freetogame.com/open/realm-mad-god",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Pirates: Tides of Fortune",
@@ -4785,7 +5126,8 @@
     "game_url": "https://www.freetogame.com/open/pirates-tides-fortune",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Stronghold Kingdoms",
@@ -4799,7 +5141,8 @@
     "game_url": "https://www.freetogame.com/open/stronghold-kingdoms",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Star Wars: The Old Republic",
@@ -4813,7 +5156,8 @@
     "game_url": "https://www.freetogame.com/open/swtor",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "No More Room in Hell",
@@ -4827,7 +5171,8 @@
     "game_url": "https://www.freetogame.com/open/no-more-room-in-hell",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Digimon Masters Online",
@@ -4841,7 +5186,8 @@
     "game_url": "https://www.freetogame.com/open/digimon-masters-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dragon Nest",
@@ -4855,7 +5201,8 @@
     "game_url": "https://www.freetogame.com/open/dragon-nest",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Drakensang Online",
@@ -4869,7 +5216,8 @@
     "game_url": "https://www.freetogame.com/open/drakensang-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Spiral Knights",
@@ -4883,7 +5231,8 @@
     "game_url": "https://www.freetogame.com/open/spiral-knights",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Steel Legions",
@@ -4897,7 +5246,8 @@
     "game_url": "https://www.freetogame.com/open/steel-legions",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Asda Global",
@@ -4911,7 +5261,8 @@
     "game_url": "https://www.freetogame.com/open/asda-global",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Brink",
@@ -4925,7 +5276,8 @@
     "game_url": "https://www.freetogame.com/open/brink",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Allods Online",
@@ -4939,7 +5291,8 @@
     "game_url": "https://www.freetogame.com/open/allods-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Elsword",
@@ -4953,7 +5306,8 @@
     "game_url": "https://www.freetogame.com/open/elsword",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "DC Universe Online",
@@ -4967,7 +5321,8 @@
     "game_url": "https://www.freetogame.com/open/dcuo",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Bloodline Champions",
@@ -4981,7 +5336,8 @@
     "game_url": "https://www.freetogame.com/open/bloodline-champions",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "GetAmped 2",
@@ -4995,7 +5351,8 @@
     "game_url": "https://www.freetogame.com/open/getamped-2",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dragon Saga",
@@ -5009,7 +5366,8 @@
     "game_url": "https://www.freetogame.com/open/dragon-saga",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Vindictus",
@@ -5023,7 +5381,8 @@
     "game_url": "https://www.freetogame.com/open/vindictus",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Aika Online",
@@ -5037,7 +5396,8 @@
     "game_url": "https://www.freetogame.com/open/aika-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "APB Reloaded",
@@ -5051,7 +5411,8 @@
     "game_url": "https://www.freetogame.com/open/apb",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mortal Online",
@@ -5065,7 +5426,8 @@
     "game_url": "https://www.freetogame.com/open/mortal-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Grand Fantasia",
@@ -5079,7 +5441,8 @@
     "game_url": "https://www.freetogame.com/open/grand-fantasia",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Grepolis",
@@ -5093,7 +5456,8 @@
     "game_url": "https://www.freetogame.com/open/grepolis",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Twelve Sky 2",
@@ -5107,7 +5471,8 @@
     "game_url": "https://www.freetogame.com/open/twelve-sky-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Champions Online",
@@ -5121,7 +5486,8 @@
     "game_url": "https://www.freetogame.com/open/champions-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "WolfTeam",
@@ -5135,7 +5501,8 @@
     "game_url": "https://www.freetogame.com/open/wolfteam",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Runes of Magic",
@@ -5149,7 +5516,8 @@
     "game_url": "https://www.freetogame.com/open/runes-of-magic",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "theHunter",
@@ -5163,7 +5531,8 @@
     "game_url": "https://www.freetogame.com/open/thehunter",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "AION",
@@ -5177,7 +5546,8 @@
     "game_url": "https://www.freetogame.com/open/aion",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Atlantica Online",
@@ -5191,7 +5561,8 @@
     "game_url": "https://www.freetogame.com/open/atlantica-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Florensia",
@@ -5205,7 +5576,8 @@
     "game_url": "https://www.freetogame.com/open/florensia",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "4Story",
@@ -5219,7 +5591,8 @@
     "game_url": "https://www.freetogame.com/open/4story",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "AdventureQuest Worlds",
@@ -5233,7 +5606,8 @@
     "game_url": "https://www.freetogame.com/open/adventurequest-worlds",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "S4 league",
@@ -5247,7 +5621,8 @@
     "game_url": "https://www.freetogame.com/open/s4-league",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Wizard101",
@@ -5261,7 +5636,8 @@
     "game_url": "https://www.freetogame.com/open/wizard101",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Perfect World International",
@@ -5275,7 +5651,8 @@
     "game_url": "https://www.freetogame.com/open/pwi",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ace Online",
@@ -5289,7 +5666,8 @@
     "game_url": "https://www.freetogame.com/open/ace-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rohan: Blood Feud",
@@ -5303,7 +5681,8 @@
     "game_url": "https://www.freetogame.com/open/rohan-blood-feud",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Age of Conan: Unchained",
@@ -5317,7 +5696,8 @@
     "game_url": "https://www.freetogame.com/open/age-of-conan",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ikariam",
@@ -5331,7 +5711,8 @@
     "game_url": "https://www.freetogame.com/open/ikariam",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Fiesta Online",
@@ -5345,7 +5726,8 @@
     "game_url": "https://www.freetogame.com/open/fiesta-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Angels Online Global",
@@ -5359,7 +5741,8 @@
     "game_url": "https://www.freetogame.com/open/angels-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Seal Online",
@@ -5373,7 +5756,8 @@
     "game_url": "https://www.freetogame.com/open/seal-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Team Fortress 2",
@@ -5387,7 +5771,8 @@
     "game_url": "https://www.freetogame.com/open/team-fortress-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rumble Fighter",
@@ -5401,7 +5786,8 @@
     "game_url": "https://www.freetogame.com/open/rumble-fighter",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Granado Espada Online",
@@ -5415,7 +5801,8 @@
     "game_url": "https://www.freetogame.com/open/granado-espada",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "9Dragons",
@@ -5429,7 +5816,8 @@
     "game_url": "https://www.freetogame.com/open/9dragons",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crossfire",
@@ -5443,7 +5831,8 @@
     "game_url": "https://www.freetogame.com/open/crossfire",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Teeworlds",
@@ -5457,7 +5846,8 @@
     "game_url": "https://www.freetogame.com/open/teeworlds",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Priston Tale",
@@ -5471,7 +5861,8 @@
     "game_url": "https://www.freetogame.com/open/priston-tale",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Roblox",
@@ -5485,7 +5876,8 @@
     "game_url": "https://www.freetogame.com/open/roblox",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Metin2",
@@ -5499,7 +5891,8 @@
     "game_url": "https://www.freetogame.com/open/metin2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dark Orbit Reloaded",
@@ -5513,7 +5906,8 @@
     "game_url": "https://www.freetogame.com/open/darkorbit",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Rappelz",
@@ -5527,7 +5921,8 @@
     "game_url": "https://www.freetogame.com/open/rappelz",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Grand Prix Racing Online",
@@ -5541,7 +5936,8 @@
     "game_url": "https://www.freetogame.com/open/gpro",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Astro Empires",
@@ -5555,7 +5951,8 @@
     "game_url": "https://www.freetogame.com/open/astro-empires",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dungeons and Dragons Online",
@@ -5569,7 +5966,8 @@
     "game_url": "https://www.freetogame.com/open/dungeons-dragons-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Urban Rivals",
@@ -5583,7 +5981,8 @@
     "game_url": "https://www.freetogame.com/open/urban-rivals",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Flyff: Fly For Fun",
@@ -5597,7 +5996,8 @@
     "game_url": "https://www.freetogame.com/open/flyff",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dream of Mirror Online",
@@ -5611,7 +6011,8 @@
     "game_url": "https://www.freetogame.com/open/domo",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Imperia Online",
@@ -5625,7 +6026,8 @@
     "game_url": "https://www.freetogame.com/open/imperia-online",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "MapleStory",
@@ -5639,7 +6041,8 @@
     "game_url": "https://www.freetogame.com/open/maplestory",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Shot Online",
@@ -5653,7 +6056,8 @@
     "game_url": "https://www.freetogame.com/open/shot-online",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Everquest 2",
@@ -5667,7 +6071,8 @@
     "game_url": "https://www.freetogame.com/open/everquest-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dofus",
@@ -5681,7 +6086,8 @@
     "game_url": "https://www.freetogame.com/open/dofus",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Travian",
@@ -5695,7 +6101,8 @@
     "game_url": "https://www.freetogame.com/open/travian",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ryzom",
@@ -5709,7 +6116,8 @@
     "game_url": "https://www.freetogame.com/open/ryzom",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Kal Online",
@@ -5723,7 +6131,8 @@
     "game_url": "https://www.freetogame.com/open/kalonline",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Lineage 2",
@@ -5737,7 +6146,8 @@
     "game_url": "https://www.freetogame.com/open/lineage-2",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Red Stone Online",
@@ -5751,7 +6161,8 @@
     "game_url": "https://www.freetogame.com/open/red-stone-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mu Online",
@@ -5765,7 +6176,8 @@
     "game_url": "https://www.freetogame.com/open/mu-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Second Life",
@@ -5779,7 +6191,8 @@
     "game_url": "https://www.freetogame.com/open/second-life",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Ragnarok Online",
@@ -5793,7 +6206,8 @@
     "game_url": "https://www.freetogame.com/open/ragnarok-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Entropia Universe",
@@ -5807,7 +6221,8 @@
     "game_url": "https://www.freetogame.com/open/entropia-universe",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Habbo",
@@ -5821,7 +6236,8 @@
     "game_url": "https://www.freetogame.com/open/habbo",
     "min_ram": 8,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Anarchy Online",
@@ -5835,7 +6251,8 @@
     "game_url": "https://www.freetogame.com/open/anarchy-online",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Lord of the Rings Online",
@@ -5849,7 +6266,8 @@
     "game_url": "https://www.freetogame.com/open/lotro",
     "min_ram": 12,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Tattoo Tycoon (Epic Games) Giveaway",
@@ -5863,7 +6281,8 @@
     "game_url": "https://www.gamerpower.com/open/tattoo-tycoon-epic-games-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$29.99"
+    "worth": "$29.99",
+    "sale_price": null
   },
   {
     "title": "Nova Lands (Epic Games) Giveaway",
@@ -5877,7 +6296,8 @@
     "game_url": "https://www.gamerpower.com/open/nova-lands-epic-games-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$19.99"
+    "worth": "$19.99",
+    "sale_price": null
   },
   {
     "title": "Primal Slideee Deluxe (Stove) Giveaway",
@@ -5891,7 +6311,8 @@
     "game_url": "https://www.gamerpower.com/open/primal-slideee-deluxe-pc-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$1.99"
+    "worth": "$1.99",
+    "sale_price": null
   },
   {
     "title": "Silence (GOG) Giveaway",
@@ -5905,7 +6326,8 @@
     "game_url": "https://www.gamerpower.com/open/silence-gog-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$19.99"
+    "worth": "$19.99",
+    "sale_price": null
   },
   {
     "title": "GOALS: AMD Kit Key Giveaway",
@@ -5919,7 +6341,8 @@
     "game_url": "https://www.gamerpower.com/open/goals-amd-kit-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Whiskey Mafia: Frank's Story (IndieGala) Giveaway",
@@ -5933,7 +6356,8 @@
     "game_url": "https://www.gamerpower.com/open/whiskey-mafia-frank-s-story",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$5.99"
+    "worth": "$5.99",
+    "sale_price": null
   },
   {
     "title": "Whiskey.Mafia. Leo's Family (IndieGala) Giveaway",
@@ -5947,7 +6371,8 @@
     "game_url": "https://www.gamerpower.com/open/whiskey-mafia-leo-s-family-pc-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$5.99"
+    "worth": "$5.99",
+    "sale_price": null
   },
   {
     "title": "Madness Inside (itch.io) Giveaway",
@@ -5961,7 +6386,8 @@
     "game_url": "https://www.gamerpower.com/open/madness-inside-itch-io-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$6.99"
+    "worth": "$6.99",
+    "sale_price": null
   },
   {
     "title": "NIGHTBELL (Itch.io) Giveaway",
@@ -5975,7 +6401,8 @@
     "game_url": "https://www.gamerpower.com/open/nightbell-itch-io-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$3.99"
+    "worth": "$3.99",
+    "sale_price": null
   },
   {
     "title": "Dire Echo (itchio) Giveaway",
@@ -5989,7 +6416,8 @@
     "game_url": "https://www.gamerpower.com/open/dire-echo-itchio-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$5.99"
+    "worth": "$5.99",
+    "sale_price": null
   },
   {
     "title": "World of Warships Alienware Flag Pack Key Giveaway",
@@ -6003,7 +6431,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-warships-alienware-flag-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crystal Saga Nova: Free Gift Pack Keys",
@@ -6017,7 +6446,8 @@
     "game_url": "https://www.gamerpower.com/open/crystal-saga-nova-free-gift-pack-keys",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mongil: Star Dive Gift Pack Key Giveaway",
@@ -6031,7 +6461,8 @@
     "game_url": "https://www.gamerpower.com/open/mongil-star-dive-gift-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Static Voice (Itch.io) Giveaway",
@@ -6045,7 +6476,8 @@
     "game_url": "https://www.gamerpower.com/open/static-voice-itch-io-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$2.99"
+    "worth": "$2.99",
+    "sale_price": null
   },
   {
     "title": "Blacklist Mafia (IndieGala) Giveaway",
@@ -6059,7 +6491,8 @@
     "game_url": "https://www.gamerpower.com/open/blacklist-mafia-pc-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$9.99"
+    "worth": "$9.99",
+    "sale_price": null
   },
   {
     "title": "Neverwinter: Cape of the Noble North Key Giveaway",
@@ -6073,7 +6506,8 @@
     "game_url": "https://www.gamerpower.com/open/neverwinter-cape-of-the-noble-north-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "007 First Light: Ops Radiant Outfit Key Giveaway",
@@ -6087,7 +6521,8 @@
     "game_url": "https://www.gamerpower.com/open/007-first-light-ops-radiant-outfit-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Mr.Brocco And Co (IndieGala) Giveaway",
@@ -6101,7 +6536,8 @@
     "game_url": "https://www.gamerpower.com/open/mr-brocco-and-co-pc-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$9.99"
+    "worth": "$9.99",
+    "sale_price": null
   },
   {
     "title": "World of Tanks Blitz - Welcome Bundle (Steam) Giveaway",
@@ -6115,7 +6551,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-tanks-blitz-welcome-bundle-steam-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Without a Hitch UFO Hat Key Giveaway",
@@ -6129,7 +6566,8 @@
     "game_url": "https://www.gamerpower.com/open/without-a-hitch-ufo-hat-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "NTE: 120 Free Pulls + S-Class Chiz + A-Class Haniel",
@@ -6143,7 +6581,8 @@
     "game_url": "https://www.gamerpower.com/open/nte-120-free-pulls-s-class-chiz-a-class-haniel",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Genshin Impact: New Primogems Codes",
@@ -6157,7 +6596,8 @@
     "game_url": "https://www.gamerpower.com/open/genshin-impact-new-primogems-codes",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Arknights: Endfield Gift Pack Key Giveaway",
@@ -6171,7 +6611,8 @@
     "game_url": "https://www.gamerpower.com/open/arknights-endfield-gift-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Super Animal Royale Bundle Key Giveaway",
@@ -6185,7 +6626,8 @@
     "game_url": "https://www.gamerpower.com/open/super-animal-royale-bundle-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Idle Champions Lae'zel Key Giveaway",
@@ -6199,7 +6641,8 @@
     "game_url": "https://www.gamerpower.com/open/idle-champions-lae-zel-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Deadswitch Combat: Soldier Bundle (Steam) Giveaway",
@@ -6213,7 +6656,8 @@
     "game_url": "https://www.gamerpower.com/open/deadswitch-combat-soldier-bundle-steam-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$9.99"
+    "worth": "$9.99",
+    "sale_price": null
   },
   {
     "title": "Star Trek Online: Corruption Gift Pack Key Giveaway",
@@ -6227,7 +6671,8 @@
     "game_url": "https://www.gamerpower.com/open/star-trek-online-corruption-gift-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Blade and Soul NEO Anniversary Weapon Skin Key Giveaway",
@@ -6241,7 +6686,8 @@
     "game_url": "https://www.gamerpower.com/open/blade-and-soul-neo-anniversary-weapon-skin-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Deadswitch Combat: Weapons Skins Steam Key Giveaway",
@@ -6255,7 +6701,8 @@
     "game_url": "https://www.gamerpower.com/open/deadswitch-combat-weapons-skins-steam-key-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$9.99"
+    "worth": "$9.99",
+    "sale_price": null
   },
   {
     "title": "KARDS Special Bundle Key Giveaway",
@@ -6269,7 +6716,8 @@
     "game_url": "https://www.gamerpower.com/open/kards-special-bundle-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Chop Shop Playtest (Steam) Key Giveaway",
@@ -6283,7 +6731,8 @@
     "game_url": "https://www.gamerpower.com/open/chop-shop-playtest-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Endless Space 2 - Untold Tales DLC (Steam) Giveaway",
@@ -6297,7 +6746,8 @@
     "game_url": "https://www.gamerpower.com/open/endless-space-2-untold-tales-dlc-steam-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$2.99"
+    "worth": "$2.99",
+    "sale_price": null
   },
   {
     "title": "Untrusted 10K Credits Key Giveaway",
@@ -6311,7 +6761,8 @@
     "game_url": "https://www.gamerpower.com/open/untrusted-10k-credits-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "GigaBash (Stove) Giveaway",
@@ -6325,7 +6776,8 @@
     "game_url": "https://www.gamerpower.com/open/gigabash-pc-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$24.99"
+    "worth": "$24.99",
+    "sale_price": null
   },
   {
     "title": "Tomb Raider Legacy of Atlantis: Lara Croft Wetsuit Skin Giveaway",
@@ -6339,7 +6791,8 @@
     "game_url": "https://www.gamerpower.com/open/tomb-raider-legacy-of-atlantis-lara-croft-wetsuit-skin-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Bethesda Bundle Giveaway",
@@ -6353,7 +6806,8 @@
     "game_url": "https://www.gamerpower.com/open/bethesda-bundle-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "DK Online: Season 4 First Steps Pack (Steam) Giveaway",
@@ -6367,7 +6821,8 @@
     "game_url": "https://www.gamerpower.com/open/dk-online-season-4-first-steps-pack-steam-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dominion Synergy Gift Pack Key Giveaway",
@@ -6381,7 +6836,8 @@
     "game_url": "https://www.gamerpower.com/open/dominion-synergy-gift-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Vampire Master Gift Pack Codes Giveaway",
@@ -6395,7 +6851,8 @@
     "game_url": "https://www.gamerpower.com/open/vampire-master-gift-pack-codes-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Arena Breakout: Infinite Koen Pack Key Giveaway",
@@ -6409,7 +6866,8 @@
     "game_url": "https://www.gamerpower.com/open/arena-breakout-infinite-koen-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "DungeonLoot: Open Beta Has Arrived!",
@@ -6423,7 +6881,8 @@
     "game_url": "https://www.gamerpower.com/open/dungeonloot-open-beta-has-arrived",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Warships Economic Bonuses Codes Giveaway",
@@ -6437,7 +6896,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-warships-economic-bonuses-codes-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "DAVE THE DIVER - Godzilla Content Pack (Steam) Giveaway",
@@ -6451,7 +6911,8 @@
     "game_url": "https://www.gamerpower.com/open/dave-the-diver-godzilla-content-pack-steam-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Magic: The Gathering Arena Sliver Overlord Sleeve Key Giveaway",
@@ -6465,7 +6926,8 @@
     "game_url": "https://www.gamerpower.com/open/magic-the-gathering-arena-sliver-overlord-sleeve-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "ScreenPlay CCG: Box Office Bundle Key Giveaway",
@@ -6479,7 +6941,8 @@
     "game_url": "https://www.gamerpower.com/open/screenplay-ccg-box-office-bundle-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "3on3 FreeStyle: Beginner's Starter Kit (Steam) Giveaway",
@@ -6493,7 +6956,8 @@
     "game_url": "https://www.gamerpower.com/open/3on3-freestyle-beginner-s-starter-kit-steam-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Tanks - Invite/Bonus Code Giveaway",
@@ -6507,7 +6971,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-tanks-invite-bonus-code-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Elder Scrolls Online: Experience Scroll Key Giveaway",
@@ -6521,7 +6986,8 @@
     "game_url": "https://www.gamerpower.com/open/the-elder-scrolls-online-experience-scroll-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Homeworld 3 Emblem Key Giveaway",
@@ -6535,7 +7001,8 @@
     "game_url": "https://www.gamerpower.com/open/homeworld-3-emblem-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "The Elder Scrolls Online: Pyromancer's Quandary Emote Key Giveaway",
@@ -6549,7 +7016,8 @@
     "game_url": "https://www.gamerpower.com/open/the-elder-scrolls-online-pyromancer-s-quandary-emote-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "EVERSPACE 2 Decal DLC Steam Key Giveaway",
@@ -6563,7 +7031,8 @@
     "game_url": "https://www.gamerpower.com/open/everspace-2-decal-dlc-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Zero King (Beta) Steam Key Giveaway",
@@ -6577,7 +7046,8 @@
     "game_url": "https://www.gamerpower.com/open/zero-king-beta-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Metaball Jersey Key Giveaway",
@@ -6591,7 +7061,8 @@
     "game_url": "https://www.gamerpower.com/open/metaball-jersey-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Death or Glory Beginner's Champion Pack Key Giveaway",
@@ -6605,7 +7076,8 @@
     "game_url": "https://www.gamerpower.com/open/death-or-glory-beginner-s-champion-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Tanks: Starter Pack Giveaway",
@@ -6619,7 +7091,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-tanks-starter-pack-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Neverwinter Xaryxian Aristrocrat's Drapery Cape Key Giveaway",
@@ -6633,7 +7106,8 @@
     "game_url": "https://www.gamerpower.com/open/neverwinter-xaryxian-aristrocrat-s-drapery-cape-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Pirate Souls In-Game Pack Key Giveaway",
@@ -6647,7 +7121,8 @@
     "game_url": "https://www.gamerpower.com/open/pirate-souls-in-game-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Destiny 2 Emblem Key Giveaway",
@@ -6661,7 +7136,8 @@
     "game_url": "https://www.gamerpower.com/open/destiny-2-emblem-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Exoprimal: Alienware Decal Steam Key Giveaway",
@@ -6675,7 +7151,8 @@
     "game_url": "https://www.gamerpower.com/open/exoprimal-alienware-decal-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Neverwinter Frayed Silken Cloak Key Giveaway",
@@ -6689,7 +7166,8 @@
     "game_url": "https://www.gamerpower.com/open/neverwinter-frayed-silken-cloak-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Deadswitch 3: Delta Force Supply Cache Key Giveaway",
@@ -6703,7 +7181,8 @@
     "game_url": "https://www.gamerpower.com/open/deadswitch-3-delta-force-supply-cache-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Giveaway Alerts Chrome Extension",
@@ -6717,7 +7196,8 @@
     "game_url": "https://www.gamerpower.com/open/giveaway-alerts-chrome-extension",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Age of Wonders 4: Special Godir Helmet Steam Key Giveaway",
@@ -6731,7 +7211,8 @@
     "game_url": "https://www.gamerpower.com/open/age-of-wonders-4-special-godir-helmet-steam-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dinogen Online Survival Bundle Key Giveaway",
@@ -6745,7 +7226,8 @@
     "game_url": "https://www.gamerpower.com/open/dinogen-online-survival-bundle-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dual Chroma: Academy Carols (itch.io) Giveaway",
@@ -6759,7 +7241,8 @@
     "game_url": "https://www.gamerpower.com/open/dual-chroma-academy-carols-itch-io-giveaway",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$2.00"
+    "worth": "$2.00",
+    "sale_price": null
   },
   {
     "title": "Minecraft: Peace Builders (DLC)",
@@ -6773,7 +7256,8 @@
     "game_url": "https://www.gamerpower.com/open/minecraft-peace-builders-dlc",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Untrusted Starter Pack Key Giveaway",
@@ -6787,7 +7271,8 @@
     "game_url": "https://www.gamerpower.com/open/untrusted-starter-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dora Diginoid: Metroidvania sci-fi adventure game",
@@ -6801,7 +7286,8 @@
     "game_url": "https://www.gamerpower.com/open/dora-diginoid-metroidvania-sci-fi-adventure-game",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$6.00"
+    "worth": "$6.00",
+    "sale_price": null
   },
   {
     "title": "DarkStory Online Gift Box Key Giveaway",
@@ -6815,7 +7301,8 @@
     "game_url": "https://www.gamerpower.com/open/darkstory-online-gift-box-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Thunder League Online: Free Points Key Giveaway",
@@ -6829,7 +7316,8 @@
     "game_url": "https://www.gamerpower.com/open/thunder-league-online-free-points-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Doomtrooper CCG Card Pack Key Giveaway",
@@ -6843,7 +7331,8 @@
     "game_url": "https://www.gamerpower.com/open/doomtrooper-ccg-card-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dead Frontier 2 Survivor Starter Pack Key Giveaway",
@@ -6857,7 +7346,8 @@
     "game_url": "https://www.gamerpower.com/open/dead-frontier-2-survivor-starter-pack-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "SMITE 3 Day Account Booster Key Giveaway",
@@ -6871,7 +7361,8 @@
     "game_url": "https://www.gamerpower.com/open/smite-3-day-account-booster-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Destiny 2: Be True Emblem Code",
@@ -6885,7 +7376,8 @@
     "game_url": "https://www.gamerpower.com/open/destiny-2-be-true-emblem-code",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Minecraft: Seaside Story (DLC)",
@@ -6899,7 +7391,8 @@
     "game_url": "https://www.gamerpower.com/open/minecraft-seaside-story-dlc",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Minecraft: Vibrant Adventurers Volume 1, 2 and 3",
@@ -6913,7 +7406,8 @@
     "game_url": "https://www.gamerpower.com/open/minecraft-vibrant-adventurers-volume-1-2-and-3",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Crown: Neon Rox Skin Key Giveaway",
@@ -6927,7 +7421,8 @@
     "game_url": "https://www.gamerpower.com/open/crown-neon-rox-skin-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World Of Warships Godzilla vs. Kong Supply Drop Key",
@@ -6941,7 +7436,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-warships-godzilla-vs-kong-supply-drop-key",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Magic: The Gathering Arena - 5 Card Sleeves",
@@ -6955,7 +7451,8 @@
     "game_url": "https://www.gamerpower.com/open/magic-the-gathering-arena-5-card-sleeves",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Free MTG: Arena Codes",
@@ -6969,7 +7466,8 @@
     "game_url": "https://www.gamerpower.com/open/free-mtg-arena-codes",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "DRAG: Special Event Key Giveaway",
@@ -6983,7 +7481,8 @@
     "game_url": "https://www.gamerpower.com/open/drag-special-event-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "World of Tanks: 600 Gold + Tank Invite Code",
@@ -6997,7 +7496,8 @@
     "game_url": "https://www.gamerpower.com/open/world-of-tanks-tank-600-gold-invite-code",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Two Point Hospital: SEGA 60th Items DLC",
@@ -7011,7 +7511,8 @@
     "game_url": "https://www.gamerpower.com/open/two-point-hospital-sega-60th-items-dlc",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Causa, Voices of the Dusk Game Packs Bundle Keys",
@@ -7025,7 +7526,8 @@
     "game_url": "https://www.gamerpower.com/open/causa-voices-of-the-dusk-game-packs-bundle-keys",
     "min_ram": 4,
     "price": "paid",
-    "worth": "$14.00"
+    "worth": "$14.00",
+    "sale_price": null
   },
   {
     "title": "Free Bomb Bots Arena Gift Pack Keys",
@@ -7039,7 +7541,8 @@
     "game_url": "https://www.gamerpower.com/open/free-bomb-bots-arena-gift-pack-keys",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "SUPER CIRCUIT BREAKERS - PAYNE",
@@ -7053,7 +7556,8 @@
     "game_url": "https://www.gamerpower.com/open/super-circuit-breakers-payne",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Payday 2: Free In-game Items Giveaway",
@@ -7067,7 +7571,8 @@
     "game_url": "https://www.gamerpower.com/open/payday-2-free-in-game-items-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Collective Free Hero Skin Key",
@@ -7081,7 +7586,8 @@
     "game_url": "https://www.gamerpower.com/open/collective-free-hero-skin-key",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Dream of Mirror Online Summer Fun DLC Pack Steam Keys",
@@ -7095,7 +7601,8 @@
     "game_url": "https://www.gamerpower.com/open/domo-summer-fun-dlc-steam-keys",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Overstep Skin Key Giveaway",
@@ -7109,7 +7616,8 @@
     "game_url": "https://www.gamerpower.com/open/overstep-skin-key-giveaway",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Free Rocket League Codes",
@@ -7123,7 +7631,8 @@
     "game_url": "https://www.gamerpower.com/open/free-rocket-league-codes",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Destiny 2: Free Emblem Codes",
@@ -7137,7 +7646,8 @@
     "game_url": "https://www.gamerpower.com/open/destiny-2-free-emblem-codes",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Warframe Free Promo Codes",
@@ -7151,7 +7661,8 @@
     "game_url": "https://www.gamerpower.com/open/warframe-free-promo-codes",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
   },
   {
     "title": "Farming Simulator 2017: Free Horsch Agrovation DLC",
@@ -7165,6 +7676,457 @@
     "game_url": "https://www.gamerpower.com/open/farming-simulator-2017-free-horsch-agrovation-dlc",
     "min_ram": 4,
     "price": "free",
-    "worth": "N/A"
+    "worth": "N/A",
+    "sale_price": null
+  },
+  {
+    "title": "Moonlight Peaks",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/6f0a16e68608089383a80a5ac26d0e8f04833fb1/capsule_231x87.jpg?t=1783444081",
+    "short_description": "Super Oferta PC! De $34.99 por apenas $25.83 (26% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=X8qYOmaI%2FaAv87PHYsEiJdWpz8lfIg9lyhd3douYCmI%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$34.99",
+    "sale_price": "$25.87"
+  },
+  {
+    "title": "Tattoo Tycoon",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2375260/56e1e2ab605a617180da63984e5435238badfbc4/capsule_231x87.jpg?t=1771922358",
+    "short_description": "Super Oferta PC! De $29.99 por apenas $0.00 (100% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=uALxWb1eqHb5dheChJTIGZtb5tDcLX9oqPBkHnoY3%2BE%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$29.99",
+    "sale_price": "$0.00"
+  },
+  {
+    "title": "NBA 2K26",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/a3525b0c4590861bf02bd36129ff0d510e2f85d6/capsule_231x87_alt_assets_6.jpg?t=1782486648",
+    "short_description": "Super Oferta PC! De $69.99 por apenas $8.35 (88% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=dua6N5u4HYIU5lUexFlvkjLixz5RHy0a4lzdZENh64A%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.99",
+    "sale_price": "$8.72"
+  },
+  {
+    "title": "Watch_Dogs 2 Gold Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/b862c5cae355443f879809fc20eec404/e1d34e22dd2e4d3196a8e0c77b07c778.jpg",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $3.82 (95% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=pGwiDdiyTGTBUh6qtuDI6Iq3cSdq4KNR1fIOIu2ULmk%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$4.00"
+  },
+  {
+    "title": "Nova Lands",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1501610/capsule_231x87.jpg?t=1769181148",
+    "short_description": "Super Oferta PC! De $19.99 por apenas $0.00 (100% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=zjOV6rPk8GHfz%2BfBcXb277gbMhGpy59ONVh525xyeMY%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$19.99",
+    "sale_price": "$0.00"
+  },
+  {
+    "title": "Suicide Squad: Kill the Justice League",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/315210/capsule_231x87.jpg?t=1777940046",
+    "short_description": "Super Oferta PC! De $69.99 por apenas $3.08 (96% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=ER%2FfOp0PmIbG%2BkoMMkNkd8JljZgzqnQqdZLU%2Bz1MekQ%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.99",
+    "sale_price": "$3.08"
+  },
+  {
+    "title": "Rims Racing : Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/e1cdac10807b4dd78337834ab4ca1837/a21ed18dfb334b8481276f4d5a4a538b.jpg",
+    "short_description": "Super Oferta PC! De $69.50 por apenas $3.47 (95% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=SmsaXTBWCcgJyOW0zG%2BuTbwH%2F1QL11rC2Yqb%2FMFqxCs%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.50",
+    "sale_price": "$3.47"
+  },
+  {
+    "title": "Back 4 Blood: Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/back-4-blood-ultimate-edition/cover-180-91231d.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $8.80 (91% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=us%2F3P6n9Z4fN16CkFinUTYMnruUmCeF%2BTdb4pWeAHB0%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$8.80"
+  },
+  {
+    "title": "RiMS Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/rims-ultimate-edition/cover-180-18e225.jpg",
+    "short_description": "Super Oferta PC! De $69.50 por apenas $3.47 (95% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=r5WMNvjeIMvCavj0Pe1YLAdiIdKLxN%2FdfvROJbUNLH4%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.50",
+    "sale_price": "$3.47"
+  },
+  {
+    "title": "Assassins Creed Origins Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/954b123f74ce43e6a39abdaee7d33a61/cbc991bb102c4ad2a819a17b06e1701c.jpg",
+    "short_description": "Super Oferta PC! De $69.99 por apenas $9.45 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=ihwiQ9AZtYJmi5oc1KDKzixg21FxAMmS2Z07NJC5Ho8%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.99",
+    "sale_price": "$9.69"
+  },
+  {
+    "title": "Watch Dogs Legion Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://cdn.humblebundle.com/misc/files/hashed/2ea134bcd1d8de38c4e1fd88c71bed893a23cc18.jpg",
+    "short_description": "Super Oferta PC! De $69.99 por apenas $9.69 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=CY0qkv0hCaks4qtSWhqd1Y0V4px%2B2%2BKDVuagr%2FKS7FE%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.99",
+    "sale_price": "$9.69"
+  },
+  {
+    "title": "V-Rally 4 Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://www.wingamestore.com/images_boxshots/master/v-rally-4-ultimate-edition-1549767297.jpg",
+    "short_description": "Super Oferta PC! De $69.99 por apenas $6.99 (90% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=q1ag%2ByKTbCANc8AuW2iUPTigsjuwwjAqaSK974j0wmQ%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.99",
+    "sale_price": "$6.99"
+  },
+  {
+    "title": "Assassin's Creed Odyssey - Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/85f64a5bdd2045fcae1dbfaa2b03b28e/18f26e2f95974e6ab4f8181434d4dd00.jpg",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $10.80 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=j46CiZP1igYcQ4VBE9PsYhpLCPCNmeQ%2FpH3sbAfUsBs%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$10.99"
+  },
+  {
+    "title": "Tiny Tinas Wonderlands: Chaotic Great Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/tiny-tinas-wonderlands-chaotic-great-edition-steam/cover-180-f31516.jpg",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $14.35 (82% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=IlhZi6eHyYhfj8wTsBppN3ewXJ4dA6wsJL9ogoTFtmo%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$14.35"
+  },
+  {
+    "title": "Assassins Creed Odyssey Gold Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/b0279bf8df8a426987e1c4abaeffb03a/45ef97623d6246b8a367d7a3370d4a17.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $13.50 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=%2Bj1YG%2BiaAw3mvcPG1Ko1mnx0uYXwcTdcSc49lJ4m48U%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$13.75"
+  },
+  {
+    "title": "Assassins Creed Origins Gold Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/e6797d37de1243a1a79b5fede824bda3/da9b336eecab4f57b33543893d426051.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $13.50 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=ed2T3JtmWfyE4UMDjpqECpUEPpbpGdDpmJC0k9geRJg%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$13.75"
+  },
+  {
+    "title": "Assassins Creed Odyssey Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/5586046eb67a48f186b1abaa86d276f1/85bcc60d3c074a518533c565b9e51058.jpg",
+    "short_description": "Super Oferta PC! De $119.99 por apenas $16.20 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=UwiMbIvtQ7zMU1PoXSUs96G2OweD6gOkEcIqulOmpGU%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$119.99",
+    "sale_price": "$16.46"
+  },
+  {
+    "title": "IL-2 Sturmovik: Tank Crew - Clash at Prokhorovka",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/il-2-sturmovik-tank-crew-clash-at-prokhorovka/cover-180-4ada10.jpg",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $15.99 (80% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=Y93nGwniEqLFXWQw9sGQbO3Nf6YTzzWEzUNd7mqtYuk%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$15.99"
+  },
+  {
+    "title": "Tennis World Tour Legends Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/tennis-world-tour-legends-edition/cover-180-641a7e.jpg",
+    "short_description": "Super Oferta PC! De $69.98 por apenas $7.00 (90% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=pOSFvcoR2JunSDMzQCTwsDx6qSuqb0HeAaPmD9lE6a8%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$69.98",
+    "sale_price": "$7.00"
+  },
+  {
+    "title": "Sid Meiers Civilization VI Anthology",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/sid-meiers-civilization-vi-anthology-steam/cover-180-ac032e.jpg",
+    "short_description": "Super Oferta PC! De $209.85 por apenas $28.96 (86% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=Hz%2BOAW9%2F250%2BOjC1aoftzKgeZfi0%2BKY9Ug43iVy4cvk%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$209.85",
+    "sale_price": "$28.96"
+  },
+  {
+    "title": "Borderlands 3: Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/borderlands-3-ultimate-edition-steam/cover-180-4b55a5.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $19.85 (80% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=4EkSrrYLD%2FiAeRxElkRrbhbqILnmxJj22obxAna%2Bwds%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$19.85"
+  },
+  {
+    "title": "Gotham Knights Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/gotham-knights-deluxe-edition/cover-180-e1de87.jpg",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $14.08 (82% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=2udD6lQAZEs%2BErSpt6HIKZOmiJV8CXbxyHW%2BdAF8tko%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$14.08"
+  },
+  {
+    "title": "Suicide Squad: Kill the Justice League - Digital Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/suicide-squad-kill-the-justice-league-digital-deluxe-edition/cover-180-c29cf2.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $4.38 (96% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=tgoizJLrmwbzR5Zj8j3F%2Fhc9TxYMIv7AtH31aRp6Li4%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$5.00"
+  },
+  {
+    "title": "Suicide Squad: Kill the Justice League - Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/98fb0e76d36341cea0f0ca36ce9c08c6/f08e60d2766549d6b1e89e25444a00e8.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $4.99 (95% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=oEE9bBm34JwWr9B3vJsDZKq9o9wpaDxh%2B6fZLK%2B920o%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$4.99"
+  },
+  {
+    "title": "Watch Dogs: Legion Gold Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://cdn.humblebundle.com/misc/files/hashed/5fa544ab5435535c247224d10fb6221a94809367.jpg",
+    "short_description": "Super Oferta PC! De $99.99 por apenas $18.26 (82% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=ruE3EUqgjlVU9KYE%2Bqlt76%2BRfutGLY6IvRigl%2FrUyY8%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$99.99",
+    "sale_price": "$18.26"
+  },
+  {
+    "title": "Assassins Creed Odyssey Digital Deluxe Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/en_US/dwa1ddf744/images/large/5afda8a96b54a4271407a857.jpg?sw=197&amp;sh=261&amp;sm=fit",
+    "short_description": "Super Oferta PC! De $79.99 por apenas $12.00 (85% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=9d4A0mIxn4RVUdoiOQ627IStZOCsdOF%2B5%2FXmgnua71c%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$79.99",
+    "sale_price": "$12.00"
+  },
+  {
+    "title": "The Next Penelope",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332250/capsule_231x87.jpg?t=1781884634",
+    "short_description": "Super Oferta PC! De $12.99 por apenas $1.29 (90% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=%2Fhe91FSS5h33%2BEjY0G5IMyEKMZPHz%2FVBmQRe7C9ropk%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$12.99",
+    "sale_price": "$1.29"
+  },
+  {
+    "title": "The Incredible Adventures of Van Helsing Anthology",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/75825/capsule_231x87.jpg?t=1705948029",
+    "short_description": "Super Oferta PC! De $74.99 por apenas $5.95 (92% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=tbfhAnpKWgIw3AyPA%2BDmIaYpwSY8JzEReS2X69F3zo4%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$74.99",
+    "sale_price": "$5.95"
+  },
+  {
+    "title": "Far Cry 5 Gold Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://images.greenmangaming.com/343728a3ccce4911b335aad397b6cae3/a3b2074aa80e4e81b525aa0ec4a3acdc.jpg",
+    "short_description": "Super Oferta PC! De $89.99 por apenas $13.50 (85% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=xJtJJ4rDQo5wJG8e2eby5aSomScreI%2BfKH%2FLr%2FB9CDg%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$89.99",
+    "sale_price": "$13.50"
+  },
+  {
+    "title": "FOR HONOR  Ultimate Edition",
+    "genre": "Oferta / Promoção",
+    "tags": ["promo", "oferta", "deals"],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw8a5d2786/images/large/659ea86929c01c38968dce15.jpg?sw=197&amp;sh=261&amp;sm=fit",
+    "short_description": "Super Oferta PC! De $89.99 por apenas $13.50 (85% de desconto).",
+    "developer": "Steam / Epic Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=92vczbOy2iGlFO1ggHTIxk8d1CVBVjsc26U4alik0f8%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$89.99",
+    "sale_price": "$13.50"
   }
 ]

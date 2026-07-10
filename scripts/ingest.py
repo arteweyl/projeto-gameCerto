@@ -32,6 +32,7 @@ class Game:
     min_ram: int
     price: str
     worth: str
+    sale_price: Optional[str] = None
 
 # Base de dados local robusta (jogos gratuitos padrão + jogos pagos premium adicionados)
 FALLBACK_GAMES: List[Game] = [
@@ -291,6 +292,72 @@ class GamesIngestor:
         except Exception as e:
             logger.error(f"Erro inesperado na GamerPower: {e}")
 
+    def fetch_cheapshark(self) -> None:
+        """Busca ofertas ativas de jogos de PC pagos na CheapShark API."""
+        logger.info("Buscando ofertas de jogos PC na CheapShark API...")
+        # Buscamos as top 50 ofertas ordenadas por desconto/economia
+        url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50"
+
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Connection": "keep-alive"
+                }
+            )
+            with urllib.request.urlopen(req, timeout=15) as response:
+                if response.status == 200:
+                    data = json.loads(response.read().decode("utf-8"))
+                    deals_list = data if isinstance(data, list) else list(data.values())
+
+                    for item in deals_list:
+                        title_key = item.get("title", "").strip().lower()
+                        if not title_key:
+                            continue
+
+                        normal_price = f"${item.get('normalPrice')}"
+                        sale_price = f"${item.get('salePrice')}"
+                        savings = float(item.get("savings", "0"))
+                        
+                        deal_url = f"https://www.cheapshark.com/redirect?dealID={item.get('dealID')}"
+                        short_desc = f"Super Oferta PC! De {normal_price} por apenas {sale_price} ({savings:.0f}% de desconto)."
+                        thumbnail = item.get("thumb", "")
+
+                        # Se o jogo já estiver na base, mesclamos as informações de preço
+                        if title_key in self.games_map:
+                            existing = self.games_map[title_key]
+                            existing.price = "paid"
+                            existing.worth = normal_price
+                            existing.sale_price = sale_price
+                            existing.game_url = deal_url
+                        else:
+                            game = Game(
+                                title=item.get("title"),
+                                genre="Oferta / Promoção",
+                                tags=["promo", "oferta", "deals"],
+                                platform="PC (Windows)",
+                                thumbnail=thumbnail,
+                                short_description=short_desc,
+                                developer="Steam / Epic Store Deals",
+                                release_date="N/A",
+                                game_url=deal_url,
+                                min_ram=8, # PC Gamer padrão
+                                price="paid",
+                                worth=normal_price,
+                                sale_price=sale_price
+                            )
+                            self.games_map[title_key] = game
+                    logger.info(f"Sucesso! {len(deals_list)} ofertas ativas carregadas da CheapShark.")
+                else:
+                    logger.warning(f"CheapShark retornou status de resposta: {response.status}")
+        except urllib.error.URLError as e:
+            logger.error(f"Erro ao acessar CheapShark API: {e.reason}")
+        except Exception as e:
+            logger.error(f"Erro inesperado na CheapShark: {e}")
+
     def save_data(self) -> None:
         """Salva a lista consolidada em data/games.json."""
         games_list = [asdict(game) for game in self.games_map.values()]
@@ -312,4 +379,5 @@ if __name__ == "__main__":
     ingestor.load_fallback_games()
     ingestor.fetch_freetogame()
     ingestor.fetch_gamerpower()
+    ingestor.fetch_cheapshark()
     ingestor.save_data()
