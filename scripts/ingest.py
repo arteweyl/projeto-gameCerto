@@ -296,10 +296,105 @@ class GamesIngestor:
         except Exception as e:
             logger.error(f"Erro inesperado na GamerPower: {e}")
 
-    def fetch_cheapshark(self) -> None:
-        """Busca ofertas ativas de jogos de PC pagos na CheapShark API e cruza com a Steam API para metadados ricos."""
-        import time
+    def clean_title_for_igdb(self, title: str) -> str:
+        """Limpa o título removendo marcas de plataforma e edições especiais para busca no IGDB."""
         import re
+        # Remove parênteses, colchetes e tudo dentro
+        t = re.sub(r'[\(\[][^\)\]]*[\)\]]', '', title)
+        # Remove palavras-chave comuns de plataforma ou edições
+        for word in ["PC", "Steam", "GOG", "Epic Games", "ROW", "Edition", "Cut", "Director's Cut", "Gold Edition", "Standard Edition", "Deluxe Edition"]:
+            t = re.sub(rf'\b{word}\b', '', t, flags=re.IGNORECASE)
+        # Limpa caracteres especiais no final ou início e substitui múltiplos espaços
+        t = t.replace(":", "").replace("-", "").strip()
+        t = re.sub(r'\s+', ' ', t)
+        return t
+
+    def fetch_twitch_token(self) -> str:
+        """Adquire o access token da Twitch OAuth2 para autenticação no IGDB."""
+        import urllib.parse
+        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
+        client_secret = os.getenv("IGDB_SECRET", "tjawudm7uaq2bu4gyxacp8fwolz53f")
+        
+        url = "https://id.twitch.tv/oauth2/token"
+        params = {
+            "client_id": client_id,
+            "client_secret": client_secret,
+            "grant_type": "client_credentials"
+        }
+        data = urllib.parse.urlencode(params).encode("utf-8")
+        req = urllib.request.Request(url, data=data, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=10) as res:
+                resp = json.loads(res.read().decode("utf-8"))
+                token = resp.get("access_token")
+                logger.info("Token Twitch/IGDB obtido com sucesso.")
+                return token
+        except Exception as e:
+            logger.error(f"Erro ao obter token da Twitch: {e}")
+            return ""
+
+    def query_igdb(self, titles: list, token: str) -> dict:
+        """Consulta metadados de múltiplos títulos no IGDB em uma única requisição em lote."""
+        if not token:
+            return {}
+            
+        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
+        url = "https://api.igdb.com/v4/games"
+        headers = {
+            "Client-ID": client_id,
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "text/plain"
+        }
+        
+        # Escapa aspas nas strings de títulos
+        escaped_titles = [t.replace('"', '\\"') for t in titles]
+        titles_tuple = ", ".join(f'"{t}"' for t in escaped_titles)
+        body = f"where name = ({titles_tuple}); fields name, cover.url, summary, rating, genres.name, platforms.name, first_release_date, involved_companies.company.name, involved_companies.developer; limit {len(titles)};"
+        
+        req = urllib.request.Request(url, data=body.encode("utf-8"), headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=10) as res:
+                resp = json.loads(res.read().decode("utf-8"))
+                
+                # Mapeia os dados retornados pelo nome (chave em minúsculas sem espaços)
+                igdb_data = {}
+                for item in resp:
+                    name_key = item.get("name", "").strip().lower()
+                    igdb_data[name_key] = item
+                return igdb_data
+        except Exception as e:
+            logger.error(f"Erro ao consultar IGDB: {e}")
+            return {}
+
+    def search_igdb_game(self, title: str, token: str) -> Optional[dict]:
+        """Faz uma busca difusa (fuzzy search) de um único título no IGDB e retorna o melhor resultado."""
+        if not token:
+            return None
+            
+        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
+        url = "https://api.igdb.com/v4/games"
+        headers = {
+            "Client-ID": client_id,
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "text/plain"
+        }
+        
+        escaped_title = title.replace('"', '\\"')
+        body = f'search "{escaped_title}"; fields name, cover.url, summary, rating, genres.name, platforms.name, first_release_date, involved_companies.company.name, involved_companies.developer; limit 1;'
+        
+        req = urllib.request.Request(url, data=body.encode("utf-8"), headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=10) as res:
+                resp = json.loads(res.read().decode("utf-8"))
+                if resp and isinstance(resp, list) and len(resp) > 0:
+                    return resp[0]
+        except Exception as e:
+            logger.debug(f"Erro ao buscar no IGDB para '{title}': {e}")
+        return None
+
+    def fetch_cheapshark(self) -> None:
+        """Busca ofertas ativas de jogos de PC pagos na CheapShark API e cruza com a IGDB API para metadados ricos."""
+        import time
         logger.info("Buscando ofertas de jogos PC na CheapShark API...")
         # Buscamos as top 150 ofertas ordenadas por desconto/economia
         url = "https://www.cheapshark.com/api/1.0/deals?pageSize=150"
@@ -319,29 +414,77 @@ class GamesIngestor:
                     data = json.loads(response.read().decode("utf-8"))
                     deals_list = data if isinstance(data, list) else list(data.values())
 
-                    logger.info(f"Carregadas {len(deals_list)} ofertas iniciais da CheapShark. Cruzando com Steam API para as top 25...")
+                    logger.info(f"Carregadas {len(deals_list)} ofertas iniciais da CheapShark.")
+                    
+                    # 1. Obtém token Twitch/IGDB e busca dados em lote
+                    twitch_token = self.fetch_twitch_token()
+                    igdb_enrichment = {}
+                    if twitch_token:
+                        # Mapeamento do título limpo para a chave de busca original
+                        clean_to_original = {}
+                        clean_titles = []
+                        for item in deals_list:
+                            orig_title = item.get("title", "")
+                            if orig_title:
+                                clean_t = self.clean_title_for_igdb(orig_title)
+                                if clean_t and clean_t not in clean_titles:
+                                    clean_titles.append(clean_t)
+                                clean_to_original[clean_t.lower()] = orig_title.strip().lower()
+                        
+                        batch_size = 20
+                        logger.info(f"Enriquecendo {len(clean_titles)} títulos (limpos) com o IGDB em lotes de {batch_size}...")
+                        unmatched_titles = []
+                        for i in range(0, len(clean_titles), batch_size):
+                            batch_titles = clean_titles[i:i+batch_size]
+                            batch_data = self.query_igdb(batch_titles, twitch_token)
+                            
+                            # Mapeia de volta usando o clean_to_original
+                            for clean_name_key, igdb_game in batch_data.items():
+                                if clean_name_key in clean_to_original:
+                                    orig_key = clean_to_original[clean_name_key]
+                                    igdb_enrichment[orig_key] = igdb_game
+                            time.sleep(0.25) # Respeita limite de taxa de 4 req/seg da Twitch
+                            
+                        # Determina quais títulos limpos não foram encontrados no lote exato
+                        for clean_t in clean_titles:
+                            orig_key = clean_to_original.get(clean_t.lower())
+                            if orig_key not in igdb_enrichment:
+                                unmatched_titles.append(clean_t)
+                                
+                        # 2. Busca difusa individual para os não encontrados
+                        if unmatched_titles:
+                            logger.info(f"Buscando {len(unmatched_titles)} títulos restantes via busca difusa no IGDB...")
+                            for clean_t in unmatched_titles:
+                                igdb_game = self.search_igdb_game(clean_t, twitch_token)
+                                if igdb_game:
+                                    orig_key = clean_to_original.get(clean_t.lower())
+                                    if orig_key:
+                                        igdb_enrichment[orig_key] = igdb_game
+                                time.sleep(0.25) # Respeita o limite de 4 req/seg
+                                
+                        logger.info(f"Metadados de {len(igdb_enrichment)} jogos recuperados do IGDB no total.")
 
+                    # 2. Processa cada oferta da CheapShark
                     for idx, item in enumerate(deals_list):
-                        title_key = item.get("title", "").strip().lower()
+                        title = item.get("title", "")
+                        title_key = title.strip().lower()
                         if not title_key:
                             continue
 
                         normal_price = f"${item.get('normalPrice')}"
                         sale_price = f"${item.get('salePrice')}"
-                        savings = float(item.get("savings", "0"))
                         deal_url = f"https://www.cheapshark.com/redirect?dealID={item.get('dealID')}"
-                        steam_app_id = item.get("steamAppID")
                         
-                        # Valores padrão de fallback para o jogo da CheapShark
+                        # Valores padrão de fallback
                         genre = "Oferta / Promoção"
                         tags = ["promo", "oferta", "deals"]
-                        short_desc = f"Super Oferta PC! De {normal_price} por apenas {sale_price} ({savings:.0f}% de desconto)."
-                        thumbnail = item.get("thumb", "")
+                        short_desc = "Uma oferta incrível de PC ativa no momento!"
                         developer = "Steam Store Deals"
                         release_date = "N/A"
                         min_ram = 8
+                        thumbnail = item.get("thumb")
 
-                        # Heurística para adivinhar gêneros com base em palavras-chave no título
+                        # Heurística de fallback para gêneros se o IGDB falhar/não tiver o jogo
                         title_lower = title_key.lower()
                         if any(w in title_lower for w in ["shoot", "duty", "doom", "battlefield", "crysis", "sniper", "halo", "wolfenstein", "counter"]):
                             genre = "Shooter"
@@ -359,56 +502,40 @@ class GamesIngestor:
                             genre = "Survival"
                             tags = ["survival", "action", "promo", "oferta"]
 
-                        # Se possui ID da Steam válido e é uma das top 25 ofertas, cruza com os detalhes ricos da Steam
-                        if steam_app_id and steam_app_id != "0" and idx < 25:
-                            logger.info(f"[{idx+1}/25] Cruzando metadados de '{item.get('title')}' (Steam ID: {steam_app_id})...")
-                            steam_url = f"https://store.steampowered.com/api/appdetails?appids={steam_app_id}"
+                        # Aplica metadados ricos do IGDB
+                        if title_key in igdb_enrichment:
+                            igdb_game = igdb_enrichment[title_key]
                             
-                            try:
-                                steam_req = urllib.request.Request(
-                                    steam_url,
-                                    headers={
-                                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-                                    }
-                                )
-                                # Adiciona um pequeno delay de 0.4s para evitar rate limiting da Steam
-                                time.sleep(0.4)
+                            cover_url = igdb_game.get("cover", {}).get("url")
+                            if cover_url:
+                                thumbnail = "https:" + cover_url.replace("t_thumb", "t_cover_big")
                                 
-                                with urllib.request.urlopen(steam_req, timeout=10) as steam_res:
-                                    if steam_res.status == 200:
-                                        steam_data = json.loads(steam_res.read().decode("utf-8"))
-                                        
-                                        if steam_app_id in steam_data and steam_data[steam_app_id].get("success", False):
-                                            game_info = steam_data[steam_app_id]["data"]
-                                            
-                                            # Extrai gêneros e tags reais da Steam!
-                                            steam_genres = [g.get("description", "") for g in game_info.get("genres", [])]
-                                            if steam_genres:
-                                                genre = steam_genres[0]
-                                                tags = [g.lower() for g in steam_genres if g] + ["promo", "oferta", "deals"]
-                                            
-                                            # Extrai descrição curta real
-                                            if game_info.get("short_description"):
-                                                short_desc = game_info.get("short_description")
-                                            
-                                            # Extrai desenvolvedores
-                                            devs = game_info.get("developers", [])
-                                            if devs:
-                                                developer = devs[0]
-                                                
-                                            # Extrai data de lançamento
-                                            release = game_info.get("release_date", {})
-                                            if release.get("date"):
-                                                release_date = release.get("date")
-
-                                            # Extrai min_ram das especificações do PC (Regex)
-                                            min_req = game_info.get("pc_requirements", {}).get("minimum", "")
-                                            ram_match = re.search(r"(\d+)\s*GB\s*RAM", min_req, re.IGNORECASE)
-                                            if ram_match:
-                                                min_ram = int(ram_match.group(1))
-                                                
-                            except Exception as steam_err:
-                                logger.warning(f"Falha ao obter metadados da Steam para '{item.get('title')}': {steam_err}")
+                            if igdb_game.get("summary"):
+                                short_desc = igdb_game.get("summary")
+                                
+                            igdb_genres = [g.get("name") for g in igdb_game.get("genres", [])]
+                            if igdb_genres:
+                                genre = igdb_genres[0]
+                                tags = [g.lower() for g in igdb_genres if g] + ["promo", "oferta", "deals"]
+                                
+                            devs = []
+                            for ic in igdb_game.get("involved_companies", []):
+                                if ic.get("developer", False):
+                                    comp = ic.get("company", {})
+                                    if comp.get("name"):
+                                        devs.append(comp.get("name"))
+                            if devs:
+                                developer = devs[0]
+                                
+                            first_release = igdb_game.get("first_release_date")
+                            if first_release:
+                                import datetime
+                                try:
+                                    release_date = datetime.datetime.utcfromtimestamp(first_release).strftime('%Y-%m-%d')
+                                except Exception:
+                                    pass
+                                    
+                            min_ram = self._estimate_ram(short_desc, genre)
 
                         # Se o jogo já estiver na base (ex: fallback local), mesclamos as informações de preço
                         if title_key in self.games_map:
@@ -418,15 +545,16 @@ class GamesIngestor:
                             existing.sale_price = sale_price
                             existing.game_url = deal_url
                             
-                            # Atualiza metadados se conseguimos na Steam
                             if genre != "Oferta / Promoção":
                                 existing.genre = genre
                                 existing.tags = list(set(existing.tags + tags))
                                 existing.min_ram = min_ram
                                 existing.developer = developer
+                                existing.thumbnail = thumbnail
+                                existing.short_description = short_desc
                         else:
                             game = Game(
-                                title=item.get("title"),
+                                title=title,
                                 genre=genre,
                                 tags=tags,
                                 platform="PC (Windows)",
@@ -442,7 +570,7 @@ class GamesIngestor:
                             )
                             self.games_map[title_key] = game
                             
-                    logger.info(f"Sucesso! {len(deals_list)} ofertas processadas e enriquecidas da CheapShark + Steam.")
+                    logger.info(f"Sucesso! {len(deals_list)} ofertas processadas e enriquecidas da CheapShark + IGDB.")
                 else:
                     logger.warning(f"CheapShark retornou status de resposta: {response.status}")
         except urllib.error.URLError as e:

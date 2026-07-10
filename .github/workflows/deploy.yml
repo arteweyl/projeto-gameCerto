@@ -40,6 +40,8 @@ jobs:
         run: python scripts/ingest.py
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          IGBD_ID: ${{ secrets.IGBD_ID }}
+          IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -85,6 +87,8 @@ jobs:
         run: python scripts/ingest.py
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          IGBD_ID: ${{ secrets.IGBD_ID }}
+          IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
