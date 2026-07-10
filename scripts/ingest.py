@@ -454,6 +454,14 @@ class GamesIngestor:
         """Salva a lista consolidada em data/games.js."""
         games_list = [asdict(game) for game in self.games_map.values()]
         
+        # Salvaguarda de segurança: se a lista tiver menos de 150 jogos, indica falha grave nas chamadas de APIs.
+        # Interrompe para evitar sobrescrever a base saudável no build com dados vazios.
+        if len(games_list) < 150:
+            raise RuntimeError(
+                f"Ingestão abortada: base de dados com apenas {len(games_list)} jogos. "
+                "Possível falha de chaves de API (RapidAPI) ou rede no Runner."
+            )
+        
         # Garante a existência do diretório 'data'
         data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
         os.makedirs(data_dir, exist_ok=True)
