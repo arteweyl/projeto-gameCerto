@@ -293,10 +293,12 @@ class GamesIngestor:
             logger.error(f"Erro inesperado na GamerPower: {e}")
 
     def fetch_cheapshark(self) -> None:
-        """Busca ofertas ativas de jogos de PC pagos na CheapShark API."""
+        """Busca ofertas ativas de jogos de PC pagos na CheapShark API e cruza com a Steam API para metadados ricos."""
+        import time
+        import re
         logger.info("Buscando ofertas de jogos PC na CheapShark API...")
-        # Buscamos as top 50 ofertas ordenadas por desconto/economia
-        url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50"
+        # Buscamos as top 30 ofertas ordenadas por desconto/economia
+        url = "https://www.cheapshark.com/api/1.0/deals?pageSize=30"
 
         try:
             req = urllib.request.Request(
@@ -313,7 +315,9 @@ class GamesIngestor:
                     data = json.loads(response.read().decode("utf-8"))
                     deals_list = data if isinstance(data, list) else list(data.values())
 
-                    for item in deals_list:
+                    logger.info(f"Carregadas {len(deals_list)} ofertas iniciais da CheapShark. Cruzando com Steam API...")
+
+                    for idx, item in enumerate(deals_list):
                         title_key = item.get("title", "").strip().lower()
                         if not title_key:
                             continue
@@ -321,36 +325,102 @@ class GamesIngestor:
                         normal_price = f"${item.get('normalPrice')}"
                         sale_price = f"${item.get('salePrice')}"
                         savings = float(item.get("savings", "0"))
-                        
                         deal_url = f"https://www.cheapshark.com/redirect?dealID={item.get('dealID')}"
+                        steam_app_id = item.get("steamAppID")
+                        
+                        # Valores padrão de fallback para o jogo da CheapShark
+                        genre = "Oferta / Promoção"
+                        tags = ["promo", "oferta", "deals"]
                         short_desc = f"Super Oferta PC! De {normal_price} por apenas {sale_price} ({savings:.0f}% de desconto)."
                         thumbnail = item.get("thumb", "")
+                        developer = "Steam Store Deals"
+                        release_date = "N/A"
+                        min_ram = 8
 
-                        # Se o jogo já estiver na base, mesclamos as informações de preço
+                        # Se possui ID da Steam válido, cruza com os detalhes ricos da Steam
+                        if steam_app_id and steam_app_id != "0":
+                            logger.info(f"[{idx+1}/{len(deals_list)}] Cruzando metadados de '{item.get('title')}' (Steam ID: {steam_app_id})...")
+                            steam_url = f"https://store.steampowered.com/api/appdetails?appids={steam_app_id}"
+                            
+                            try:
+                                steam_req = urllib.request.Request(
+                                    steam_url,
+                                    headers={
+                                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                                    }
+                                )
+                                # Adiciona um pequeno delay de 0.4s para evitar rate limiting da Steam
+                                time.sleep(0.4)
+                                
+                                with urllib.request.urlopen(steam_req, timeout=10) as steam_res:
+                                    if steam_res.status == 200:
+                                        steam_data = json.loads(steam_res.read().decode("utf-8"))
+                                        
+                                        if steam_app_id in steam_data and steam_data[steam_app_id].get("success", False):
+                                            game_info = steam_data[steam_app_id]["data"]
+                                            
+                                            # Extrai gêneros e tags reais da Steam!
+                                            steam_genres = [g.get("description", "") for g in game_info.get("genres", [])]
+                                            if steam_genres:
+                                                genre = steam_genres[0]
+                                                tags = [g.lower() for g in steam_genres if g] + ["promo", "oferta", "deals"]
+                                            
+                                            # Extrai descrição curta real
+                                            if game_info.get("short_description"):
+                                                short_desc = game_info.get("short_description")
+                                            
+                                            # Extrai desenvolvedores
+                                            devs = game_info.get("developers", [])
+                                            if devs:
+                                                developer = devs[0]
+                                                
+                                            # Extrai data de lançamento
+                                            release = game_info.get("release_date", {})
+                                            if release.get("date"):
+                                                release_date = release.get("date")
+
+                                            # Extrai min_ram das especificações do PC (Regex)
+                                            min_req = game_info.get("pc_requirements", {}).get("minimum", "")
+                                            ram_match = re.search(r"(\d+)\s*GB\s*RAM", min_req, re.IGNORECASE)
+                                            if ram_match:
+                                                min_ram = int(ram_match.group(1))
+                                                
+                            except Exception as steam_err:
+                                logger.warning(f"Falha ao obter metadados da Steam para '{item.get('title')}': {steam_err}")
+
+                        # Se o jogo já estiver na base (ex: fallback local), mesclamos as informações de preço
                         if title_key in self.games_map:
                             existing = self.games_map[title_key]
                             existing.price = "paid"
                             existing.worth = normal_price
                             existing.sale_price = sale_price
                             existing.game_url = deal_url
+                            
+                            # Atualiza metadados se conseguimos na Steam
+                            if genre != "Oferta / Promoção":
+                                existing.genre = genre
+                                existing.tags = list(set(existing.tags + tags))
+                                existing.min_ram = min_ram
+                                existing.developer = developer
                         else:
                             game = Game(
                                 title=item.get("title"),
-                                genre="Oferta / Promoção",
-                                tags=["promo", "oferta", "deals"],
+                                genre=genre,
+                                tags=tags,
                                 platform="PC (Windows)",
                                 thumbnail=thumbnail,
                                 short_description=short_desc,
-                                developer="Steam / Epic Store Deals",
-                                release_date="N/A",
+                                developer=developer,
+                                release_date=release_date,
                                 game_url=deal_url,
-                                min_ram=8, # PC Gamer padrão
+                                min_ram=min_ram,
                                 price="paid",
                                 worth=normal_price,
                                 sale_price=sale_price
                             )
                             self.games_map[title_key] = game
-                    logger.info(f"Sucesso! {len(deals_list)} ofertas ativas carregadas da CheapShark.")
+                            
+                    logger.info(f"Sucesso! {len(deals_list)} ofertas processadas e enriquecidas da CheapShark + Steam.")
                 else:
                     logger.warning(f"CheapShark retornou status de resposta: {response.status}")
         except urllib.error.URLError as e:
