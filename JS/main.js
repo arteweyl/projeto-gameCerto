@@ -635,7 +635,7 @@ async function fazFetch() {
     return queryVector;
   }
 
-  // 4. Ação do Botão de Submit (Algoritmo de Scoring com NLP/LSA Vetorial)
+  // 4. Ação do Botão de Submit (Algoritmo de Scoring Híbrido: Lexical + LSA Vetorial + Expansão)
   getInfoButton.addEventListener("click", () => {
     showLoading();
 
@@ -645,8 +645,282 @@ async function fazFetch() {
       document.getElementById("search-description")?.value || "";
     const queryTokens = tokenize(searchDesc);
 
+    // Dicionário de Expansão de Consulta (Query Expansion) com sinônimos PT/EN para games
+    const synonymDict = {
+      space: [
+        "space",
+        "espaco",
+        "espacial",
+        "nave",
+        "naves",
+        "alien",
+        "aliens",
+        "alienigena",
+        "alienigenas",
+        "sci-fi",
+        "scifi",
+        "stellar",
+        "galaxy",
+        "galaxia",
+        "orbit",
+        "orbita",
+        "cosmos",
+        "cosmico",
+        "universo",
+        "star",
+        "stars",
+        "estrela",
+        "estrelas",
+      ],
+      espaco: [
+        "space",
+        "espaco",
+        "espacial",
+        "nave",
+        "naves",
+        "alien",
+        "aliens",
+        "alienigena",
+        "alienigenas",
+        "sci-fi",
+        "scifi",
+        "stellar",
+        "galaxy",
+        "galaxia",
+        "orbit",
+        "orbita",
+        "cosmos",
+        "cosmico",
+        "universo",
+        "star",
+        "stars",
+        "estrela",
+        "estrelas",
+      ],
+      espacial: [
+        "space",
+        "espaco",
+        "espacial",
+        "nave",
+        "naves",
+        "alien",
+        "aliens",
+        "alienigena",
+        "alienigenas",
+        "sci-fi",
+        "scifi",
+        "stellar",
+        "galaxy",
+        "galaxia",
+        "orbit",
+        "orbita",
+        "cosmos",
+        "cosmico",
+        "universo",
+        "star",
+        "stars",
+        "estrela",
+        "estrelas",
+      ],
+      alien: [
+        "alien",
+        "aliens",
+        "alienigena",
+        "alienigenas",
+        "extraterrestre",
+        "extraterrestres",
+        "invasao",
+        "monster",
+        "monstro",
+        "monstros",
+      ],
+      aliens: [
+        "alien",
+        "aliens",
+        "alienigena",
+        "alienigenas",
+        "extraterrestre",
+        "extraterrestres",
+        "invasao",
+        "monster",
+        "monstro",
+        "monstros",
+      ],
+      tiro: [
+        "tiro",
+        "shoot",
+        "shooter",
+        "shooting",
+        "arma",
+        "armas",
+        "gun",
+        "guns",
+        "fps",
+        "tps",
+        "militar",
+        "war",
+        "guerra",
+        "combat",
+        "combate",
+        "batalha",
+        "battle",
+      ],
+      shooter: [
+        "tiro",
+        "shoot",
+        "shooter",
+        "shooting",
+        "arma",
+        "armas",
+        "gun",
+        "guns",
+        "fps",
+        "tps",
+        "militar",
+        "war",
+        "guerra",
+        "combat",
+        "combate",
+        "batalha",
+        "battle",
+      ],
+      shoot: [
+        "tiro",
+        "shoot",
+        "shooter",
+        "shooting",
+        "arma",
+        "armas",
+        "gun",
+        "guns",
+        "fps",
+        "tps",
+        "militar",
+        "war",
+        "guerra",
+        "combat",
+        "combate",
+        "batalha",
+        "battle",
+      ],
+      zumbi: [
+        "zumbi",
+        "zumbis",
+        "zombie",
+        "zombies",
+        "morto-vivo",
+        "mortos-vivos",
+        "undead",
+        "apocalipse",
+        "virus",
+        "infectado",
+        "infectados",
+      ],
+      zombie: [
+        "zumbi",
+        "zumbis",
+        "zombie",
+        "zombies",
+        "morto-vivo",
+        "mortos-vivos",
+        "undead",
+        "apocalipse",
+        "virus",
+        "infectado",
+        "infectados",
+      ],
+      corrida: [
+        "corrida",
+        "run",
+        "racing",
+        "race",
+        "carro",
+        "carros",
+        "car",
+        "cars",
+        "velocidade",
+        "speed",
+        "dirigir",
+        "drive",
+      ],
+      racing: [
+        "corrida",
+        "run",
+        "racing",
+        "race",
+        "carro",
+        "carros",
+        "car",
+        "cars",
+        "velocidade",
+        "speed",
+        "dirigir",
+        "drive",
+      ],
+      luta: [
+        "luta",
+        "fight",
+        "fighting",
+        "combate",
+        "batalha",
+        "battle",
+        "arena",
+        "moba",
+        "brawler",
+      ],
+      fight: [
+        "luta",
+        "fight",
+        "fighting",
+        "combate",
+        "batalha",
+        "battle",
+        "arena",
+        "moba",
+        "brawler",
+      ],
+      medieval: [
+        "medieval",
+        "espada",
+        "sword",
+        "cavaleiro",
+        "knight",
+        "castelo",
+        "castle",
+        "reino",
+        "kingdom",
+        "magia",
+        "magic",
+        "bruxo",
+        "feiticeiro",
+      ],
+      rpg: [
+        "rpg",
+        "roleplaying",
+        "quest",
+        "aventura",
+        "adventure",
+        "level",
+        "nivel",
+        "xp",
+        "skills",
+        "habilidades",
+        "masmorra",
+        "dungeon",
+      ],
+    };
+
+    // Expande a consulta do usuário adicionando sinônimos correspondentes
+    let expandedTokens = [...queryTokens];
+    queryTokens.forEach((token) => {
+      if (synonymDict[token]) {
+        expandedTokens = expandedTokens.concat(synonymDict[token]);
+      }
+    });
+    expandedTokens = Array.from(new Set(expandedTokens)); // remove duplicatas
+
     // Projeta a query do usuário em um vetor de 30D LSA (se houver termos conhecidos)
-    const queryVector = getQuerySemanticVector(queryTokens);
+    const queryVector = getQuerySemanticVector(expandedTokens);
 
     // Filtro Inicial Estrito: Plataforma e Licença de Preço
     let matchingGames = loadedGames.filter((game) => {
@@ -704,14 +978,12 @@ async function fazFetch() {
         const estimatedMinRam = g.min_ram || getEstimatedRamRequirement(g);
         return userRamValue >= estimatedMinRam;
       });
-      // Se houver algum jogo compatível com a RAM do usuário, aplica o filtro.
-      // Caso contrário, mantém todos e exibirá um aviso de limite de RAM no card.
       if (ramFiltered.length > 0) {
         matchingGames = ramFiltered;
       }
     }
 
-    // Algoritmo de Scoring (Match Score Calculation)
+    // Algoritmo de Scoring Híbrido (Lexical Exact Matches + LSA Cosine Similarity)
     let scoredGames = matchingGames.map((game) => {
       let score = 0;
 
@@ -728,44 +1000,52 @@ async function fazFetch() {
         });
       }
 
-      // 2. Similaridade Semântica Cosseno LSA (Peso máximo de 50 pontos)
+      // 2. Pontuação Léxica Direta (Casamento Exato dos Termos Digitados e Sinônimos)
+      let lexicalScore = 0;
+      const titleLower = (game.title || "").toLowerCase();
+      const genreLower = (game.genre || "").toLowerCase();
+      const descLower = (
+        game.description ||
+        game.short_description ||
+        ""
+      ).toLowerCase();
+      const tagsLower = Array.isArray(game.tags)
+        ? game.tags.map((t) => t.toLowerCase())
+        : [];
+
+      // Termos exatos da consulta original ganham peso máximo
+      queryTokens.forEach((token) => {
+        if (titleLower.includes(token)) lexicalScore += 120;
+        if (genreLower.includes(token)) lexicalScore += 60;
+        if (tagsLower.includes(token)) lexicalScore += 50;
+        if (descLower.includes(token)) lexicalScore += 30;
+      });
+
+      // Termos expandidos (sinônimos) ganham peso moderado
+      expandedTokens.forEach((token) => {
+        if (titleLower.includes(token)) lexicalScore += 30;
+        if (genreLower.includes(token)) lexicalScore += 20;
+        if (tagsLower.includes(token)) lexicalScore += 15;
+        if (descLower.includes(token)) lexicalScore += 8;
+      });
+
+      score += lexicalScore;
+
+      // 3. Similaridade Semântica Cosseno LSA (Peso máximo de 50 pontos)
       if (queryVector && window.semanticModelDatabase) {
         const gameKey = game.title.trim().toLowerCase();
         const gameVector = window.semanticModelDatabase.game_vectors[gameKey];
         if (gameVector) {
-          // Produto escalar de vetores unitários
           let dotProduct = 0;
           for (let j = 0; j < queryVector.length; j++) {
             dotProduct += queryVector[j] * gameVector[j];
           }
-          // Transforma [-1, 1] em [0, 1] e dá até 50 pontos
           const lsaSimilarity = ((dotProduct + 1) / 2) * 50;
           score += lsaSimilarity;
         }
-      } else if (queryTokens.length > 0) {
-        // Fallback de correspondência de strings se os termos não estiverem no vocabulário do LSA
-        let keywordHits = 0;
-        const titleLower = (game.title || "").toLowerCase();
-        const genreLower = (game.genre || "").toLowerCase();
-        const descLower = (
-          game.description ||
-          game.short_description ||
-          ""
-        ).toLowerCase();
-        const tagsLower = Array.isArray(game.tags)
-          ? game.tags.join(" ").toLowerCase()
-          : "";
-
-        queryTokens.forEach((token) => {
-          if (titleLower.includes(token)) keywordHits += 40;
-          if (genreLower.includes(token)) keywordHits += 20;
-          if (tagsLower.includes(token)) keywordHits += 15;
-          if (descLower.includes(token)) keywordHits += 8;
-        });
-        score += Math.min(50, keywordHits);
       }
 
-      // 3. Bônus por Custo-benefício (Promoções ativas com maior desconto)
+      // 4. Bônus por Custo-benefício (Promoções ativas com maior desconto)
       if (game.sale_price && game.worth) {
         score += 5;
       }
@@ -773,16 +1053,13 @@ async function fazFetch() {
       return { game, score };
     });
 
-    // Se o usuário não passou nenhum filtro de interesse, embaralhamos os resultados para manter o dinamismo
     const hasInputs = checkedValues.length > 0 || queryTokens.length > 0;
     if (!hasInputs) {
       scoredGames.sort(() => Math.random() - 0.5);
     } else {
-      // Ordena por Nota de Compatibilidade decrescente
       scoredGames.sort((a, b) => b.score - a.score);
     }
 
-    // Simula delay de 300ms para feedback visual fluido do loading spinner
     setTimeout(() => {
       processAndDisplayGame(
         scoredGames,
