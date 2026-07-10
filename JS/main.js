@@ -468,30 +468,13 @@ const FALLBACK_GAMES = [
   },
 ];
 
-let loadedGames = [];
+// A base de dados é carregada síncronamente via script tag 'data/games.js'
+const loadedGames = window.loadedGamesDatabase || FALLBACK_GAMES;
 
 // Inicialização principal
-window.addEventListener("DOMContentLoaded", async () => {
-  await loadLocalDatabase();
+window.addEventListener("DOMContentLoaded", () => {
   fazFetch();
 });
-
-async function loadLocalDatabase() {
-  try {
-    const response = await fetch("./data/games.json");
-    if (!response.ok) throw new Error("Erro ao ler games.json");
-    loadedGames = await response.json();
-    console.log(
-      `Sucesso! ${loadedGames.length} jogos carregados do banco estático.`,
-    );
-  } catch (error) {
-    console.warn(
-      "Falha ao carregar banco estático. Usando fallback offline de segurança...",
-      error,
-    );
-    loadedGames = FALLBACK_GAMES;
-  }
-}
 
 async function fazFetch() {
   const getInfoButton = document.getElementById("button-check");

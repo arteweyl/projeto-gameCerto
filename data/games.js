@@ -1,4 +1,4 @@
-[
+window.loadedGamesDatabase = [
   {
     "title": "League of Legends",
     "genre": "MOBA",
@@ -7431,13 +7431,13 @@
     "title": "Moonlight Peaks",
     "genre": "Casual",
     "tags": [
-      "simulation",
-      "indie",
       "rpg",
-      "oferta",
-      "casual",
+      "indie",
       "promo",
-      "deals"
+      "deals",
+      "simulation",
+      "casual",
+      "oferta"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/6f0a16e68608089383a80a5ac26d0e8f04833fb1/capsule_231x87.jpg?t=1783444081",
@@ -7476,16 +7476,16 @@
     "title": "NBA 2K26",
     "genre": "Sports",
     "tags": [
+      "deals",
       "sports",
-      "promo",
       "oferta",
-      "deals"
+      "promo"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/a3525b0c4590861bf02bd36129ff0d510e2f85d6/capsule_231x87_alt_assets_6.jpg?t=1782486648",
     "short_description": "Bragging rights are on the line in MyCAREER, MyTEAM, MyNBA, The W, and Play Now. Showcase your bag of moves with hyper realism, Powered by ProPLAY™, and challenge your friends, or rivals, in NBA 2K26’s competitive modes—and leave no doubt that you wear the crown.",
     "developer": "Visual Concepts",
-    "release_date": "4 Sep, 2025",
+    "release_date": "Sep 4, 2025",
     "game_url": "https://www.cheapshark.com/redirect?dealID=dua6N5u4HYIU5lUexFlvkjLixz5RHy0a4lzdZENh64A%3D",
     "min_ram": 8,
     "price": "paid",
@@ -7538,16 +7538,16 @@
     "title": "Suicide Squad: Kill the Justice League",
     "genre": "Action",
     "tags": [
-      "promo",
-      "oferta",
       "action",
-      "deals"
+      "deals",
+      "oferta",
+      "promo"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/315210/capsule_231x87.jpg?t=1777940046",
     "short_description": "From the creators of Batman: Arkham, Suicide Squad: Kill the Justice League is a genre-defying third-person action shooter where the ultimate band of misfits must do the impossible: Kill the Justice League.",
     "developer": "Rocksteady Studios",
-    "release_date": "Feb 2, 2024",
+    "release_date": "2 Feb, 2024",
     "game_url": "https://www.cheapshark.com/redirect?dealID=ER%2FfOp0PmIbG%2BkoMMkNkd8JljZgzqnQqdZLU%2Bz1MekQ%3D",
     "min_ram": 8,
     "price": "paid",
@@ -8125,4 +8125,4 @@
     "worth": "$14.99",
     "sale_price": "$1.49"
   }
-]
+];

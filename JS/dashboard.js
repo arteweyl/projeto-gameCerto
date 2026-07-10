@@ -468,26 +468,13 @@ window.addEventListener("DOMContentLoaded", () => {
   initDashboard();
 });
 
-async function initDashboard() {
-  try {
-    const res = await fetch("./data/games.json");
-    if (!res.ok) throw new Error("Erro ao buscar base estática games.json");
-
-    const data = await res.json();
-    allGamesData = Array.isArray(data) ? data : Object.values(data);
-    console.log(
-      "Sucesso ao obter jogos da base estática para o dashboard:",
-      allGamesData.length,
-    );
-    renderDashboard(allGamesData);
-  } catch (error) {
-    console.warn(
-      "Falha ao carregar banco de dados estático. Usando fallback offline no dashboard...",
-      error,
-    );
-    allGamesData = [...FALLBACK_GAMES];
-    renderDashboard(allGamesData);
-  }
+function initDashboard() {
+  allGamesData = window.loadedGamesDatabase || FALLBACK_GAMES;
+  console.log(
+    "Sucesso ao obter jogos da base estática para o dashboard:",
+    allGamesData.length,
+  );
+  renderDashboard(allGamesData);
 }
 
 function renderDashboard(games) {

@@ -451,20 +451,22 @@ class GamesIngestor:
             logger.error(f"Erro inesperado na CheapShark: {e}")
 
     def save_data(self) -> None:
-        """Salva a lista consolidada em data/games.json."""
+        """Salva a lista consolidada em data/games.js."""
         games_list = [asdict(game) for game in self.games_map.values()]
         
         # Garante a existência do diretório 'data'
         data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
         os.makedirs(data_dir, exist_ok=True)
         
-        file_path = os.path.join(data_dir, "games.json")
+        file_path = os.path.join(data_dir, "games.js")
         try:
             with open(file_path, "w", encoding="utf-8") as f:
+                f.write("window.loadedGamesDatabase = ")
                 json.dump(games_list, f, indent=2, ensure_ascii=False)
+                f.write(";\n")
             logger.info(f"Dados salvos com sucesso! Total de {len(games_list)} jogos gravados em {file_path}")
         except Exception as e:
-            logger.error(f"Erro ao salvar arquivo JSON: {e}")
+            logger.error(f"Erro ao salvar arquivo JS: {e}")
 
 if __name__ == "__main__":
     ingestor = GamesIngestor()
