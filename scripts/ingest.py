@@ -235,8 +235,12 @@ class GamesIngestor:
                     items_list = data if isinstance(data, list) else list(data.values())
 
                     for item in items_list:
-                        # Processa apenas brindes ativos
+                        # Processa apenas brindes ativos e que sejam JOGOS reais (ignora DLC/Loot de cosméticos)
                         if item.get("status") != "Active":
+                            continue
+
+                        item_type = item.get("type", "")
+                        if item_type not in ["Game", "Early Access"]:
                             continue
 
                         title_key = item.get("title", "").strip().lower()
@@ -297,8 +301,8 @@ class GamesIngestor:
         import time
         import re
         logger.info("Buscando ofertas de jogos PC na CheapShark API...")
-        # Buscamos as top 30 ofertas ordenadas por desconto/economia
-        url = "https://www.cheapshark.com/api/1.0/deals?pageSize=30"
+        # Buscamos as top 150 ofertas ordenadas por desconto/economia
+        url = "https://www.cheapshark.com/api/1.0/deals?pageSize=150"
 
         try:
             req = urllib.request.Request(
@@ -315,7 +319,7 @@ class GamesIngestor:
                     data = json.loads(response.read().decode("utf-8"))
                     deals_list = data if isinstance(data, list) else list(data.values())
 
-                    logger.info(f"Carregadas {len(deals_list)} ofertas iniciais da CheapShark. Cruzando com Steam API...")
+                    logger.info(f"Carregadas {len(deals_list)} ofertas iniciais da CheapShark. Cruzando com Steam API para as top 25...")
 
                     for idx, item in enumerate(deals_list):
                         title_key = item.get("title", "").strip().lower()
@@ -337,9 +341,27 @@ class GamesIngestor:
                         release_date = "N/A"
                         min_ram = 8
 
-                        # Se possui ID da Steam válido, cruza com os detalhes ricos da Steam
-                        if steam_app_id and steam_app_id != "0":
-                            logger.info(f"[{idx+1}/{len(deals_list)}] Cruzando metadados de '{item.get('title')}' (Steam ID: {steam_app_id})...")
+                        # Heurística para adivinhar gêneros com base em palavras-chave no título
+                        title_lower = title_key.lower()
+                        if any(w in title_lower for w in ["shoot", "duty", "doom", "battlefield", "crysis", "sniper", "halo", "wolfenstein", "counter"]):
+                            genre = "Shooter"
+                            tags = ["shooter", "action", "fps", "promo", "oferta"]
+                        elif any(w in title_lower for w in ["rpg", "witcher", "scrolls", "fantasy", "diablo", "final fantasy", "souls", "elden"]):
+                            genre = "RPG"
+                            tags = ["rpg", "adventure", "fantasy", "promo", "oferta"]
+                        elif any(w in title_lower for w in ["strategy", "age of", "civilization", "command", "tactics", "warhammer", "total war"]):
+                            genre = "Strategy"
+                            tags = ["strategy", "tactical", "promo", "oferta"]
+                        elif any(w in title_lower for w in ["race", "racing", "speed", "dirt", "f1", "moto", "drive"]):
+                            genre = "Racing"
+                            tags = ["racing", "sports", "promo", "oferta"]
+                        elif any(w in title_lower for w in ["survival", "rust", "ark", "zombie", "dead", "forest", "dayz"]):
+                            genre = "Survival"
+                            tags = ["survival", "action", "promo", "oferta"]
+
+                        # Se possui ID da Steam válido e é uma das top 25 ofertas, cruza com os detalhes ricos da Steam
+                        if steam_app_id and steam_app_id != "0" and idx < 25:
+                            logger.info(f"[{idx+1}/25] Cruzando metadados de '{item.get('title')}' (Steam ID: {steam_app_id})...")
                             steam_url = f"https://store.steampowered.com/api/appdetails?appids={steam_app_id}"
                             
                             try:
