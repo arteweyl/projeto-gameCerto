@@ -10,17 +10,17 @@ A arquitetura do GameCerto une a praticidade e leveza de uma aplicação executa
 
 ```mermaid
 graph TD
-    subgraph 1. Pipeline de Ingestão & NLP (Python + CI/CD)
+    subgraph "1. Pipeline de Ingestão e NLP (Python + CI/CD)"
         A[CheapShark API] --> D[ingest.py]
         B[FreeToGame API] --> D
         C[GamerPower API] --> D
-        D -->|Busca em Lote & Fuzzy| E[Twitch / IGDB API]
+        D -->|Busca em Lote e Fuzzy| E[Twitch / IGDB API]
         E -->|Capas, Descrições, Desenvolvedoras| D
         D -->|Games Database| F[data/games.js]
         D -->|TF-IDF + SVD Latent Spaces| G[data/semantic_model.js]
     end
 
-    subgraph 2. Interface do Recomendador (Navegador do Usuário)
+    subgraph "2. Interface do Recomendador (Navegador do Usuário)"
         F & G -->|Carregados via Script| H[Recomendador Frontend]
         I[Inputs: Texto + Tags + RAM] --> H
         H -->|Busca Híbrida Léxico-Semântica| J[Similaridade de Cosseno + Exatos]
