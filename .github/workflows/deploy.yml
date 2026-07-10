@@ -37,9 +37,15 @@ jobs:
         run: pip install numpy scikit-learn
 
       - name: Run Ingestion Script
-        run: python scripts/ingest.py
+        run: |
+          if [ -n "$RAPIDAPI_KEY" ]; then
+            python scripts/ingest.py
+          else
+            echo "RAPIDAPI_KEY is not configured. Using committed data/*.js files."
+          fi
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          IGDB_ID: ${{ secrets.IGDB_ID }}
           IGBD_ID: ${{ secrets.IGBD_ID }}
           IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 
@@ -84,9 +90,15 @@ jobs:
         run: pip install numpy scikit-learn
 
       - name: Run Ingestion Script
-        run: python scripts/ingest.py
+        run: |
+          if [ -n "$RAPIDAPI_KEY" ]; then
+            python scripts/ingest.py
+          else
+            echo "RAPIDAPI_KEY is not configured. Using committed data/*.js files."
+          fi
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          IGDB_ID: ${{ secrets.IGDB_ID }}
           IGBD_ID: ${{ secrets.IGBD_ID }}
           IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 

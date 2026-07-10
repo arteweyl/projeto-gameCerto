@@ -14,8 +14,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("IngestorGameCerto")
 
-# Chaves e Hosts obtidos por variáveis de ambiente ou com fallback seguro
-RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY", "cf1135635bmsh474fe305c0cc252p18816fjsne45f0c9774ab")
+# Chaves e Hosts obtidos por variáveis de ambiente/GitHub Secrets.
+RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY", "")
 RAPIDAPI_HOST = "free-to-play-games-database.p.rapidapi.com"
 
 @dataclass
@@ -312,8 +312,8 @@ class GamesIngestor:
     def fetch_twitch_token(self) -> str:
         """Adquire o access token da Twitch OAuth2 para autenticação no IGDB."""
         import urllib.parse
-        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
-        client_secret = os.getenv("IGDB_SECRET", "tjawudm7uaq2bu4gyxacp8fwolz53f")
+        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
+        client_secret = os.getenv("IGDB_SECRET", "")
         
         url = "https://id.twitch.tv/oauth2/token"
         params = {
@@ -338,7 +338,7 @@ class GamesIngestor:
         if not token:
             return {}
             
-        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
+        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
         url = "https://api.igdb.com/v4/games"
         headers = {
             "Client-ID": client_id,
@@ -371,7 +371,7 @@ class GamesIngestor:
         if not token:
             return None
             
-        client_id = os.getenv("IGBD_ID", "xv9jhbvj43cv1h2r7w01nczaslqqc8")
+        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
         url = "https://api.igdb.com/v4/games"
         headers = {
             "Client-ID": client_id,
@@ -404,7 +404,7 @@ class GamesIngestor:
                 url,
                 headers={
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+                    "Accept": "application/json",
                     "Accept-Language": "en-US,en;q=0.9",
                     "Connection": "keep-alive"
                 }
