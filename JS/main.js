@@ -1040,7 +1040,8 @@ async function fazFetch() {
           for (let j = 0; j < queryVector.length; j++) {
             dotProduct += queryVector[j] * gameVector[j];
           }
-          const lsaSimilarity = ((dotProduct + 1) / 2) * 50;
+          // Filtra ruído semântico do LSA: apenas dotProduct relevante >= 0.22 é considerado
+          const lsaSimilarity = dotProduct >= 0.22 ? dotProduct * 50 : 0;
           score += lsaSimilarity;
         }
       }
@@ -1057,6 +1058,8 @@ async function fazFetch() {
     if (!hasInputs) {
       scoredGames.sort(() => Math.random() - 0.5);
     } else {
+      // Se houver busca/filtros, remove os jogos sem qualquer relevância (score === 0)
+      scoredGames = scoredGames.filter((item) => item.score > 0);
       scoredGames.sort((a, b) => b.score - a.score);
     }
 
