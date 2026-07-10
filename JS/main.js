@@ -570,12 +570,6 @@ async function fazFetch() {
     "jogos",
     "play",
     "playing",
-    "quero",
-    "gosto",
-    "adoro",
-    "queria",
-    "estilo",
-    "tipo",
   ]);
 
   // Tokenizador de texto para análise de palavras semânticas simples
@@ -591,7 +585,57 @@ async function fazFetch() {
       .filter((w) => w.length > 2 && !stopWords.has(w));
   }
 
-  // 4. Ação do Botão de Submit (Algoritmo de Scoring com NLP Simples)
+  // Projeta a query do usuário no espaço latente de 30 dimensões (LSA)
+  function getQuerySemanticVector(tokens) {
+    const model = window.semanticModelDatabase;
+    if (!model) return null;
+
+    const K = model.n_components;
+    const vocab = model.vocabulary;
+    const idf = model.idf;
+    const components = model.components;
+
+    let queryVector = new Array(K).fill(0);
+
+    // Conta a frequência de cada token na query (TF)
+    const tfMap = {};
+    tokens.forEach((t) => {
+      tfMap[t] = (tfMap[t] || 0) + 1;
+    });
+
+    let hasMatches = false;
+
+    // Projeta a query
+    for (const [token, tf] of Object.entries(tfMap)) {
+      const vocabIdx = vocab.indexOf(token);
+      if (vocabIdx !== -1) {
+        hasMatches = true;
+        const tokenWeight = tf * idf[vocabIdx];
+
+        for (let j = 0; j < K; j++) {
+          queryVector[j] += tokenWeight * components[j][vocabIdx];
+        }
+      }
+    }
+
+    if (!hasMatches) return null;
+
+    // Normaliza o vetor resultante (L2 norm) para facilitar cálculo do cosseno
+    let sumSq = 0;
+    for (let j = 0; j < K; j++) {
+      sumSq += queryVector[j] * queryVector[j];
+    }
+    const norm = Math.sqrt(sumSq);
+    if (norm > 0) {
+      for (let j = 0; j < K; j++) {
+        queryVector[j] /= norm;
+      }
+    }
+
+    return queryVector;
+  }
+
+  // 4. Ação do Botão de Submit (Algoritmo de Scoring com NLP/LSA Vetorial)
   getInfoButton.addEventListener("click", () => {
     showLoading();
 
@@ -600,6 +644,9 @@ async function fazFetch() {
     const searchDesc =
       document.getElementById("search-description")?.value || "";
     const queryTokens = tokenize(searchDesc);
+
+    // Projeta a query do usuário em um vetor de 30D LSA (se houver termos conhecidos)
+    const queryVector = getQuerySemanticVector(queryTokens);
 
     // Filtro Inicial Estrito: Plataforma e Licença de Preço
     let matchingGames = loadedGames.filter((game) => {
@@ -681,8 +728,23 @@ async function fazFetch() {
         });
       }
 
-      // 2. Busca Inteligente NLP (Peso: +40 se palavra-chave no título, +20 no gênero, +15 nas tags, +8 na descrição)
-      if (queryTokens.length > 0) {
+      // 2. Similaridade Semântica Cosseno LSA (Peso máximo de 50 pontos)
+      if (queryVector && window.semanticModelDatabase) {
+        const gameKey = game.title.trim().toLowerCase();
+        const gameVector = window.semanticModelDatabase.game_vectors[gameKey];
+        if (gameVector) {
+          // Produto escalar de vetores unitários
+          let dotProduct = 0;
+          for (let j = 0; j < queryVector.length; j++) {
+            dotProduct += queryVector[j] * gameVector[j];
+          }
+          // Transforma [-1, 1] em [0, 1] e dá até 50 pontos
+          const lsaSimilarity = ((dotProduct + 1) / 2) * 50;
+          score += lsaSimilarity;
+        }
+      } else if (queryTokens.length > 0) {
+        // Fallback de correspondência de strings se os termos não estiverem no vocabulário do LSA
+        let keywordHits = 0;
         const titleLower = (game.title || "").toLowerCase();
         const genreLower = (game.genre || "").toLowerCase();
         const descLower = (
@@ -695,11 +757,12 @@ async function fazFetch() {
           : "";
 
         queryTokens.forEach((token) => {
-          if (titleLower.includes(token)) score += 40;
-          if (genreLower.includes(token)) score += 20;
-          if (tagsLower.includes(token)) score += 15;
-          if (descLower.includes(token)) score += 8;
+          if (titleLower.includes(token)) keywordHits += 40;
+          if (genreLower.includes(token)) keywordHits += 20;
+          if (tagsLower.includes(token)) keywordHits += 15;
+          if (descLower.includes(token)) keywordHits += 8;
         });
+        score += Math.min(50, keywordHits);
       }
 
       // 3. Bônus por Custo-benefício (Promoções ativas com maior desconto)

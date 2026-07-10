@@ -7431,13 +7431,13 @@ window.loadedGamesDatabase = [
     "title": "Moonlight Peaks",
     "genre": "Casual",
     "tags": [
-      "rpg",
-      "indie",
-      "promo",
-      "deals",
-      "simulation",
       "casual",
-      "oferta"
+      "deals",
+      "indie",
+      "rpg",
+      "simulation",
+      "oferta",
+      "promo"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/6f0a16e68608089383a80a5ac26d0e8f04833fb1/capsule_231x87.jpg?t=1783444081",
@@ -7476,16 +7476,16 @@ window.loadedGamesDatabase = [
     "title": "NBA 2K26",
     "genre": "Sports",
     "tags": [
-      "deals",
       "sports",
       "oferta",
+      "deals",
       "promo"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/a3525b0c4590861bf02bd36129ff0d510e2f85d6/capsule_231x87_alt_assets_6.jpg?t=1782486648",
     "short_description": "Bragging rights are on the line in MyCAREER, MyTEAM, MyNBA, The W, and Play Now. Showcase your bag of moves with hyper realism, Powered by ProPLAY™, and challenge your friends, or rivals, in NBA 2K26’s competitive modes—and leave no doubt that you wear the crown.",
     "developer": "Visual Concepts",
-    "release_date": "Sep 4, 2025",
+    "release_date": "4 Sep, 2025",
     "game_url": "https://www.cheapshark.com/redirect?dealID=dua6N5u4HYIU5lUexFlvkjLixz5RHy0a4lzdZENh64A%3D",
     "min_ram": 8,
     "price": "paid",
@@ -7539,15 +7539,15 @@ window.loadedGamesDatabase = [
     "genre": "Action",
     "tags": [
       "action",
-      "deals",
       "oferta",
+      "deals",
       "promo"
     ],
     "platform": "PC (Windows)",
     "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/315210/capsule_231x87.jpg?t=1777940046",
     "short_description": "From the creators of Batman: Arkham, Suicide Squad: Kill the Justice League is a genre-defying third-person action shooter where the ultimate band of misfits must do the impossible: Kill the Justice League.",
     "developer": "Rocksteady Studios",
-    "release_date": "2 Feb, 2024",
+    "release_date": "Feb 2, 2024",
     "game_url": "https://www.cheapshark.com/redirect?dealID=ER%2FfOp0PmIbG%2BkoMMkNkd8JljZgzqnQqdZLU%2Bz1MekQ%3D",
     "min_ram": 8,
     "price": "paid",
@@ -7720,11 +7720,11 @@ window.loadedGamesDatabase = [
     "short_description": "Super Oferta PC! De $99.99 por apenas $13.50 (86% de desconto).",
     "developer": "Steam Store Deals",
     "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=j%2FC8wZdx%2FInTvprBOhBpFesyH5gqdSRZtysnEJr76dA%3D",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=%2Bj1YG%2BiaAw3mvcPG1Ko1mnx0uYXwcTdcSc49lJ4m48U%3D",
     "min_ram": 8,
     "price": "paid",
     "worth": "$99.99",
-    "sale_price": "$15.00"
+    "sale_price": "$13.75"
   },
   {
     "title": "Assassins Creed Origins Gold Edition",
@@ -7763,6 +7763,26 @@ window.loadedGamesDatabase = [
     "price": "paid",
     "worth": "$119.99",
     "sale_price": "$16.46"
+  },
+  {
+    "title": "Sid Meiers Civilization VI Anthology",
+    "genre": "Strategy",
+    "tags": [
+      "strategy",
+      "tactical",
+      "promo",
+      "oferta"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://sttc.gamersgate.com/images/product/sid-meiers-civilization-vi-anthology-steam/cover-180-ac032e.jpg",
+    "short_description": "Super Oferta PC! De $209.85 por apenas $28.96 (86% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=Hz%2BOAW9%2F250%2BOjC1aoftzKgeZfi0%2BKY9Ug43iVy4cvk%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$209.85",
+    "sale_price": "$28.96"
   },
   {
     "title": "IL-2 Sturmovik: Tank Crew - Clash at Prokhorovka",
@@ -7860,6 +7880,25 @@ window.loadedGamesDatabase = [
     "sale_price": "$5.00"
   },
   {
+    "title": "Mindcop",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517180/capsule_231x87.jpg?t=1744981735",
+    "short_description": "Super Oferta PC! De $14.99 por apenas $2.24 (85% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=bcpGnU4MAWFVoJKt5vIwyMCHVQYl3QNEFxvUz0kGHrU%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$14.99",
+    "sale_price": "$2.24"
+  },
+  {
     "title": "Suicide Squad: Kill the Justice League - Deluxe Edition",
     "genre": "Oferta / Promoção",
     "tags": [
@@ -7896,6 +7935,44 @@ window.loadedGamesDatabase = [
     "price": "paid",
     "worth": "$99.99",
     "sale_price": "$18.26"
+  },
+  {
+    "title": "Bury me, my Love",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/808090/capsule_231x87.jpg?t=1781885052",
+    "short_description": "Super Oferta PC! De $4.99 por apenas $0.49 (90% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=e%2Fjd1kSBHyZXwsusdWTyaEyscpACkEGvwt0iJJOrn1I%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$4.99",
+    "sale_price": "$0.49"
+  },
+  {
+    "title": "Nocturnal",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_231x87.jpg?t=1782833654",
+    "short_description": "Super Oferta PC! De $16.99 por apenas $1.69 (90% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=Mih%2BMFGYCiSm8%2FqQ0fcOEKiF8Nbkax3KwR3%2FVye4kKg%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$16.99",
+    "sale_price": "$1.69"
   },
   {
     "title": "Assassins Creed Odyssey Digital Deluxe Edition",
@@ -7948,11 +8025,11 @@ window.loadedGamesDatabase = [
     "short_description": "Super Oferta PC! De $74.99 por apenas $5.95 (92% de desconto).",
     "developer": "Steam Store Deals",
     "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=1F%2Fs0kTRNaj6kR1b%2Fc7nUJHql%2FiZ3IW1pWHnXEOwVX4%3D",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=tbfhAnpKWgIw3AyPA%2BDmIaYpwSY8JzEReS2X69F3zo4%3D",
     "min_ram": 8,
     "price": "paid",
     "worth": "$74.99",
-    "sale_price": "$6.89"
+    "sale_price": "$5.95"
   },
   {
     "title": "Far Cry 5 Gold Edition",
@@ -8012,6 +8089,44 @@ window.loadedGamesDatabase = [
     "sale_price": "$1.74"
   },
   {
+    "title": "Impulsion",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/811270/capsule_231x87.jpg?t=1722517971",
+    "short_description": "Super Oferta PC! De $12.99 por apenas $1.29 (90% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=PhedlEeBzgZ6eV%2FpSbfoZxcdGoT1ZOoUxRZje%2FU5HSg%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$12.99",
+    "sale_price": "$1.29"
+  },
+  {
+    "title": "Splasher",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/446840/capsule_231x87.jpg?t=1656581950",
+    "short_description": "Super Oferta PC! De $14.99 por apenas $1.49 (90% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=qREbAx4azQsKuOW124qXoBnkhNE9NVvoneRlMmU%2Fo3w%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$14.99",
+    "sale_price": "$1.49"
+  },
+  {
     "title": "Watch Dogs: Legion Ultimate Edition",
     "genre": "Oferta / Promoção",
     "tags": [
@@ -8031,6 +8146,25 @@ window.loadedGamesDatabase = [
     "sale_price": "$21.87"
   },
   {
+    "title": "Alba: A Wildlife Adventure",
+    "genre": "Oferta / Promoção",
+    "tags": [
+      "promo",
+      "oferta",
+      "deals"
+    ],
+    "platform": "PC (Windows)",
+    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1337010/capsule_231x87.jpg?t=1765899835",
+    "short_description": "Super Oferta PC! De $16.99 por apenas $1.69 (90% de desconto).",
+    "developer": "Steam Store Deals",
+    "release_date": "N/A",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=wxYZA2HjgYoG3ca7ZuvoRfb8fsP3SILV83%2FDw1b2k3g%3D",
+    "min_ram": 8,
+    "price": "paid",
+    "worth": "$16.99",
+    "sale_price": "$1.69"
+  },
+  {
     "title": "Resident Evil 7 Gold Edition and Village Gold Edition",
     "genre": "Oferta / Promoção",
     "tags": [
@@ -8043,86 +8177,10 @@ window.loadedGamesDatabase = [
     "short_description": "Super Oferta PC! De $79.99 por apenas $17.00 (79% de desconto).",
     "developer": "Steam Store Deals",
     "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=KpZw8OeXxq8UgFfO4VAyJUw7E8PqzrgEnqQblQMg748%3D",
+    "game_url": "https://www.cheapshark.com/redirect?dealID=l5sbf9ZKRsuldsz2HQpjwlFb43L5ltVwKjMVY2EUtyg%3D",
     "min_ram": 8,
     "price": "paid",
     "worth": "$79.99",
-    "sale_price": "$18.26"
-  },
-  {
-    "title": "Fly'N",
-    "genre": "Oferta / Promoção",
-    "tags": [
-      "promo",
-      "oferta",
-      "deals"
-    ],
-    "platform": "PC (Windows)",
-    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/223730/capsule_231x87.jpg?t=1753954633",
-    "short_description": "Super Oferta PC! De $9.99 por apenas $0.99 (90% de desconto).",
-    "developer": "Steam Store Deals",
-    "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=CygdT1AXmlrr%2BHbzYkDGm%2Fhy7JRITQa0nOjPyI0Yafs%3D",
-    "min_ram": 8,
-    "price": "paid",
-    "worth": "$9.99",
-    "sale_price": "$0.99"
-  },
-  {
-    "title": "Shadowgrounds Survivor",
-    "genre": "Oferta / Promoção",
-    "tags": [
-      "promo",
-      "oferta",
-      "deals"
-    ],
-    "platform": "PC (Windows)",
-    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/11200/capsule_231x87.jpg?t=1725011465",
-    "short_description": "Super Oferta PC! De $9.99 por apenas $0.99 (90% de desconto).",
-    "developer": "Steam Store Deals",
-    "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=GxCeQHH57JE%2F68Ax5BV6qp%2FZ6g34MWSR4gzZo6Smc3g%3D",
-    "min_ram": 8,
-    "price": "paid",
-    "worth": "$9.99",
-    "sale_price": "$0.99"
-  },
-  {
-    "title": "Tower of Time",
-    "genre": "Oferta / Promoção",
-    "tags": [
-      "promo",
-      "oferta",
-      "deals"
-    ],
-    "platform": "PC (Windows)",
-    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/617480/75e6dee24eecc1fb9f7d4f0b0f2b7a3a6ff207a0/capsule_231x87.jpg?t=1783088743",
-    "short_description": "Super Oferta PC! De $24.99 por apenas $1.99 (92% de desconto).",
-    "developer": "Steam Store Deals",
-    "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=%2BTtUcXUugzMF2EAX8PXOWDv7Ax7h8F6cHsx9uUYAcBU%3D",
-    "min_ram": 8,
-    "price": "paid",
-    "worth": "$24.99",
-    "sale_price": "$1.99"
-  },
-  {
-    "title": "Anarcute",
-    "genre": "Oferta / Promoção",
-    "tags": [
-      "promo",
-      "oferta",
-      "deals"
-    ],
-    "platform": "PC (Windows)",
-    "thumbnail": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/390720/capsule_231x87.jpg?t=1781884646",
-    "short_description": "Super Oferta PC! De $14.99 por apenas $1.49 (90% de desconto).",
-    "developer": "Steam Store Deals",
-    "release_date": "N/A",
-    "game_url": "https://www.cheapshark.com/redirect?dealID=Z6B9rNulf2q4pK5zlcMqToNjm0PO%2FhB50SWITCDK0%2Bw%3D",
-    "min_ram": 8,
-    "price": "paid",
-    "worth": "$14.99",
-    "sale_price": "$1.49"
+    "sale_price": "$17.00"
   }
 ];

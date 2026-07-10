@@ -476,6 +476,82 @@ class GamesIngestor:
         except Exception as e:
             logger.error(f"Erro ao salvar arquivo JS: {e}")
 
+    def build_semantic_model(self) -> None:
+        """Treina um modelo LSA (TF-IDF + SVD) sobre o corpus dos jogos e gera data/semantic_model.js."""
+        try:
+            from sklearn.feature_extraction.text import TfidfVectorizer
+            from sklearn.decomposition import TruncatedSVD
+            import numpy as np
+        except ImportError:
+            logger.warning("sklearn/numpy não encontrados. Pulando geração do modelo semântico LSA.")
+            return
+
+        logger.info("Iniciando treinamento do modelo semântico LSA...")
+        games_list = list(self.games_map.values())
+        if not games_list:
+            logger.warning("Nenhum jogo disponível para treinar o modelo semântico.")
+            return
+
+        # Cria o documento textual de cada jogo para o corpus
+        documents = []
+        for game in games_list:
+            tags_str = " ".join(game.tags) if isinstance(game.tags, list) else ""
+            desc = game.short_description or game.description or ""
+            doc = f"{game.title} {game.genre} {tags_str} {desc}"
+            documents.append(doc)
+
+        # Configura o TfidfVectorizer
+        vectorizer = TfidfVectorizer(
+            lowercase=True,
+            strip_accents="unicode",
+            stop_words=None,
+            min_df=1
+        )
+        tfidf_matrix = vectorizer.fit_transform(documents)
+
+        # Reduz as dimensões para 30 conceitos latentes (LSA)
+        n_components = min(30, tfidf_matrix.shape[1])
+        svd = TruncatedSVD(n_components=n_components, random_state=42)
+        lsa_matrix = svd.fit_transform(tfidf_matrix)
+
+        # Normaliza os vetores dos jogos (L2 norm) para facilitar produto escalar na similaridade de cosseno
+        norms = np.linalg.norm(lsa_matrix, axis=1, keepdims=True)
+        norms[norms == 0] = 1.0
+        normalized_lsa_matrix = lsa_matrix / norms
+
+        # Extrai vocabulário, IDF e componentes do SVD
+        vocab = vectorizer.get_feature_names_out().tolist()
+        idf = vectorizer.idf_.tolist()
+        components = svd.components_.tolist()
+
+        # Associa cada jogo ao seu vetor correspondente
+        game_vectors = {}
+        for idx, game in enumerate(games_list):
+            title_key = game.title.strip().lower()
+            game_vectors[title_key] = normalized_lsa_matrix[idx].tolist()
+
+        # Salva o arquivo Javascript contendo os pesos e vocabulário
+        data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+        os.makedirs(data_dir, exist_ok=True)
+        file_path = os.path.join(data_dir, "semantic_model.js")
+
+        model_data = {
+            "n_components": n_components,
+            "vocabulary": vocab,
+            "idf": idf,
+            "components": components,
+            "game_vectors": game_vectors
+        }
+
+        try:
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write("window.semanticModelDatabase = ")
+                json.dump(model_data, f, ensure_ascii=False)
+                f.write(";\n")
+            logger.info(f"Modelo semântico LSA salvo com sucesso em {file_path}! Vocabulário: {len(vocab)} palavras.")
+        except Exception as e:
+            logger.error(f"Erro ao salvar arquivo do modelo semântico: {e}")
+
 if __name__ == "__main__":
     ingestor = GamesIngestor()
     ingestor.load_fallback_games()
@@ -483,3 +559,4 @@ if __name__ == "__main__":
     ingestor.fetch_gamerpower()
     ingestor.fetch_cheapshark()
     ingestor.save_data()
+    ingestor.build_semantic_model()

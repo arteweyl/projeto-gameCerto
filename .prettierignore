@@ -1,3 +1,4 @@
 node_modules/
 package-lock.json
 data/games.js
+data/semantic_model.js
