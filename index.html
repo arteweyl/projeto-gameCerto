@@ -105,22 +105,46 @@
                     <option id="option-2" value="browser">
                       Navegador (Web)
                     </option>
+                    <option id="option-3" value="playstation">
+                      PlayStation (PS4/PS5)
+                    </option>
+                    <option id="option-4" value="xbox">
+                      Xbox (One/Series)
+                    </option>
+                    <option id="option-5" value="switch">
+                      Nintendo Switch
+                    </option>
                   </select>
                 </div>
               </div>
 
               <div class="field-box">
-                <label for="RAM-quantity" class="group-label"
-                  >3. Memória RAM (GB)</label
+                <label for="price-type" class="group-label"
+                  >3. Licença / Preço</label
                 >
-                <input
-                  id="RAM-quantity"
-                  type="number"
-                  min="1"
-                  max="128"
-                  placeholder="Ex: 8 (Opcional)"
-                />
+                <div class="select-wrapper">
+                  <select id="price-type" name="price-type">
+                    <option value="">-- Qualquer Preço --</option>
+                    <option value="free">Grátis (Free-To-Play)</option>
+                    <option value="paid">Pago (Premium)</option>
+                  </select>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="field-box">
+              <label for="RAM-quantity" class="group-label"
+                >4. Memória RAM (GB) (Opcional)</label
+              >
+              <input
+                id="RAM-quantity"
+                type="number"
+                min="1"
+                max="128"
+                placeholder="Ex: 8"
+              />
             </div>
           </div>
 

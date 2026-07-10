@@ -381,6 +381,91 @@ const FALLBACK_GAMES = [
     game_url: "https://store.steampowered.com/app/588430/Fallout_Shelter/",
     min_ram: 4,
   },
+  {
+    title: "Minecraft",
+    genre: "Sandbox",
+    tags: ["sandbox", "survival", "3d"],
+    platform: "pc, playstation, xbox, switch",
+    thumbnail:
+      "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Explore mundos infinitos e construa de tudo, desde a mais simples das casas até o mais grandioso dos castelos.",
+    developer: "Mojang Studios",
+    publisher: "Mojang Studios",
+    release_date: "2011-11-18",
+    game_url: "https://www.minecraft.net",
+    min_ram: 4,
+    price: "paid",
+    worth: "$29.99",
+  },
+  {
+    title: "Elden Ring",
+    genre: "Action RPG",
+    tags: ["action-rpg", "open-world", "fantasy", "3d", "action"],
+    platform: "pc, playstation, xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1655821888788-6107699e173b?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Um RPG de ação de fantasia sombria em um vasto mundo aberto criado por Hidetaka Miyazaki e George R. R. Martin.",
+    developer: "FromSoftware",
+    publisher: "Bandai Namco Entertainment",
+    release_date: "2022-02-25",
+    game_url: "https://www.eldenring.com",
+    min_ram: 12,
+    price: "paid",
+    worth: "$59.99",
+  },
+  {
+    title: "Cyberpunk 2077",
+    genre: "RPG",
+    tags: ["sci-fi", "open-world", "action", "first-person", "3d"],
+    platform: "pc, playstation, xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "RPG de ação e aventura em mundo aberto ambientado em Night City, uma megalópole obcecada por poder e modificações corporais.",
+    developer: "CD Projekt Red",
+    publisher: "CD Projekt Red",
+    release_date: "2020-12-10",
+    game_url: "https://www.cyberpunk.net",
+    min_ram: 12,
+    price: "paid",
+    worth: "$59.99",
+  },
+  {
+    title: "Grand Theft Auto V",
+    genre: "Action",
+    tags: ["open-world", "action", "3d", "pvp"],
+    platform: "pc, playstation, xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Um ladrão de rua, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com o submundo do crime.",
+    developer: "Rockstar North",
+    publisher: "Rockstar Games",
+    release_date: "2013-09-17",
+    game_url: "https://www.rockstargames.com/gta-v",
+    min_ram: 8,
+    price: "paid",
+    worth: "$29.99",
+  },
+  {
+    title: "Red Dead Redemption 2",
+    genre: "Action",
+    tags: ["open-world", "action", "survival", "3d"],
+    platform: "pc, playstation, xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Uma história épica sobre a vida e a sobrevivência no implacável coração dos Estados Unidos no fim do século XIX.",
+    developer: "CD Projekt Red",
+    publisher: "Rockstar Games",
+    release_date: "2018-10-26",
+    game_url: "https://www.rockstargames.com/reddeadredemption2",
+    min_ram: 12,
+    price: "paid",
+    worth: "$59.99",
+  },
 ];
 
 // Inicialização principal
@@ -394,8 +479,15 @@ async function fazFetch() {
   const platformSelect = document.getElementById("platform");
   const tagsContainer = document.getElementById("container-1");
   const sectionCard = document.getElementById("sectionCard");
+  const priceTypeSelect = document.getElementById("price-type");
 
-  if (!getInfoButton || !platformSelect || !tagsContainer || !sectionCard)
+  if (
+    !getInfoButton ||
+    !platformSelect ||
+    !tagsContainer ||
+    !sectionCard ||
+    !priceTypeSelect
+  )
     return;
 
   const API_LINK =
@@ -446,60 +538,29 @@ async function fazFetch() {
     // Exibe tela de carregamento animada na área de resultado
     showLoading();
 
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": RAPIDAPI_KEY,
-        "X-RapidAPI-Host": RAPIDAPI_HOST,
-      },
-    };
+    const selectedPlatform = platformSelect.value;
+    const selectedPrice = priceTypeSelect.value;
+    const isConsole = ["playstation", "xbox", "switch"].includes(
+      selectedPlatform,
+    );
 
-    // Constrói a URL da API
-    let queryParams = [];
-    if (TAG) queryParams.push(TAG);
-    if (PLATFORM) queryParams.push(PLATFORM);
-    const fullUrl = API_LINK + queryParams.join("&");
-
-    try {
-      // Faz a requisição à API
-      const response = await fetch(fullUrl, options);
-      if (!response.ok) {
-        throw new Error(`Erro na resposta do servidor: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      // Valida o retorno
-      if (
-        !data ||
-        (Array.isArray(data) && data.length === 0) ||
-        data.status === 0 ||
-        data.message
-      ) {
-        throw new Error("Nenhum jogo encontrado com este filtro na API.");
-      }
-
-      // Processa a lista vinda da API
-      const gamesList = Array.isArray(data) ? data : Object.values(data);
-
-      // Se informou memória RAM, filtra os jogos na medida do possível
-      // Como a API não traz RAM direto no filtro geral, filtramos no fallback ou aplicamos regras
-      processAndDisplayGame(gamesList, false);
-    } catch (error) {
-      console.warn(
-        "API falhou ou bloqueou via CORS. Usando banco de dados local robusto como fallback...",
-        error,
+    // SELECIONOU PAGO NO PC/BROWSER:
+    // A API de Free-to-play não possui jogos pagos, então pulamos a chamada e usamos o banco local premium!
+    if (selectedPrice === "paid" && !isConsole) {
+      console.log(
+        "Busca por jogo pago de PC/Browser. Utilizando banco de dados local premium...",
       );
 
-      // FALLBACK SEGURO E INTELIGENTE
-      // Filtra localmente baseado nas tags selecionadas e plataforma
       let matchingGames = FALLBACK_GAMES.filter((game) => {
-        // Filtra por plataforma se selecionada
-        if (platformSelect.value && game.platform !== platformSelect.value) {
+        if (game.price !== "paid") return false;
+
+        if (
+          selectedPlatform &&
+          !game.platform.toLowerCase().includes(selectedPlatform)
+        ) {
           return false;
         }
 
-        // Filtra por tags (se o jogo tem pelo menos uma das tags selecionadas)
         if (checkedValues.length > 0) {
           const hasMatchingTag = checkedValues.some((selectedTag) =>
             game.tags.includes(selectedTag.toLowerCase()),
@@ -509,24 +570,197 @@ async function fazFetch() {
         return true;
       });
 
-      // Se nenhum jogo corresponder exatamente às tags locais, amplia a busca para todos da plataforma selecionada
       if (matchingGames.length === 0) {
-        matchingGames = FALLBACK_GAMES.filter((game) => {
-          if (platformSelect.value && game.platform !== platformSelect.value)
-            return false;
-          return true;
-        });
+        matchingGames = FALLBACK_GAMES.filter((game) => game.price === "paid");
       }
 
-      // Se mesmo assim estiver vazio, usa a lista inteira
-      if (matchingGames.length === 0) {
-        matchingGames = FALLBACK_GAMES;
-      }
-
-      // Simula um delay pequeno de carregamento para melhor experiência do usuário (sabor de app web real)
       setTimeout(() => {
         processAndDisplayGame(matchingGames, true);
       }, 500);
+      return;
+    }
+
+    if (isConsole) {
+      // MAPEAMENTO PARA GAMERPOWER API (CONSOLES - BRINDES E DLCs)
+      const consolePlatformMap = {
+        playstation: "ps5",
+        xbox: "xbox-series-xs",
+        switch: "switch",
+      };
+      const consolePlatformCode = consolePlatformMap[selectedPlatform];
+      const consoleUrl =
+        "https://corsproxy.io/?" +
+        encodeURIComponent(
+          `https://www.gamerpower.com/api/giveaways?platform=${consolePlatformCode}`,
+        );
+
+      try {
+        const response = await fetch(consoleUrl);
+        if (!response.ok) {
+          throw new Error(
+            `Erro na resposta do servidor console: ${response.status}`,
+          );
+        }
+
+        const data = await response.json();
+        let gamesList = Array.isArray(data) ? data : Object.values(data);
+
+        // Filtra por Categoria de Preço (GamerPower indica brindes pagos com worth comercial)
+        if (selectedPrice === "paid") {
+          gamesList = gamesList.filter(
+            (g) => g.worth && g.worth !== "N/A" && g.worth !== "$0.00",
+          );
+        } else if (selectedPrice === "free") {
+          gamesList = gamesList.filter(
+            (g) => !g.worth || g.worth === "N/A" || g.worth === "$0.00",
+          );
+        }
+
+        // Filtra por tags
+        if (checkedValues.length > 0) {
+          gamesList = gamesList.filter((game) => {
+            const type = (game.type || "").toLowerCase();
+            const desc = (game.description || "").toLowerCase();
+            const title = (game.title || "").toLowerCase();
+
+            return checkedValues.some((selectedTag) => {
+              const tag = selectedTag.toLowerCase();
+              return (
+                type.includes(tag) || desc.includes(tag) || title.includes(tag)
+              );
+            });
+          });
+        }
+
+        if (gamesList.length === 0) {
+          throw new Error(
+            "Nenhum brinde ou jogo encontrado com estes filtros.",
+          );
+        }
+
+        processAndDisplayGame(gamesList, false);
+      } catch (error) {
+        console.warn(
+          "Falha ao buscar console API. Usando fallback offline de consoles...",
+          error,
+        );
+
+        let matchingGames = FALLBACK_GAMES.filter((game) => {
+          if (selectedPrice === "paid" && game.price !== "paid") return false;
+          if (selectedPrice === "free" && game.price === "paid") return false;
+
+          const gamePlatform = (game.platform || "").toLowerCase();
+          if (!gamePlatform.includes(selectedPlatform)) {
+            return false;
+          }
+
+          if (checkedValues.length > 0) {
+            const hasMatchingTag = checkedValues.some((selectedTag) =>
+              game.tags.includes(selectedTag.toLowerCase()),
+            );
+            return hasMatchingTag;
+          }
+          return true;
+        });
+
+        if (matchingGames.length === 0) {
+          matchingGames = FALLBACK_GAMES.filter((game) => {
+            if (selectedPrice === "paid" && game.price !== "paid") return false;
+            if (selectedPrice === "free" && game.price === "paid") return false;
+            const gamePlatform = (game.platform || "").toLowerCase();
+            return gamePlatform.includes(selectedPlatform);
+          });
+        }
+
+        if (matchingGames.length === 0) {
+          matchingGames = FALLBACK_GAMES;
+        }
+
+        setTimeout(() => {
+          processAndDisplayGame(matchingGames, true);
+        }, 500);
+      }
+    } else {
+      // BUSCA PADRÃO DO FREETOGAME API (PC / BROWSER GRÁTIS)
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": RAPIDAPI_KEY,
+          "X-RapidAPI-Host": RAPIDAPI_HOST,
+        },
+      };
+
+      let queryParams = [];
+      if (TAG) queryParams.push(TAG);
+      if (PLATFORM) queryParams.push(PLATFORM);
+      const fullUrl = API_LINK + queryParams.join("&");
+
+      try {
+        const response = await fetch(fullUrl, options);
+        if (!response.ok) {
+          throw new Error(`Erro na resposta do servidor: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (
+          !data ||
+          (Array.isArray(data) && data.length === 0) ||
+          data.status === 0 ||
+          data.message
+        ) {
+          throw new Error("Nenhum jogo encontrado com este filtro na API.");
+        }
+
+        let gamesList = Array.isArray(data) ? data : Object.values(data);
+        processAndDisplayGame(gamesList, false);
+      } catch (error) {
+        console.warn(
+          "API falhou ou bloqueou via CORS. Usando banco de dados local robusto como fallback...",
+          error,
+        );
+
+        let matchingGames = FALLBACK_GAMES.filter((game) => {
+          if (selectedPrice === "paid" && game.price !== "paid") return false;
+          if (selectedPrice === "free" && game.price === "paid") return false;
+
+          if (
+            platformSelect.value &&
+            !game.platform.toLowerCase().includes(platformSelect.value)
+          ) {
+            return false;
+          }
+
+          if (checkedValues.length > 0) {
+            const hasMatchingTag = checkedValues.some((selectedTag) =>
+              game.tags.includes(selectedTag.toLowerCase()),
+            );
+            return hasMatchingTag;
+          }
+          return true;
+        });
+
+        if (matchingGames.length === 0) {
+          matchingGames = FALLBACK_GAMES.filter((game) => {
+            if (selectedPrice === "paid" && game.price !== "paid") return false;
+            if (selectedPrice === "free" && game.price === "paid") return false;
+            if (
+              platformSelect.value &&
+              !game.platform.toLowerCase().includes(platformSelect.value)
+            )
+              return false;
+            return true;
+          });
+        }
+
+        if (matchingGames.length === 0) {
+          matchingGames = FALLBACK_GAMES;
+        }
+
+        setTimeout(() => {
+          processAndDisplayGame(matchingGames, true);
+        }, 500);
+      }
     }
   });
 
@@ -543,6 +777,7 @@ async function fazFetch() {
   // Processa e renderiza o jogo escolhido na tela
   function processAndDisplayGame(games, isFallback = false) {
     sectionCard.innerHTML = ""; // Limpa animação de loading
+    const selectedPlatform = platformSelect.value;
 
     // Filtro por memória RAM
     let filteredGames = [...games];
@@ -613,12 +848,36 @@ async function fazFetch() {
     const cardBody = document.createElement("div");
     cardBody.className = "game-card-body";
 
-    // Gênero / Categoria Badge
-    const genre = game.genre || (game.tags && game.tags[0]) || "Gamer";
+    // Determina se é pago
+    const isPaid =
+      game.price === "paid" ||
+      (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
+    const priceText = isPaid
+      ? game.worth
+        ? `Pago (${game.worth})`
+        : "Pago"
+      : "Grátis";
+
+    // Gênero / Categoria Badge (GamerPower usa .type, FreeToGame usa .genre)
+    const genre =
+      game.genre || game.type || (game.tags && game.tags[0]) || "Gamer";
     const genreBadge = document.createElement("span");
     genreBadge.className = "game-genre";
     genreBadge.textContent = genre.toUpperCase();
-    cardBody.appendChild(genreBadge);
+
+    // Price Badge
+    const priceBadge = document.createElement("span");
+    priceBadge.className = isPaid
+      ? "game-price-badge price-paid"
+      : "game-price-badge price-free";
+    priceBadge.textContent = priceText.toUpperCase();
+
+    // Badges Row Wrapper
+    const badgesRow = document.createElement("div");
+    badgesRow.className = "badges-row";
+    badgesRow.appendChild(genreBadge);
+    badgesRow.appendChild(priceBadge);
+    cardBody.appendChild(badgesRow);
 
     // Título do Jogo
     const title = document.createElement("h2");
@@ -626,10 +885,11 @@ async function fazFetch() {
     title.textContent = game.title || game.name || "Jogo Desconhecido";
     cardBody.appendChild(title);
 
-    // Descrição Curta
+    // Descrição Curta (GamerPower usa .description, FreeToGame usa .short_description)
     const desc = document.createElement("p");
     desc.className = "game-desc";
     desc.textContent =
+      game.description ||
       game.short_description ||
       "Um jogo eletrizante gratuito para você jogar agora mesmo!";
     cardBody.appendChild(desc);
@@ -638,10 +898,11 @@ async function fazFetch() {
     const metaRow = document.createElement("div");
     metaRow.className = "game-meta-row";
 
-    const devText = game.developer ? `Dev: ${game.developer}` : "Free-To-Play";
-    const releaseText = game.release_date
-      ? `Lançado: ${game.release_date.split("-")[0]}`
-      : "";
+    const devText = game.developer ? `Dev: ${game.developer}` : "Gratuito";
+    const releaseText =
+      game.release_date || game.published_date
+        ? `Lançado: ${(game.release_date || game.published_date).split("-")[0]}`
+        : "";
 
     metaRow.innerHTML = `
       <span>${devText}</span>
@@ -649,20 +910,57 @@ async function fazFetch() {
     `;
     cardBody.appendChild(metaRow);
 
+    // Detecta se é um jogo de console
+    const isConsoleGame =
+      (game.platforms &&
+        (game.platforms.toLowerCase().includes("playstation") ||
+          game.platforms.toLowerCase().includes("xbox") ||
+          game.platforms.toLowerCase().includes("switch") ||
+          game.platforms.toLowerCase().includes("nintendo"))) ||
+      ["playstation", "xbox", "switch"].includes(platformSelect.value);
+
     // Info do Sistema & RAM
     const sysInfo = document.createElement("div");
     sysInfo.className = "game-sys-info";
 
-    // Ícone da plataforma
-    const platformLabel = isBrowser ? "Navegador Web" : "PC Windows";
+    // Determina Rótulo e Ícone da plataforma
+    let platformLabel = "PC Windows";
+    if (isBrowser) {
+      platformLabel = "Navegador Web";
+    } else if (isConsoleGame) {
+      if (
+        game.platforms &&
+        game.platforms.toLowerCase().includes("playstation")
+      ) {
+        platformLabel = "PlayStation";
+      } else if (
+        game.platforms &&
+        game.platforms.toLowerCase().includes("xbox")
+      ) {
+        platformLabel = "Xbox";
+      } else if (
+        game.platforms &&
+        game.platforms.toLowerCase().includes("switch")
+      ) {
+        platformLabel = "Nintendo Switch";
+      } else {
+        platformLabel =
+          selectedPlatform.charAt(0).toUpperCase() + selectedPlatform.slice(1);
+      }
+    }
+
     const platformIcon = isBrowser
       ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`
-      : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>`;
+      : isConsoleGame
+        ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3" ry="3"/><circle cx="6" cy="12" r="1"/><circle cx="10" cy="12" r="1"/><circle cx="8" cy="10" r="1"/><circle cx="8" cy="14" r="1"/><circle cx="15" cy="11" r="1.5"/><circle cx="18" cy="13" r="1.5"/></svg>`
+        : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>`;
 
     // Análise de RAM inteligente
     let ramStatusHtml = "";
     if (isBrowser) {
       ramStatusHtml = `<span class="ram-status ram-compatible">⚡ Roda direto no navegador (Leve)</span>`;
+    } else if (isConsoleGame) {
+      ramStatusHtml = `<span class="ram-status ram-compatible">🎮 Roda direto no console (Sem limites de RAM)</span>`;
     } else if (userRamValue) {
       if (userRamValue >= ramReq) {
         ramStatusHtml = `<span class="ram-status ram-compatible">✅ Compatível (Você: ${userRamValue}GB | Requer: ~${ramReq}GB)</span>`;
@@ -682,18 +980,29 @@ async function fazFetch() {
     `;
     cardBody.appendChild(sysInfo);
 
-    // Botão de ação para jogar
+    // Botão de ação para jogar (suporta game_url, open_giveaway_url e freetogame_profile_url)
     const playUrl =
       game.game_url ||
+      game.open_giveaway_url ||
       game.freetogame_profile_url ||
-      "https://www.freetogame.com";
+      "https://www.gamerpower.com";
+
+    let btnText = "Jogar Grátis";
+    if (isPaid) {
+      if (game.open_giveaway_url) {
+        btnText = "Resgatar Grátis";
+      } else {
+        btnText = "Comprar Jogo";
+      }
+    }
+
     const playBtn = document.createElement("a");
     playBtn.className = "btn btn-secondary btn-play";
     playBtn.href = playUrl;
     playBtn.target = "_blank";
     playBtn.rel = "noopener noreferrer";
     playBtn.innerHTML = `
-      <span>Jogar Grátis</span>
+      <span>${btnText}</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         <polyline points="15 3 21 3 21 9"></polyline>

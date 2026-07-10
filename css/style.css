@@ -606,13 +606,60 @@ select {
   flex: 1;
 }
 
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .game-genre {
   font-family: var(--font-display);
   color: var(--secondary-glow);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 8px;
+}
+
+.game-price-badge {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.game-price-badge.price-free {
+  color: #00f2fe;
+  background: rgb(0 242 254 / 10%);
+  border: 1px solid rgb(0 242 254 / 20%);
+}
+
+.game-price-badge.price-paid {
+  color: #ff5e97;
+  background: rgb(255 94 151 / 10%);
+  border: 1px solid rgb(255 94 151 / 20%);
+}
+
+.table-price-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.table-price-tag.price-free {
+  color: #00f2fe;
+  background: rgb(0 242 254 / 8%);
+  border: 1px solid rgb(0 242 254 / 15%);
+}
+
+.table-price-tag.price-paid {
+  color: #ff5e97;
+  background: rgb(255 94 151 / 8%);
+  border: 1px solid rgb(255 94 151 / 15%);
 }
 
 .game-title {

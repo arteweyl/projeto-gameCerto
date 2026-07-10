@@ -198,8 +198,19 @@
               <div class="table-select-wrapper">
                 <select id="table-platform-filter">
                   <option value="">-- Todas as Plataformas --</option>
-                  <option value="pc">PC</option>
-                  <option value="browser">Navegador</option>
+                  <option value="pc">PC (Windows)</option>
+                  <option value="browser">Navegador (Web)</option>
+                  <option value="playstation">PlayStation</option>
+                  <option value="xbox">Xbox</option>
+                  <option value="switch">Nintendo Switch</option>
+                </select>
+              </div>
+
+              <div class="table-select-wrapper">
+                <select id="table-price-filter">
+                  <option value="">-- Todos os Preços --</option>
+                  <option value="free">Grátis</option>
+                  <option value="paid">Pago</option>
                 </select>
               </div>
             </div>
@@ -214,6 +225,7 @@
                   <th>Título</th>
                   <th>Gênero</th>
                   <th>Plataforma</th>
+                  <th>Preço</th>
                   <th>Desenvolvedor</th>
                   <th>Lançamento</th>
                   <th style="text-align: center; width: 120px">Ação</th>
@@ -222,7 +234,7 @@
               <tbody id="games-table-body">
                 <tr>
                   <td
-                    colspan="7"
+                    colspan="8"
                     style="
                       text-align: center;
                       padding: 40px;

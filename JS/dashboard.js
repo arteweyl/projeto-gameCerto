@@ -355,6 +355,81 @@ const FALLBACK_GAMES = [
     release_date: "2015-06-14",
     game_url: "https://store.steampowered.com/app/588430/Fallout_Shelter/",
   },
+  {
+    title: "Minecraft",
+    genre: "Sandbox",
+    tags: ["sandbox", "survival", "3d"],
+    platform: "PC (Windows), PlayStation, Xbox, Switch",
+    thumbnail:
+      "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Explore mundos infinitos e construa de tudo, desde a mais simples das casas até o mais grandioso dos castelos.",
+    developer: "Mojang Studios",
+    release_date: "2011-11-18",
+    game_url: "https://www.minecraft.net",
+    price: "paid",
+    worth: "$29.99",
+  },
+  {
+    title: "Elden Ring",
+    genre: "Action RPG",
+    tags: ["action-rpg", "open-world", "fantasy", "3d", "action"],
+    platform: "PC (Windows), PlayStation, Xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1655821888788-6107699e173b?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Um RPG de ação de fantasia sombria em um vasto mundo aberto criado por Hidetaka Miyazaki e George R. R. Martin.",
+    developer: "FromSoftware",
+    release_date: "2022-02-25",
+    game_url: "https://www.eldenring.com",
+    price: "paid",
+    worth: "$59.99",
+  },
+  {
+    title: "Cyberpunk 2077",
+    genre: "RPG",
+    tags: ["sci-fi", "open-world", "action", "first-person", "3d"],
+    platform: "PC (Windows), PlayStation, Xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "RPG de ação e aventura em mundo aberto ambientado em Night City, uma megalópole obcecada por poder e modificações corporais.",
+    developer: "CD Projekt Red",
+    release_date: "2020-12-10",
+    game_url: "https://www.cyberpunk.net",
+    price: "paid",
+    worth: "$59.99",
+  },
+  {
+    title: "Grand Theft Auto V",
+    genre: "Action",
+    tags: ["open-world", "action", "3d", "pvp"],
+    platform: "PC (Windows), PlayStation, Xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Um ladrão de rua, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com o submundo do crime.",
+    developer: "Rockstar North",
+    release_date: "2013-09-17",
+    game_url: "https://www.rockstargames.com/gta-v",
+    price: "paid",
+    worth: "$29.99",
+  },
+  {
+    title: "Red Dead Redemption 2",
+    genre: "Action",
+    tags: ["open-world", "action", "survival", "3d"],
+    platform: "PC (Windows), PlayStation, Xbox",
+    thumbnail:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop",
+    short_description:
+      "Uma história épica sobre a vida e a sobrevivência no implacável coração dos Estados Unidos no fim do século XIX.",
+    developer: "Rockstar Games",
+    release_date: "2018-10-26",
+    game_url: "https://www.rockstargames.com/reddeadredemption2",
+    price: "paid",
+    worth: "$59.99",
+  },
 ];
 
 // Configurações Globais do Gráfico do Chart.js
@@ -378,6 +453,7 @@ const tableBody = document.getElementById("games-table-body");
 const searchInput = document.getElementById("table-search");
 const genreFilter = document.getElementById("table-genre-filter");
 const platformFilter = document.getElementById("table-platform-filter");
+const priceFilter = document.getElementById("table-price-filter");
 
 const paginationInfo = document.getElementById("pagination-info");
 const btnPrev = document.getElementById("btn-prev");
@@ -458,7 +534,16 @@ function calculateKPIs(games) {
   games.forEach((g) => {
     // Conta plataformas
     const platform = (g.platform || "").toLowerCase();
-    if (platform.includes("pc") || platform.includes("windows")) {
+    if (
+      platform.includes("playstation") ||
+      platform.includes("ps4") ||
+      platform.includes("ps5") ||
+      platform.includes("xbox") ||
+      platform.includes("switch") ||
+      platform.includes("nintendo")
+    ) {
+      // Consoles não incrementam PC ou Browser dos KPIs principais
+    } else if (platform.includes("pc") || platform.includes("windows")) {
       pcCount++;
     } else if (
       platform.includes("browser") ||
@@ -467,7 +552,6 @@ function calculateKPIs(games) {
     ) {
       browserCount++;
     } else {
-      // Outros caem no PC como padrão estimável
       pcCount++;
     }
 
@@ -499,14 +583,31 @@ function setupCharts(games) {
   // Proporção de Plataformas
   let pcCount = 0;
   let browserCount = 0;
+  let playstationCount = 0;
+  let xboxCount = 0;
+  let switchCount = 0;
   let genreCounts = {};
 
   games.forEach((g) => {
     const platform = (g.platform || "").toLowerCase();
-    if (platform.includes("pc") || platform.includes("windows")) {
-      pcCount++;
-    } else {
+    if (
+      platform.includes("playstation") ||
+      platform.includes("ps4") ||
+      platform.includes("ps5")
+    ) {
+      playstationCount++;
+    } else if (platform.includes("xbox")) {
+      xboxCount++;
+    } else if (platform.includes("switch") || platform.includes("nintendo")) {
+      switchCount++;
+    } else if (
+      platform.includes("browser") ||
+      platform.includes("web") ||
+      platform.includes("navegador")
+    ) {
       browserCount++;
+    } else {
+      pcCount++;
     }
 
     const genre = g.genre || "Gamer";
@@ -545,6 +646,14 @@ function setupCharts(games) {
     blueBorder: "#3b82f6",
     gray: "rgba(163, 158, 178, 0.4)",
     grayBorder: "#a39eb2",
+
+    // Consoles Brand Colors
+    psBlue: "rgba(0, 112, 204, 0.65)",
+    psBlueBorder: "#0070cc",
+    xboxGreen: "rgba(16, 124, 16, 0.65)",
+    xboxGreenBorder: "#107c10",
+    switchRed: "rgba(228, 0, 15, 0.65)",
+    switchRedBorder: "#e4000f",
   };
 
   // 1. Gráfico de Gêneros (Barra Horizontal)
@@ -604,15 +713,55 @@ function setupCharts(games) {
   const ctxPlatforms = document
     .getElementById("platformsChart")
     .getContext("2d");
+
+  const rawLabels = [
+    "PC Windows",
+    "Navegador Web",
+    "PlayStation",
+    "Xbox",
+    "Nintendo Switch",
+  ];
+  const rawData = [
+    pcCount,
+    browserCount,
+    playstationCount,
+    xboxCount,
+    switchCount,
+  ];
+  const rawBgColors = [
+    colors.purple,
+    colors.cyan,
+    colors.psBlue,
+    colors.xboxGreen,
+    colors.switchRed,
+  ];
+  const rawBorderColors = [
+    colors.purpleBorder,
+    colors.cyanBorder,
+    colors.psBlueBorder,
+    colors.xboxGreenBorder,
+    colors.switchRedBorder,
+  ];
+
+  // Filtra apenas plataformas que têm jogos ativos na base para manter o gráfico limpo
+  const activeIndices = rawData
+    .map((val, idx) => (val > 0 ? idx : -1))
+    .filter((idx) => idx !== -1);
+
+  const finalLabels = activeIndices.map((idx) => rawLabels[idx]);
+  const finalData = activeIndices.map((idx) => rawData[idx]);
+  const finalBgColors = activeIndices.map((idx) => rawBgColors[idx]);
+  const finalBorderColors = activeIndices.map((idx) => rawBorderColors[idx]);
+
   platformsChartInstance = new Chart(ctxPlatforms, {
     type: "doughnut",
     data: {
-      labels: ["PC Windows", "Navegador Web"],
+      labels: finalLabels,
       datasets: [
         {
-          data: [pcCount, browserCount],
-          backgroundColor: [colors.purple, colors.cyan],
-          borderColor: [colors.purpleBorder, colors.cyanBorder],
+          data: finalData,
+          backgroundColor: finalBgColors,
+          borderColor: finalBorderColors,
           borderWidth: 2,
           hoverOffset: 8,
         },
@@ -625,9 +774,9 @@ function setupCharts(games) {
         legend: {
           position: "bottom",
           labels: {
-            padding: 20,
+            padding: 12,
             color: "#fff",
-            font: { size: 12, weight: "500" },
+            font: { size: 11, weight: "500" },
           },
         },
       },
@@ -665,8 +814,119 @@ function setupTableEvents() {
     filterData();
   });
 
-  // Filtro de Plataforma
-  platformFilter.addEventListener("change", () => {
+  // Filtro de Plataforma (com carregamento assíncrono para Consoles da GamerPower API)
+  platformFilter.addEventListener("change", async () => {
+    const pVal = platformFilter.value;
+    const isConsole = ["playstation", "xbox", "switch"].includes(pVal);
+
+    if (isConsole) {
+      // Verifica se já carregamos os dados do console na allGamesData
+      const hasConsoleGames = allGamesData.some((g) => {
+        const plat = (g.platform || "").toLowerCase();
+        return plat.includes(pVal);
+      });
+
+      if (!hasConsoleGames) {
+        // Exibe feedback visual na tabela enquanto busca
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
+              <div class="spinner" style="margin: 0 auto 12px auto; width: 30px; height: 30px;"></div>
+              Carregando brindes de ${pVal.charAt(0).toUpperCase() + pVal.slice(1)} da GamerPower API...
+            </td>
+          </tr>
+        `;
+
+        try {
+          const consolePlatformMap = {
+            playstation: "ps5",
+            xbox: "xbox-series-xs",
+            switch: "switch",
+          };
+          const consoleCode = consolePlatformMap[pVal];
+          const consoleUrl =
+            "https://corsproxy.io/?" +
+            encodeURIComponent(
+              `https://www.gamerpower.com/api/giveaways?platform=${consoleCode}`,
+            );
+
+          const response = await fetch(consoleUrl);
+          if (!response.ok) throw new Error("Erro de servidor console");
+
+          const data = await response.json();
+          const list = Array.isArray(data) ? data : Object.values(data);
+
+          // Mapeia e sanitiza para a estrutura padrão da tabela
+          const mappedConsoleGames = list.map((item) => {
+            const isPaid =
+              item.worth && item.worth !== "N/A" && item.worth !== "$0.00";
+            return {
+              title: item.title,
+              genre: item.type || "Brinde/DLC",
+              platform:
+                pVal === "playstation"
+                  ? "PlayStation (PS4/PS5)"
+                  : pVal === "xbox"
+                    ? "Xbox (One/Series)"
+                    : "Nintendo Switch",
+              thumbnail: item.thumbnail,
+              short_description: item.description,
+              developer: item.type || "GamerPower",
+              release_date: item.published_date
+                ? item.published_date.split(" ")[0]
+                : "N/A",
+              game_url: item.open_giveaway_url,
+              price: isPaid ? "paid" : "free",
+              worth: item.worth || "N/A",
+            };
+          });
+
+          // Concatena na base global
+          allGamesData = [...allGamesData, ...mappedConsoleGames];
+
+          // Atualiza KPIs, Gráficos e filtros
+          calculateKPIs(allGamesData);
+          setupCharts(allGamesData);
+          populateGenreFilter(allGamesData);
+        } catch (error) {
+          console.warn(
+            "Erro ao buscar consoles API para o dashboard, usando fallback de console local...",
+            error,
+          );
+
+          // Fallback de consoles local para o dashboard
+          const fallbackConsoleGames = FALLBACK_GAMES.filter((g) =>
+            (g.platform || "").toLowerCase().includes(pVal),
+          ).map((item) => ({
+            title: item.title,
+            genre: item.genre || "Jogo",
+            platform:
+              pVal === "playstation"
+                ? "PlayStation (PS4/PS5)"
+                : pVal === "xbox"
+                  ? "Xbox (One/Series)"
+                  : "Nintendo Switch",
+            thumbnail: item.thumbnail,
+            short_description: item.short_description,
+            developer: item.developer || "Fallback",
+            release_date: item.release_date || "N/A",
+            game_url: item.game_url,
+            price: item.price || "free",
+            worth: item.worth || "N/A",
+          }));
+
+          allGamesData = [...allGamesData, ...fallbackConsoleGames];
+          calculateKPIs(allGamesData);
+          setupCharts(allGamesData);
+        }
+      }
+    }
+
+    filterData();
+  });
+
+  // Filtro de Preço
+  priceFilter.addEventListener("change", () => {
     filterData();
   });
 
@@ -692,6 +952,7 @@ function filterData() {
   const query = searchInput.value.toLowerCase().trim();
   const selectedGenre = genreFilter.value;
   const selectedPlatform = platformFilter.value;
+  const selectedPrice = priceFilter.value;
 
   filteredGamesData = allGamesData.filter((game) => {
     // Filtro por Nome
@@ -700,6 +961,15 @@ function filterData() {
 
     // Filtro por Gênero
     if (selectedGenre && game.genre !== selectedGenre) return false;
+
+    // Filtro por Preço
+    if (selectedPrice) {
+      const isPaidGame =
+        game.price === "paid" ||
+        (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
+      if (selectedPrice === "paid" && !isPaidGame) return false;
+      if (selectedPrice === "free" && isPaidGame) return false;
+    }
 
     // Filtro por Plataforma
     if (selectedPlatform) {
@@ -716,6 +986,24 @@ function filterData() {
         !platform.includes("browser") &&
         !platform.includes("web") &&
         !platform.includes("navegador")
+      ) {
+        return false;
+      }
+      if (
+        selectedPlatform === "playstation" &&
+        !platform.includes("playstation") &&
+        !platform.includes("ps4") &&
+        !platform.includes("ps5")
+      ) {
+        return false;
+      }
+      if (selectedPlatform === "xbox" && !platform.includes("xbox")) {
+        return false;
+      }
+      if (
+        selectedPlatform === "switch" &&
+        !platform.includes("switch") &&
+        !platform.includes("nintendo")
       ) {
         return false;
       }
@@ -736,7 +1024,7 @@ function renderTable() {
   if (totalItems === 0) {
     tableBody.innerHTML = `
       <tr>
-        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+        <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
           Nenhum jogo encontrado com os filtros selecionados.
         </td>
       </tr>
@@ -785,8 +1073,37 @@ function renderTable() {
       (game.platform && game.platform.toLowerCase().includes("browser")) ||
       (game.platform && game.platform.toLowerCase().includes("web")) ||
       game.platform === "browser";
-    tdPlatform.textContent = isBrowser ? "Navegador Web" : "PC Windows";
+
+    let platformText = isBrowser ? "Navegador Web" : "PC Windows";
+    const platLower = (game.platform || "").toLowerCase();
+    if (platLower.includes("playstation")) {
+      platformText = "PlayStation";
+    } else if (platLower.includes("xbox")) {
+      platformText = "Xbox";
+    } else if (platLower.includes("switch") || platLower.includes("nintendo")) {
+      platformText = "Nintendo Switch";
+    }
+    tdPlatform.textContent = platformText;
     tr.appendChild(tdPlatform);
+
+    // Preço
+    const tdPrice = document.createElement("td");
+    const isPaid =
+      game.price === "paid" ||
+      (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
+    const priceText = isPaid
+      ? game.worth && game.worth !== "N/A"
+        ? game.worth
+        : "Pago"
+      : "Grátis";
+
+    const priceTag = document.createElement("span");
+    priceTag.className = isPaid
+      ? "table-price-tag price-paid"
+      : "table-price-tag price-free";
+    priceTag.textContent = priceText;
+    tdPrice.appendChild(priceTag);
+    tr.appendChild(tdPrice);
 
     // Desenvolvedor
     const tdDev = document.createElement("td");
@@ -798,20 +1115,27 @@ function renderTable() {
     tdRelease.textContent = game.release_date || "N/A";
     tr.appendChild(tdRelease);
 
-    // Link de Ação (Jogar)
+    // Link de Ação (Jogar / Resgatar)
     const tdAction = document.createElement("td");
     tdAction.style.textAlign = "center";
     const playUrl =
       game.game_url ||
+      game.open_giveaway_url ||
       game.freetogame_profile_url ||
-      "https://www.freetogame.com";
+      "https://www.gamerpower.com";
+
+    let actionLabel = "Jogar";
+    if (isPaid) {
+      actionLabel = game.open_giveaway_url ? "Resgatar" : "Comprar";
+    }
+
     const playLink = document.createElement("a");
     playLink.className = "btn-table-action";
     playLink.href = playUrl;
     playLink.target = "_blank";
     playLink.rel = "noopener noreferrer";
     playLink.innerHTML = `
-      <span>Jogar</span>
+      <span>${actionLabel}</span>
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
     `;
     tdAction.appendChild(playLink);
