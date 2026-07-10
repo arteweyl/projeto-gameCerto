@@ -469,34 +469,20 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 async function initDashboard() {
-  const API_LINK_ALL =
-    "https://free-to-play-games-database.p.rapidapi.com/api/games";
-  const RAPIDAPI_HOST = "free-to-play-games-database.p.rapidapi.com";
-  const RAPIDAPI_KEY = "cf1135635bmsh474fe305c0cc252p18816fjsne45f0c9774ab";
-
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": RAPIDAPI_KEY,
-      "X-RapidAPI-Host": RAPIDAPI_HOST,
-    },
-  };
-
   try {
-    const res = await fetch(API_LINK_ALL, options);
-    if (!res.ok) throw new Error("Erro de servidor ao buscar todos os jogos");
+    const res = await fetch("./data/games.json");
+    if (!res.ok) throw new Error("Erro ao buscar base estática games.json");
 
     const data = await res.json();
-    if (!data || data.length === 0 || data.status === 0) {
-      throw new Error("Nenhum dado retornado da API");
-    }
-
     allGamesData = Array.isArray(data) ? data : Object.values(data);
-    console.log("Sucesso ao obter todos os jogos da API:", allGamesData.length);
+    console.log(
+      "Sucesso ao obter jogos da base estática para o dashboard:",
+      allGamesData.length,
+    );
     renderDashboard(allGamesData);
   } catch (error) {
     console.warn(
-      "API de listagem falhou ou bloqueou via CORS. Usando fallback offline...",
+      "Falha ao carregar banco de dados estático. Usando fallback offline no dashboard...",
       error,
     );
     allGamesData = [...FALLBACK_GAMES];
@@ -814,114 +800,8 @@ function setupTableEvents() {
     filterData();
   });
 
-  // Filtro de Plataforma (com carregamento assíncrono para Consoles da GamerPower API)
-  platformFilter.addEventListener("change", async () => {
-    const pVal = platformFilter.value;
-    const isConsole = ["playstation", "xbox", "switch"].includes(pVal);
-
-    if (isConsole) {
-      // Verifica se já carregamos os dados do console na allGamesData
-      const hasConsoleGames = allGamesData.some((g) => {
-        const plat = (g.platform || "").toLowerCase();
-        return plat.includes(pVal);
-      });
-
-      if (!hasConsoleGames) {
-        // Exibe feedback visual na tabela enquanto busca
-        tableBody.innerHTML = `
-          <tr>
-            <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-muted);">
-              <div class="spinner" style="margin: 0 auto 12px auto; width: 30px; height: 30px;"></div>
-              Carregando brindes de ${pVal.charAt(0).toUpperCase() + pVal.slice(1)} da GamerPower API...
-            </td>
-          </tr>
-        `;
-
-        try {
-          const consolePlatformMap = {
-            playstation: "ps5",
-            xbox: "xbox-series-xs",
-            switch: "switch",
-          };
-          const consoleCode = consolePlatformMap[pVal];
-          const consoleUrl =
-            "https://corsproxy.io/?" +
-            encodeURIComponent(
-              `https://www.gamerpower.com/api/giveaways?platform=${consoleCode}`,
-            );
-
-          const response = await fetch(consoleUrl);
-          if (!response.ok) throw new Error("Erro de servidor console");
-
-          const data = await response.json();
-          const list = Array.isArray(data) ? data : Object.values(data);
-
-          // Mapeia e sanitiza para a estrutura padrão da tabela
-          const mappedConsoleGames = list.map((item) => {
-            const isPaid =
-              item.worth && item.worth !== "N/A" && item.worth !== "$0.00";
-            return {
-              title: item.title,
-              genre: item.type || "Brinde/DLC",
-              platform:
-                pVal === "playstation"
-                  ? "PlayStation (PS4/PS5)"
-                  : pVal === "xbox"
-                    ? "Xbox (One/Series)"
-                    : "Nintendo Switch",
-              thumbnail: item.thumbnail,
-              short_description: item.description,
-              developer: item.type || "GamerPower",
-              release_date: item.published_date
-                ? item.published_date.split(" ")[0]
-                : "N/A",
-              game_url: item.open_giveaway_url,
-              price: isPaid ? "paid" : "free",
-              worth: item.worth || "N/A",
-            };
-          });
-
-          // Concatena na base global
-          allGamesData = [...allGamesData, ...mappedConsoleGames];
-
-          // Atualiza KPIs, Gráficos e filtros
-          calculateKPIs(allGamesData);
-          setupCharts(allGamesData);
-          populateGenreFilter(allGamesData);
-        } catch (error) {
-          console.warn(
-            "Erro ao buscar consoles API para o dashboard, usando fallback de console local...",
-            error,
-          );
-
-          // Fallback de consoles local para o dashboard
-          const fallbackConsoleGames = FALLBACK_GAMES.filter((g) =>
-            (g.platform || "").toLowerCase().includes(pVal),
-          ).map((item) => ({
-            title: item.title,
-            genre: item.genre || "Jogo",
-            platform:
-              pVal === "playstation"
-                ? "PlayStation (PS4/PS5)"
-                : pVal === "xbox"
-                  ? "Xbox (One/Series)"
-                  : "Nintendo Switch",
-            thumbnail: item.thumbnail,
-            short_description: item.short_description,
-            developer: item.developer || "Fallback",
-            release_date: item.release_date || "N/A",
-            game_url: item.game_url,
-            price: item.price || "free",
-            worth: item.worth || "N/A",
-          }));
-
-          allGamesData = [...allGamesData, ...fallbackConsoleGames];
-          calculateKPIs(allGamesData);
-          setupCharts(allGamesData);
-        }
-      }
-    }
-
+  // Filtro de Plataforma (Agora instantâneo e local via base estática)
+  platformFilter.addEventListener("change", () => {
     filterData();
   });
 

@@ -468,10 +468,30 @@ const FALLBACK_GAMES = [
   },
 ];
 
+let loadedGames = [];
+
 // Inicialização principal
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadLocalDatabase();
   fazFetch();
 });
+
+async function loadLocalDatabase() {
+  try {
+    const response = await fetch("./data/games.json");
+    if (!response.ok) throw new Error("Erro ao ler games.json");
+    loadedGames = await response.json();
+    console.log(
+      `Sucesso! ${loadedGames.length} jogos carregados do banco estático.`,
+    );
+  } catch (error) {
+    console.warn(
+      "Falha ao carregar banco estático. Usando fallback offline de segurança...",
+      error,
+    );
+    loadedGames = FALLBACK_GAMES;
+  }
+}
 
 async function fazFetch() {
   const getInfoButton = document.getElementById("button-check");
@@ -490,20 +510,12 @@ async function fazFetch() {
   )
     return;
 
-  const API_LINK =
-    "https://free-to-play-games-database.p.rapidapi.com/api/filter?";
-  const RAPIDAPI_HOST = "free-to-play-games-database.p.rapidapi.com";
-  const RAPIDAPI_KEY = "cf1135635bmsh474fe305c0cc252p18816fjsne45f0c9774ab";
-
   let checkedValues = [];
-  let TAG = "";
-  let PLATFORM = "";
   let ramQuantity = "";
 
   // 1. Escuta mudanças na grid de tags (Event Delegation)
   tagsContainer.addEventListener("change", (event) => {
     if (event.target && event.target.type === "checkbox") {
-      // Reconstrói a lista de tags marcadas de forma reativa e livre de bugs
       const allCheckboxes = tagsContainer.querySelectorAll(".checkbox-input");
       checkedValues = Array.from(allCheckboxes)
         .filter((cb) => cb.checked)
@@ -511,257 +523,97 @@ async function fazFetch() {
 
       if (checkedValues.length > 0) {
         getInfoButton.removeAttribute("disabled");
-        TAG = "tag=" + checkedValues.join(".");
       } else {
         getInfoButton.setAttribute("disabled", "true");
-        TAG = "";
       }
     }
   });
 
-  // 2. Escuta mudanças no Select de Plataforma
-  platformSelect.addEventListener("change", () => {
-    if (platformSelect.value) {
-      PLATFORM = "platform=" + platformSelect.value;
-    } else {
-      PLATFORM = "";
-    }
-  });
-
-  // 3. Escuta mudanças no input de memória RAM
+  // 2. Escuta mudanças no input de memória RAM
   ramInput.addEventListener("input", () => {
     ramQuantity = ramInput.value.trim();
   });
 
-  // 4. Ação do Botão de Submit
-  getInfoButton.addEventListener("click", async () => {
-    // Exibe tela de carregamento animada na área de resultado
+  // 3. Ação do Botão de Submit (Busca Estática Reativa)
+  getInfoButton.addEventListener("click", () => {
     showLoading();
 
     const selectedPlatform = platformSelect.value;
     const selectedPrice = priceTypeSelect.value;
-    const isConsole = ["playstation", "xbox", "switch"].includes(
-      selectedPlatform,
-    );
 
-    // SELECIONOU PAGO NO PC/BROWSER:
-    // A API de Free-to-play não possui jogos pagos, então pulamos a chamada e usamos o banco local premium!
-    if (selectedPrice === "paid" && !isConsole) {
-      console.log(
-        "Busca por jogo pago de PC/Browser. Utilizando banco de dados local premium...",
-      );
+    const matchingGames = loadedGames.filter((game) => {
+      // Filtro por Preço
+      if (selectedPrice) {
+        const isPaidGame =
+          game.price === "paid" ||
+          (game.worth && game.worth !== "N/A" && game.worth !== "$0.00");
+        if (selectedPrice === "paid" && !isPaidGame) return false;
+        if (selectedPrice === "free" && isPaidGame) return false;
+      }
 
-      let matchingGames = FALLBACK_GAMES.filter((game) => {
-        if (game.price !== "paid") return false;
-
+      // Filtro por plataforma
+      if (selectedPlatform) {
+        const platLower = (game.platform || "").toLowerCase();
         if (
-          selectedPlatform &&
-          !game.platform.toLowerCase().includes(selectedPlatform)
-        ) {
+          selectedPlatform === "pc" &&
+          !platLower.includes("pc") &&
+          !platLower.includes("windows")
+        )
           return false;
-        }
-
-        if (checkedValues.length > 0) {
-          const hasMatchingTag = checkedValues.some((selectedTag) =>
-            game.tags.includes(selectedTag.toLowerCase()),
-          );
-          return hasMatchingTag;
-        }
-        return true;
-      });
-
-      if (matchingGames.length === 0) {
-        matchingGames = FALLBACK_GAMES.filter((game) => game.price === "paid");
-      }
-
-      setTimeout(() => {
-        processAndDisplayGame(matchingGames, true);
-      }, 500);
-      return;
-    }
-
-    if (isConsole) {
-      // MAPEAMENTO PARA GAMERPOWER API (CONSOLES - BRINDES E DLCs)
-      const consolePlatformMap = {
-        playstation: "ps5",
-        xbox: "xbox-series-xs",
-        switch: "switch",
-      };
-      const consolePlatformCode = consolePlatformMap[selectedPlatform];
-      const consoleUrl =
-        "https://corsproxy.io/?" +
-        encodeURIComponent(
-          `https://www.gamerpower.com/api/giveaways?platform=${consolePlatformCode}`,
-        );
-
-      try {
-        const response = await fetch(consoleUrl);
-        if (!response.ok) {
-          throw new Error(
-            `Erro na resposta do servidor console: ${response.status}`,
-          );
-        }
-
-        const data = await response.json();
-        let gamesList = Array.isArray(data) ? data : Object.values(data);
-
-        // Filtra por Categoria de Preço (GamerPower indica brindes pagos com worth comercial)
-        if (selectedPrice === "paid") {
-          gamesList = gamesList.filter(
-            (g) => g.worth && g.worth !== "N/A" && g.worth !== "$0.00",
-          );
-        } else if (selectedPrice === "free") {
-          gamesList = gamesList.filter(
-            (g) => !g.worth || g.worth === "N/A" || g.worth === "$0.00",
-          );
-        }
-
-        // Filtra por tags
-        if (checkedValues.length > 0) {
-          gamesList = gamesList.filter((game) => {
-            const type = (game.type || "").toLowerCase();
-            const desc = (game.description || "").toLowerCase();
-            const title = (game.title || "").toLowerCase();
-
-            return checkedValues.some((selectedTag) => {
-              const tag = selectedTag.toLowerCase();
-              return (
-                type.includes(tag) || desc.includes(tag) || title.includes(tag)
-              );
-            });
-          });
-        }
-
-        if (gamesList.length === 0) {
-          throw new Error(
-            "Nenhum brinde ou jogo encontrado com estes filtros.",
-          );
-        }
-
-        processAndDisplayGame(gamesList, false);
-      } catch (error) {
-        console.warn(
-          "Falha ao buscar console API. Usando fallback offline de consoles...",
-          error,
-        );
-
-        let matchingGames = FALLBACK_GAMES.filter((game) => {
-          if (selectedPrice === "paid" && game.price !== "paid") return false;
-          if (selectedPrice === "free" && game.price === "paid") return false;
-
-          const gamePlatform = (game.platform || "").toLowerCase();
-          if (!gamePlatform.includes(selectedPlatform)) {
-            return false;
-          }
-
-          if (checkedValues.length > 0) {
-            const hasMatchingTag = checkedValues.some((selectedTag) =>
-              game.tags.includes(selectedTag.toLowerCase()),
-            );
-            return hasMatchingTag;
-          }
-          return true;
-        });
-
-        if (matchingGames.length === 0) {
-          matchingGames = FALLBACK_GAMES.filter((game) => {
-            if (selectedPrice === "paid" && game.price !== "paid") return false;
-            if (selectedPrice === "free" && game.price === "paid") return false;
-            const gamePlatform = (game.platform || "").toLowerCase();
-            return gamePlatform.includes(selectedPlatform);
-          });
-        }
-
-        if (matchingGames.length === 0) {
-          matchingGames = FALLBACK_GAMES;
-        }
-
-        setTimeout(() => {
-          processAndDisplayGame(matchingGames, true);
-        }, 500);
-      }
-    } else {
-      // BUSCA PADRÃO DO FREETOGAME API (PC / BROWSER GRÁTIS)
-      const options = {
-        method: "GET",
-        headers: {
-          "X-RapidAPI-Key": RAPIDAPI_KEY,
-          "X-RapidAPI-Host": RAPIDAPI_HOST,
-        },
-      };
-
-      let queryParams = [];
-      if (TAG) queryParams.push(TAG);
-      if (PLATFORM) queryParams.push(PLATFORM);
-      const fullUrl = API_LINK + queryParams.join("&");
-
-      try {
-        const response = await fetch(fullUrl, options);
-        if (!response.ok) {
-          throw new Error(`Erro na resposta do servidor: ${response.status}`);
-        }
-
-        const data = await response.json();
-
         if (
-          !data ||
-          (Array.isArray(data) && data.length === 0) ||
-          data.status === 0 ||
-          data.message
-        ) {
-          throw new Error("Nenhum jogo encontrado com este filtro na API.");
-        }
-
-        let gamesList = Array.isArray(data) ? data : Object.values(data);
-        processAndDisplayGame(gamesList, false);
-      } catch (error) {
-        console.warn(
-          "API falhou ou bloqueou via CORS. Usando banco de dados local robusto como fallback...",
-          error,
-        );
-
-        let matchingGames = FALLBACK_GAMES.filter((game) => {
-          if (selectedPrice === "paid" && game.price !== "paid") return false;
-          if (selectedPrice === "free" && game.price === "paid") return false;
-
-          if (
-            platformSelect.value &&
-            !game.platform.toLowerCase().includes(platformSelect.value)
-          ) {
-            return false;
-          }
-
-          if (checkedValues.length > 0) {
-            const hasMatchingTag = checkedValues.some((selectedTag) =>
-              game.tags.includes(selectedTag.toLowerCase()),
-            );
-            return hasMatchingTag;
-          }
-          return true;
-        });
-
-        if (matchingGames.length === 0) {
-          matchingGames = FALLBACK_GAMES.filter((game) => {
-            if (selectedPrice === "paid" && game.price !== "paid") return false;
-            if (selectedPrice === "free" && game.price === "paid") return false;
-            if (
-              platformSelect.value &&
-              !game.platform.toLowerCase().includes(platformSelect.value)
-            )
-              return false;
-            return true;
-          });
-        }
-
-        if (matchingGames.length === 0) {
-          matchingGames = FALLBACK_GAMES;
-        }
-
-        setTimeout(() => {
-          processAndDisplayGame(matchingGames, true);
-        }, 500);
+          selectedPlatform === "browser" &&
+          !platLower.includes("browser") &&
+          !platLower.includes("web") &&
+          !platLower.includes("navegador")
+        )
+          return false;
+        if (
+          selectedPlatform === "playstation" &&
+          !platLower.includes("playstation") &&
+          !platLower.includes("ps4") &&
+          !platLower.includes("ps5")
+        )
+          return false;
+        if (selectedPlatform === "xbox" && !platLower.includes("xbox"))
+          return false;
+        if (
+          selectedPlatform === "switch" &&
+          !platLower.includes("switch") &&
+          !platLower.includes("nintendo")
+        )
+          return false;
       }
-    }
+
+      // Filtro por tags
+      if (checkedValues.length > 0) {
+        const gameGenre = (game.genre || "").toLowerCase();
+        const gameTags = Array.isArray(game.tags)
+          ? game.tags.map((t) => t.toLowerCase())
+          : [];
+        const gameDesc = (
+          game.description ||
+          game.short_description ||
+          ""
+        ).toLowerCase();
+        const gameTitle = (game.title || "").toLowerCase();
+
+        return checkedValues.some((selectedTag) => {
+          const tag = selectedTag.toLowerCase();
+          return (
+            gameGenre.includes(tag) ||
+            gameTags.includes(tag) ||
+            gameDesc.includes(tag) ||
+            gameTitle.includes(tag)
+          );
+        });
+      }
+      return true;
+    });
+
+    // Simula delay de 300ms para feedback visual fluido do loading spinner
+    setTimeout(() => {
+      processAndDisplayGame(matchingGames, loadedGames === FALLBACK_GAMES);
+    }, 300);
   });
 
   // Mostra spinner de carregamento tecnológico
