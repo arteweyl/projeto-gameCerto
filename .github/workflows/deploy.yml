@@ -46,7 +46,6 @@ jobs:
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           IGDB_ID: ${{ secrets.IGDB_ID }}
-          IGBD_ID: ${{ secrets.IGBD_ID }}
           IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 
       - name: Set up Node.js
@@ -99,7 +98,6 @@ jobs:
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           IGDB_ID: ${{ secrets.IGDB_ID }}
-          IGBD_ID: ${{ secrets.IGBD_ID }}
           IGDB_SECRET: ${{ secrets.IGDB_SECRET }}
 
       - name: Setup Pages

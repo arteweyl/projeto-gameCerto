@@ -312,8 +312,12 @@ class GamesIngestor:
     def fetch_twitch_token(self) -> str:
         """Adquire o access token da Twitch OAuth2 para autenticação no IGDB."""
         import urllib.parse
-        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
+        client_id = os.getenv("IGDB_ID", "")
         client_secret = os.getenv("IGDB_SECRET", "")
+
+        if not client_id or not client_secret:
+            logger.warning("IGDB_ID/IGDB_SECRET não configurados; enriquecimento IGDB ignorado.")
+            return ""
         
         url = "https://id.twitch.tv/oauth2/token"
         params = {
@@ -338,7 +342,7 @@ class GamesIngestor:
         if not token:
             return {}
             
-        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
+        client_id = os.getenv("IGDB_ID", "")
         url = "https://api.igdb.com/v4/games"
         headers = {
             "Client-ID": client_id,
@@ -371,7 +375,7 @@ class GamesIngestor:
         if not token:
             return None
             
-        client_id = os.getenv("IGBD_ID") or os.getenv("IGDB_ID", "")
+        client_id = os.getenv("IGDB_ID", "")
         url = "https://api.igdb.com/v4/games"
         headers = {
             "Client-ID": client_id,

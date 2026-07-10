@@ -67,6 +67,18 @@ O pipeline de ingestão (`scripts/ingest.py`) roda diariamente ou a cada deploy 
 - **GamerPower API**: Jogos premium em promoção temporária de resgate gratuito para consoles.
 - **Twitch / IGDB API (Enriquecimento)**: Cruza os títulos das outras APIs em lote ou busca difusa para injetar capas verticais em alta definição (`t_cover_big`), gêneros oficiais, desenvolvedoras corretas, classificação de avaliação (_rating_) e datas de lançamento.
 
+### Credenciais das APIs
+
+Cadastre as credenciais em **Settings > Secrets and variables > Actions > New repository secret** no repositório do GitHub:
+
+- `RAPIDAPI_KEY`
+- `IGDB_ID`
+- `IGDB_SECRET`
+
+Use **Secrets**, e não Variables, porque esses valores são sensíveis. O workflow injeta os segredos apenas no processo de ingestão; nenhum deles é incluído no site publicado.
+
+Credenciais que já apareceram em commits devem ser revogadas nos respectivos provedores antes de cadastrar novas. Remover o valor do arquivo atual não o remove do histórico Git.
+
 ---
 
 ## 💻 Tecnologias
@@ -102,7 +114,8 @@ npm install
 Para atualizar o catálogo e recompilar o modelo de busca semântica localmente, defina as credenciais Twitch/IGDB e execute:
 
 ```bash
-export IGBD_ID="seu_client_id"
+export RAPIDAPI_KEY="sua_chave_rapidapi"
+export IGDB_ID="seu_client_id"
 export IGDB_SECRET="seu_client_secret"
 python scripts/ingest.py
 ```
