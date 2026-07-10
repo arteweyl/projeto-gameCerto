@@ -88,16 +88,29 @@
           </div>
 
           <div class="control-group">
-            <label class="group-label">1. Escolha as categorias de jogo:</label>
+            <label class="group-label"
+              >1. Escolha as categorias de jogo (Opcional):</label
+            >
             <div id="container-1" class="tags-grid">
               <!-- Checkboxes (chips) will be generated here dynamically -->
             </div>
           </div>
 
           <div class="control-group">
+            <label for="search-description" class="group-label"
+              >2. Busca Inteligente por Tema / Descrição:</label
+            >
+            <input
+              id="search-description"
+              type="text"
+              placeholder="Ex: jogo de tiro espacial de naves, exploração, zumbis..."
+            />
+          </div>
+
+          <div class="control-group">
             <div class="field-row">
               <div class="field-box">
-                <label for="platform" class="group-label">2. Plataforma</label>
+                <label for="platform" class="group-label">3. Plataforma</label>
                 <div class="select-wrapper">
                   <select id="platform" name="platform">
                     <option value="">-- Qualquer Plataforma --</option>
@@ -120,7 +133,7 @@
 
               <div class="field-box">
                 <label for="price-type" class="group-label"
-                  >3. Licença / Preço</label
+                  >4. Licença / Preço</label
                 >
                 <div class="select-wrapper">
                   <select id="price-type" name="price-type">
@@ -133,10 +146,11 @@
             </div>
           </div>
 
-          <div class="control-group">
+          <!-- Agrupador de RAM para ocultar dinamicamente em Consoles -->
+          <div id="ram-group" class="control-group">
             <div class="field-box">
               <label for="RAM-quantity" class="group-label"
-                >4. Memória RAM (GB) (Opcional)</label
+                >5. Memória RAM (GB) (Opcional)</label
               >
               <input
                 id="RAM-quantity"
@@ -149,12 +163,7 @@
           </div>
 
           <div class="action-area">
-            <button
-              id="button-check"
-              type="button"
-              class="btn btn-primary"
-              disabled
-            >
+            <button id="button-check" type="button" class="btn btn-primary">
               <span>Descobrir Jogo</span>
               <svg
                 class="btn-icon"

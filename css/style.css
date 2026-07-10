@@ -337,7 +337,8 @@ body {
 
 /* Custom Select and Input Styling */
 select,
-input[type="number"] {
+input[type="number"],
+input[type="text"] {
   width: 100%;
   padding: 12px 16px;
   background: rgb(0 0 0 / 25%);
@@ -351,7 +352,8 @@ input[type="number"] {
 }
 
 select:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+input[type="text"]:focus {
   border-color: var(--primary-glow);
   box-shadow: 0 0 10px rgb(182 92 251 / 25%);
   background: rgb(0 0 0 / 40%);
@@ -1225,4 +1227,89 @@ select {
     flex: 1;
     min-width: 140px;
   }
+}
+
+/* Seção de Recomendações Alternativas */
+.alternatives-section {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.alternatives-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgb(255 255 255 / 10%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alternatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.alternative-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 6%);
+}
+
+.alternative-card:hover {
+  transform: translateY(-4px);
+  background: rgb(255 255 255 / 6%);
+  border-color: rgb(255 94 151 / 30%);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 30%);
+}
+
+.match-percentage-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: rgb(0 242 254 / 15%);
+  border: 1px solid rgb(0 242 254 / 30%);
+  color: #00f2fe;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+
+.main-match-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 16px;
+  background: rgb(255 94 151 / 20%);
+  border: 1px solid rgb(255 94 151 / 45%);
+  color: #ff5e97;
+  border-radius: 24px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+
+.why-recommended-box {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgb(255 255 255 / 3%);
+  border-left: 3px solid var(--secondary-glow);
+  border-radius: 4px 8px 8px 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }

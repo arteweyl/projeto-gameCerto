@@ -496,35 +496,113 @@ async function fazFetch() {
   let checkedValues = [];
   let ramQuantity = "";
 
-  // 1. Escuta mudanças na grid de tags (Event Delegation)
+  const ramGroup = document.getElementById("ram-group");
+
+  // 1. Escuta mudanças na plataforma para mostrar/ocultar RAM (Consoles não têm requisito de RAM)
+  platformSelect.addEventListener("change", () => {
+    const isConsole = ["playstation", "xbox", "switch"].includes(
+      platformSelect.value,
+    );
+    if (ramGroup) {
+      ramGroup.style.display = isConsole ? "none" : "block";
+    }
+  });
+
+  // 2. Escuta mudanças na grid de tags (Event Delegation)
   tagsContainer.addEventListener("change", (event) => {
     if (event.target && event.target.type === "checkbox") {
       const allCheckboxes = tagsContainer.querySelectorAll(".checkbox-input");
       checkedValues = Array.from(allCheckboxes)
         .filter((cb) => cb.checked)
         .map((cb) => cb.value);
-
-      if (checkedValues.length > 0) {
-        getInfoButton.removeAttribute("disabled");
-      } else {
-        getInfoButton.setAttribute("disabled", "true");
-      }
     }
   });
 
-  // 2. Escuta mudanças no input de memória RAM
+  // 3. Escuta mudanças no input de memória RAM
   ramInput.addEventListener("input", () => {
     ramQuantity = ramInput.value.trim();
   });
 
-  // 3. Ação do Botão de Submit (Busca Estática Reativa)
+  // Lista de Stop Words comuns em Português e Inglês para o processador de linguagem simples
+  const stopWords = new Set([
+    "de",
+    "do",
+    "da",
+    "em",
+    "um",
+    "uma",
+    "com",
+    "para",
+    "o",
+    "a",
+    "os",
+    "as",
+    "que",
+    "e",
+    "se",
+    "no",
+    "na",
+    "nos",
+    "nas",
+    "ao",
+    "aos",
+    "por",
+    "mais",
+    "como",
+    "mas",
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "in",
+    "on",
+    "at",
+    "to",
+    "for",
+    "with",
+    "of",
+    "about",
+    "by",
+    "from",
+    "game",
+    "jogo",
+    "jogos",
+    "play",
+    "playing",
+    "quero",
+    "gosto",
+    "adoro",
+    "queria",
+    "estilo",
+    "tipo",
+  ]);
+
+  // Tokenizador de texto para análise de palavras semânticas simples
+  function tokenize(text) {
+    if (!text) return [];
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // Remove acentuações
+      .replace(/[^\w\s]/g, " ") // Remove pontuações
+      .split(/\s+/)
+      .map((w) => w.trim())
+      .filter((w) => w.length > 2 && !stopWords.has(w));
+  }
+
+  // 4. Ação do Botão de Submit (Algoritmo de Scoring com NLP Simples)
   getInfoButton.addEventListener("click", () => {
     showLoading();
 
     const selectedPlatform = platformSelect.value;
     const selectedPrice = priceTypeSelect.value;
+    const searchDesc =
+      document.getElementById("search-description")?.value || "";
+    const queryTokens = tokenize(searchDesc);
 
-    const matchingGames = loadedGames.filter((game) => {
+    // Filtro Inicial Estrito: Plataforma e Licença de Preço
+    let matchingGames = loadedGames.filter((game) => {
       // Filtro por Preço
       if (selectedPrice) {
         const isPaidGame =
@@ -566,36 +644,88 @@ async function fazFetch() {
         )
           return false;
       }
+      return true;
+    });
 
-      // Filtro por tags
+    // Filtro por Hardware RAM (Apenas para PC / Navegador)
+    const isConsole = ["playstation", "xbox", "switch"].includes(
+      selectedPlatform,
+    );
+    const userRamValue = parseInt(ramQuantity, 10);
+    if (!isConsole && !isNaN(userRamValue)) {
+      const ramFiltered = matchingGames.filter((g) => {
+        const estimatedMinRam = g.min_ram || getEstimatedRamRequirement(g);
+        return userRamValue >= estimatedMinRam;
+      });
+      // Se houver algum jogo compatível com a RAM do usuário, aplica o filtro.
+      // Caso contrário, mantém todos e exibirá um aviso de limite de RAM no card.
+      if (ramFiltered.length > 0) {
+        matchingGames = ramFiltered;
+      }
+    }
+
+    // Algoritmo de Scoring (Match Score Calculation)
+    let scoredGames = matchingGames.map((game) => {
+      let score = 0;
+
+      // 1. Tags do Checkbox (Peso: +30 por categoria correspondente no gênero e +15 nas tags adicionais)
       if (checkedValues.length > 0) {
-        const gameGenre = (game.genre || "").toLowerCase();
-        const gameTags = Array.isArray(game.tags)
+        const genreLower = (game.genre || "").toLowerCase();
+        const tagsLower = Array.isArray(game.tags)
           ? game.tags.map((t) => t.toLowerCase())
           : [];
-        const gameDesc = (
+        checkedValues.forEach((selectedTag) => {
+          const tag = selectedTag.toLowerCase();
+          if (genreLower.includes(tag)) score += 30;
+          if (tagsLower.includes(tag)) score += 15;
+        });
+      }
+
+      // 2. Busca Inteligente NLP (Peso: +40 se palavra-chave no título, +20 no gênero, +15 nas tags, +8 na descrição)
+      if (queryTokens.length > 0) {
+        const titleLower = (game.title || "").toLowerCase();
+        const genreLower = (game.genre || "").toLowerCase();
+        const descLower = (
           game.description ||
           game.short_description ||
           ""
         ).toLowerCase();
-        const gameTitle = (game.title || "").toLowerCase();
+        const tagsLower = Array.isArray(game.tags)
+          ? game.tags.join(" ").toLowerCase()
+          : "";
 
-        return checkedValues.some((selectedTag) => {
-          const tag = selectedTag.toLowerCase();
-          return (
-            gameGenre.includes(tag) ||
-            gameTags.includes(tag) ||
-            gameDesc.includes(tag) ||
-            gameTitle.includes(tag)
-          );
+        queryTokens.forEach((token) => {
+          if (titleLower.includes(token)) score += 40;
+          if (genreLower.includes(token)) score += 20;
+          if (tagsLower.includes(token)) score += 15;
+          if (descLower.includes(token)) score += 8;
         });
       }
-      return true;
+
+      // 3. Bônus por Custo-benefício (Promoções ativas com maior desconto)
+      if (game.sale_price && game.worth) {
+        score += 5;
+      }
+
+      return { game, score };
     });
+
+    // Se o usuário não passou nenhum filtro de interesse, embaralhamos os resultados para manter o dinamismo
+    const hasInputs = checkedValues.length > 0 || queryTokens.length > 0;
+    if (!hasInputs) {
+      scoredGames.sort(() => Math.random() - 0.5);
+    } else {
+      // Ordena por Nota de Compatibilidade decrescente
+      scoredGames.sort((a, b) => b.score - a.score);
+    }
 
     // Simula delay de 300ms para feedback visual fluido do loading spinner
     setTimeout(() => {
-      processAndDisplayGame(matchingGames, loadedGames === FALLBACK_GAMES);
+      processAndDisplayGame(
+        scoredGames,
+        loadedGames === FALLBACK_GAMES,
+        queryTokens,
+      );
     }, 300);
   });
 
@@ -610,46 +740,49 @@ async function fazFetch() {
   }
 
   // Processa e renderiza o jogo escolhido na tela
-  function processAndDisplayGame(games, isFallback = false) {
+  function processAndDisplayGame(
+    scoredItems,
+    isFallback = false,
+    queryTokens = [],
+  ) {
     sectionCard.innerHTML = ""; // Limpa animação de loading
     const selectedPlatform = platformSelect.value;
-
-    // Filtro por memória RAM
-    let filteredGames = [...games];
     const userRamValue = parseInt(ramQuantity, 10);
 
-    if (!isNaN(userRamValue)) {
-      // Filtra jogos onde o min_ram estimado é compatível com o do usuário
-      // Para jogos vindos da API externa, estimamos a RAM com base na plataforma/gênero
-      const tempFiltered = filteredGames.filter((g) => {
-        const estimatedMinRam = getEstimatedRamRequirement(g);
-        return userRamValue >= estimatedMinRam;
-      });
-
-      // Se não houver nenhum jogo compatível para não deixar a tela vazia, mantemos a lista completa e exibiremos um aviso de compatibilidade
-      if (tempFiltered.length > 0) {
-        filteredGames = tempFiltered;
-      }
-    }
-
-    // Seleciona um jogo aleatório da lista filtrada
-    const game =
-      filteredGames[Math.floor(Math.random() * filteredGames.length)];
-
-    if (!game) {
+    if (scoredItems.length === 0) {
       sectionCard.innerHTML = `
         <div class="error-card glass">
-          <p>Desculpe, nenhum jogo atende aos filtros exigidos. Tente selecionar menos tags ou aumentar o limite de RAM.</p>
+          <p>Desculpe, nenhum jogo atende aos filtros de plataforma ou preço exigidos. Tente selecionar outros critérios.</p>
         </div>
       `;
       return;
     }
+
+    // 1. PEGA O MATCH PERFEITO (Melhor Pontuado)
+    const bestItem = scoredItems[0];
+    const game = bestItem.game;
+    const maxScore = scoredItems[0].score;
+
+    // Determina porcentagem de compatibilidade realística para exibição
+    const matchPercentage =
+      maxScore > 0
+        ? Math.min(99, 75 + Math.round((bestItem.score / maxScore) * 24))
+        : 100;
 
     // Determina o requisito de RAM estimado para exibição
     const ramReq = game.min_ram || getEstimatedRamRequirement(game);
     const isBrowser =
       (game.platform && game.platform.toLowerCase().includes("browser")) ||
       game.platform === "browser";
+
+    // Detecta se é um jogo de console
+    const isConsoleGame =
+      (game.platforms &&
+        (game.platforms.toLowerCase().includes("playstation") ||
+          game.platforms.toLowerCase().includes("xbox") ||
+          game.platforms.toLowerCase().includes("switch") ||
+          game.platforms.toLowerCase().includes("nintendo"))) ||
+      ["playstation", "xbox", "switch"].includes(selectedPlatform);
 
     // Cria o card de Jogo modernizado
     const gameCard = document.createElement("div");
@@ -662,6 +795,12 @@ async function fazFetch() {
       : "badge badge-online";
     originBadge.textContent = isFallback ? "Backup Offline" : "Live API";
     gameCard.appendChild(originBadge);
+
+    // Badge de Match Principal
+    const scoreBadge = document.createElement("div");
+    scoreBadge.className = "main-match-badge";
+    scoreBadge.textContent = `${matchPercentage}% Match`;
+    gameCard.appendChild(scoreBadge);
 
     // Container de Imagem
     const imgContainer = document.createElement("div");
@@ -751,15 +890,6 @@ async function fazFetch() {
     `;
     cardBody.appendChild(metaRow);
 
-    // Detecta se é um jogo de console
-    const isConsoleGame =
-      (game.platforms &&
-        (game.platforms.toLowerCase().includes("playstation") ||
-          game.platforms.toLowerCase().includes("xbox") ||
-          game.platforms.toLowerCase().includes("switch") ||
-          game.platforms.toLowerCase().includes("nintendo"))) ||
-      ["playstation", "xbox", "switch"].includes(platformSelect.value);
-
     // Info do Sistema & RAM
     const sysInfo = document.createElement("div");
     sysInfo.className = "game-sys-info";
@@ -821,6 +951,31 @@ async function fazFetch() {
     `;
     cardBody.appendChild(sysInfo);
 
+    // "Por que é perfeito para você?" - Texto dinâmico personalizado
+    const whyRecommended = document.createElement("div");
+    whyRecommended.className = "why-recommended-box";
+
+    let explanationText =
+      "Este jogo é uma excelente combinação com seus filtros de busca.";
+    if (checkedValues.length > 0 || queryTokens.length > 0) {
+      explanationText = "Perfeito para você porque ";
+      if (!isConsoleGame && !isNaN(userRamValue)) {
+        explanationText += `atende totalmente ao seu setup de ${userRamValue}GB de RAM (exige apenas ~${ramReq}GB)`;
+      } else if (isConsoleGame) {
+        explanationText += `está disponível para o seu console favorito e roda com máxima otimização nativa`;
+      } else {
+        explanationText += `é ideal para o seu perfil e plataforma`;
+      }
+
+      if (game.sale_price) {
+        explanationText += ` e está em super promoção por apenas ${game.sale_price} (com ${game.worth ? game.worth : ""} de valor original).`;
+      } else {
+        explanationText += `.`;
+      }
+    }
+    whyRecommended.textContent = explanationText;
+    cardBody.appendChild(whyRecommended);
+
     // Botão de ação para jogar (suporta game_url, open_giveaway_url e freetogame_profile_url)
     const playUrl =
       game.game_url ||
@@ -859,6 +1014,76 @@ async function fazFetch() {
 
     gameCard.appendChild(cardBody);
     sectionCard.appendChild(gameCard);
+
+    // 2. RENDERIZA OUTRAS OPÇÕES RECOMENDADAS (Se existirem mais matches)
+    const alternativeItems = scoredItems.slice(1, 4); // Pega as próximas 3 opções
+    if (alternativeItems.length > 0) {
+      const altSection = document.createElement("div");
+      altSection.className = "alternatives-section";
+      altSection.innerHTML = `
+        <h3 class="alternatives-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Outros Jogos Recomendados
+        </h3>
+      `;
+
+      const altGrid = document.createElement("div");
+      altGrid.className = "alternatives-grid";
+
+      alternativeItems.forEach((item) => {
+        const altGame = item.game;
+        const altPercentage =
+          maxScore > 0
+            ? Math.min(95, 70 + Math.round((item.score / maxScore) * 25))
+            : 90 - Math.round(Math.random() * 10);
+
+        const isAltPaid =
+          altGame.price === "paid" ||
+          (altGame.worth &&
+            altGame.worth !== "N/A" &&
+            altGame.worth !== "$0.00");
+
+        let altPriceText = "Grátis";
+        if (isAltPaid) {
+          altPriceText = altGame.sale_price
+            ? altGame.sale_price
+            : altGame.worth && altGame.worth !== "N/A"
+              ? altGame.worth
+              : "Pago";
+        }
+
+        const altCard = document.createElement("div");
+        altCard.className = "alternative-card glass";
+
+        altCard.innerHTML = `
+          <div class="match-percentage-badge">${altPercentage}% Match</div>
+          <div class="game-img-container" style="height: 140px;">
+            <img class="game-img" src="${altGame.thumbnail}" alt="${altGame.title}" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop'">
+          </div>
+          <div class="game-card-body" style="padding: 16px;">
+            <div class="badges-row">
+              <span class="game-genre" style="font-size: 0.75rem;">${(altGame.genre || "Gamer").toUpperCase()}</span>
+              <span class="game-price-badge ${isAltPaid ? "price-paid" : "price-free"}" style="font-size: 0.75rem;">${altPriceText.toUpperCase()}</span>
+            </div>
+            <h4 class="game-title" style="font-size: 1.1rem; margin-top: 8px; margin-bottom: 8px;">${altGame.title}</h4>
+            <p class="game-desc" style="font-size: 0.8rem; -webkit-line-clamp: 2; height: 36px; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical;">
+              ${altGame.description || altGame.short_description || "Um grande jogo para você jogar!"}
+            </p>
+            <a class="btn btn-secondary btn-play" href="${altGame.game_url || "https://www.gamerpower.com"}" target="_blank" rel="noopener noreferrer" style="margin-top: 12px; padding: 8px 12px; font-size: 0.8rem;">
+              <span>${isAltPaid ? (altGame.sale_price ? "Ver Oferta" : "Comprar") : "Jogar Grátis"}</span>
+            </a>
+          </div>
+        `;
+        altGrid.appendChild(altCard);
+      });
+
+      altSection.appendChild(altGrid);
+      sectionCard.appendChild(altSection);
+    }
   }
 
   // Estima dinamicamente o requisito de RAM com base nas tags e plataforma
